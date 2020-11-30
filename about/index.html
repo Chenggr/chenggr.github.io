@@ -6,7 +6,7 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -92,14 +92,17 @@
 
 
 
+<meta name="description" content="欢迎来到 Chenggr 的技术博客，一个记录与分享的地方~">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
+<meta property="og:title" content="关于">
 <meta property="og:url" content="https://chenggr.github.io/about/index.html">
 <meta property="og:site_name" content="Chenggr&#39;s Blog">
+<meta property="og:description" content="欢迎来到 Chenggr 的技术博客，一个记录与分享的地方~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-08T10:02:18.000Z">
+<meta property="og:updated_time" content="2019-05-22T09:08:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="关于">
+<meta name="twitter:description" content="欢迎来到 Chenggr 的技术博客，一个记录与分享的地方~">
 
 
 
@@ -135,7 +138,7 @@
 
 
 
-  <title>about | Chenggr's Blog</title>
+  <title>关于 | Chenggr's Blog</title>
   
 
 
@@ -249,6 +252,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-fa fa-book"></i> <br>
+            
+            留言板
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -275,7 +288,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
+	<h1 class="post-title" itemprop="name headline">关于</h1>
 
 
 
@@ -287,7 +300,10 @@
       <div class="post-body">
         
         
-          
+          <blockquote>
+<p>欢迎来到 Chenggr 的技术博客，一个记录与分享的地方~</p>
+</blockquote>
+
         
       </div>
       
@@ -306,6 +322,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -345,7 +364,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -367,7 +386,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -404,7 +423,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -565,6 +584,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'vxIagPJEU1WoEEV9ied2yyjc-gzGzoHsz',
+        appKey: 'pds4bWK0vhTsnBwyv17UIrpW',
+        placeholder: '输入你的评论\n昵称为必填项目\n虽然email不是必选，但是填写了email可以收到推送通知哦！',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
