@@ -1,22 +1,1162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenggr.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-08-13T00:52:42.040Z</updated>
+    <title>chenggr&apos;s blog</title>
+    <updated>2021-08-13T01:55:39.911Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenggr.github.io"/>
     <link rel="self" href="https://chenggr.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>一个记录与分享的地方~</subtitle>
     <logo>https://chenggr.github.io/images/avatar.png</logo>
     <icon>https://chenggr.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, chenggr&apos;s blog</rights>
     <entry>
-        <title type="html"><![CDATA[测试文章]]></title>
-        <id>https://chenggr.github.io/post/ce-shi-wen-zhang/</id>
-        <link href="https://chenggr.github.io/post/ce-shi-wen-zhang/">
+        <title type="html"><![CDATA[我的macOS常用软件及配置]]></title>
+        <id>https://chenggr.github.io/post/wo-de-macos-chang-yong-ruan-jian-ji-pei-zhi/</id>
+        <link href="https://chenggr.github.io/post/wo-de-macos-chang-yong-ruan-jian-ji-pei-zhi/">
         </link>
-        <updated>2021-08-13T00:38:57.000Z</updated>
-        <content type="html"><![CDATA[<p>123123</p>
+        <updated>2021-08-13T01:44:44.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>记录我的某些常用软件及配置，方便以后查看。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>记录我的某些常用软件及配置，方便以后查看。</p>
+</blockquote>
+<!--more-->
+<h1 id="破解软件下载地址">破解软件下载地址</h1>
+<p><a href ="https://xclient.info/">精品 MAC 应用分享</a><br>
+<a href ="https://www.macbl.com/">马可菠萝</a></p>
+<h1 id="软件">软件</h1>
+<ul>
+<li>
+<p>chrome &amp; chrome 插件<br>
+划词翻译<br>
+web 前端助手（FeHelper）</p>
+</li>
+<li>
+<p>可能需要用到的<br>
+MacBooster 7（清理垃圾、内存）<br>
+Dr. Unarchiver（解压）<br>
+iStatistica（查看内存、网络、网速、等等）</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Sourcetree（git）</li>
+<li>SmartSVN（svn）</li>
+<li>微信开发者工具</li>
+<li>Navicat Premium（数据库）</li>
+<li>Sublime Text3（编辑器）</li>
+<li>MAMP PRO（服务器）</li>
+<li>Postman（接口）</li>
+<li>Charles（抓包）</li>
+<li>Vscode（编译器）</li>
+</ul>
+<hr>
+<h1 id="配置">配置</h1>
+<h2 id="vscode">vscode</h2>
+<pre><code class="language-javascript">{
+  &quot;editor.detectIndentation&quot;: false,
+  // 重新设定 tabsize
+  &quot;editor.tabSize&quot;: 2,
+  // #每次保存的时候自动格式化
+  &quot;editor.formatOnSave&quot;: true,
+  // #每次保存的时候将代码按 eslint 格式进行修复
+  &quot;eslint.autoFixOnSave&quot;: true,
+  // 添加 vue 支持
+  &quot;eslint.validate&quot;: [
+    &quot;javascript&quot;,
+    &quot;javascriptreact&quot;,
+    {
+    &quot;language&quot;: &quot;vue&quot;,
+    &quot;autoFix&quot;: true
+    }
+  ],
+  // #让 prettier 使用 eslint 的代码格式进行校验
+  &quot;prettier.eslintIntegration&quot;: true,
+  // #去掉代码结尾的分号
+  &quot;prettier.semi&quot;: false,
+  // #使用带引号替代双引号
+  &quot;prettier.singleQuote&quot;: true,
+  // #让函数(名)和后面的括号之间加个空格
+  &quot;javascript.format.insertSpaceBeforeFunctionParenthesis&quot;: true,
+  // #这个按用户自身习惯选择
+  &quot;vetur.format.defaultFormatter.html&quot;: &quot;js-beautify-html&quot;,
+  // #让 vue 中的 js 按编辑器自带的 ts 格式进行格式化
+  &quot;vetur.format.defaultFormatter.js&quot;: &quot;vscode-typescript&quot;,
+  &quot;vetur.format.defaultFormatterOptions&quot;: {
+    &quot;js-beautify-html&quot;: {
+    &quot;wrap_attributes&quot;: &quot;force-aligned&quot;
+    // #vue 组件中 html 代码格式化样式
+    }
+  },
+  // 格式化 stylus, 需安装 Manta's Stylus Supremacy 插件
+  &quot;stylusSupremacy.insertColons&quot;: false, // 是否插入冒号
+  &quot;stylusSupremacy.insertSemicolons&quot;: false, // 是否插入分好
+  &quot;stylusSupremacy.insertBraces&quot;: false, // 是否插入大括号
+  &quot;stylusSupremacy.insertNewLineAroundImports&quot;: false, // import 之后是否换行
+  &quot;stylusSupremacy.insertNewLineAroundBlocks&quot;: false, // 两个选择器中是否换行
+  &quot;eslint.options&quot;: {
+    &quot;plugins&quot;: [&quot;html&quot;]
+  },
+  &quot;editor.fontSize&quot;: 13
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[interview-js]]></title>
+        <id>https://chenggr.github.io/post/interview-js/</id>
+        <link href="https://chenggr.github.io/post/interview-js/">
+        </link>
+        <updated>2019-05-22T08:38:02.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>imooc 的 javascript 笔记</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>imooc 的 javascript 笔记</p>
+</blockquote>
+<!--more-->
+<h1 id="原型规则和示例">原型规则和示例</h1>
+<ul>
+<li>所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除了“null”以外）</li>
+<li>所有的引用类型（数组、对象、函数），都有一个 ** proto ** (隐式原型)属性，属性值是一个普通的对象</li>
+<li>所有的函数，都有一个 prototype(显示原型)属性，属性值也是一个普通对象</li>
+<li>所有的引用类型（数组、对象、函数），** proto ** (隐式原型)属性值指向它的构造函数的“prototype”(显示类型)属性值 <strong>obj. ** porto ** === Object.prototype</strong></li>
+<li>当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的 ** proto **(即它的构造函数的 prototype)中寻找</li>
+</ul>
+<h1 id="作用域和闭包">作用域和闭包</h1>
+<p>执行上下文</p>
+<p>this</p>
+<p>作用域</p>
+<p>作用域链</p>
+<p>闭包</p>
+<h2 id="执行上下文">执行上下文</h2>
+<p>范围：一段 &lt; script &gt; 或者一个函数</p>
+<p>全局：变量定义、函数声明</p>
+<p>函数：变量定义、函数声明、this、arguments</p>
+<p>Ps：函数声明 和 函数表达式 的区别</p>
+<h2 id="this">this</h2>
+<p>this 要执行时才能确认值，定义时无法确认</p>
+<pre><code class="language-javascript">var a = {
+  name: 'A',
+  fn: function() {
+    console.log(this.name)
+  }
+}
+a.fn() // this === a
+a.fn.call({ name: 'B' }) // this === {name: 'B'}
+var fn1 = a.fn
+fn1() // this === window
+</code></pre>
+<ul>
+<li>作为构造函数执行</li>
+<li>作为对象属性执行</li>
+<li>作为普通函数执行</li>
+<li>call apply bind</li>
+</ul>
+<pre><code class="language-javascript">function Foo(name) {
+  this.name = name
+}
+var f = new Foo('zhangsan')
+</code></pre>
+<pre><code class="language-javascript">var obj = {
+  name: 'A',
+  printName: function() {
+    console.log(this.name)
+  }
+}
+obj.printName() // this === obj
+</code></pre>
+<pre><code class="language-javascript">function fn() {
+  console.log(this) // this === window
+}
+fn()
+</code></pre>
+<pre><code class="language-javascript">// call apply bind
+function fn1(name, age) {
+  alert(name)
+  console.log(this)
+}
+fn1.call({ x: 100 }, 'zhangsan', 20) // this === {x:100}
+fn1.apply({ x: 100 }, ['zhangsan', 20])
+
+var fn2 = function(name, age) {
+  alert(name)
+  console.log(this)
+}.bind({ y: 200 })
+fn2('zhangsan', 20)
+</code></pre>
+<p>作用域</p>
+<ul>
+<li>
+<p>没有块级作用域</p>
+</li>
+<li>
+<p>只有函数和全局作用域</p>
+<p>​</p>
+</li>
+</ul>
+<pre><code class="language-javascript">// 无块级作用域
+if (true) {
+  var name = 'zhangsan'
+}
+console.log(name)
+
+// 函数和全局作用域
+var a = 100
+function fn() {
+  var a = 200
+  console.log('fn', a)
+}
+console.log('global', a)
+fn()
+</code></pre>
+<p>作用域链</p>
+<pre><code class="language-javascript">var a = 100
+function fn() {
+  var b = 200
+
+  // 当前作用域没有定义的变量，即“自由变量”
+  console.log(a)
+  console.log(b)
+}
+fn()
+</code></pre>
+<pre><code class="language-javascript">var a = 100
+function F1() {
+  var b = 200
+  function F2() {
+    var c = 300
+    console.log(a) // a是自由变量
+    console.log(b) // b是自由变量
+    console.log(c)
+  }
+  F2()
+}
+F1()
+</code></pre>
+<h2 id="闭包的使用场景">闭包的使用场景</h2>
+<ul>
+<li>函数作为返回值</li>
+<li>函数作为参数传递</li>
+</ul>
+<pre><code class="language-javascript">function F1() {
+  var a = 100
+  // 返回一个函数(函数作为返回值)
+  return function() {
+    console.log(a) // 自由变量，父级作用域寻找
+  }
+}
+// f1 得到一个函数
+var f1 = F1()
+var a = 200
+f1()
+
+// 1.函数作为返回值 ↑
+// 2.函数作为参数来传递 ↓
+function F1() {
+  var a = 100
+  return function() {
+    console.log(a)
+  }
+}
+var f1 = F1()
+function F2(fn) {
+  var a = 200
+  fn()
+}
+F2(f1)
+</code></pre>
+<h3 id="创建-10-个a标签点击的时候弹出对应的序号">创建 10 个<a>标签，点击的时候弹出对应的序号</h3>
+<pre><code class="language-javascript">var i
+for (i = 0; i &lt; 10; i++) {
+  ;(function(i) {
+    var a = document.createElement('a')
+    a.innerHTML = i + '&lt;br&gt;'
+    a.addEventListener('click', function(e) {
+      e.preventDefault()
+      alert(i)
+    })
+    document.body.appendChild(a)
+  })(i)
+}
+</code></pre>
+<h3 id="闭包的应用">闭包的应用</h3>
+<pre><code class="language-javascript">// 闭包实际开发中主要用于封装变量，收敛权限
+function isFirstLoad() {
+  var _list = []
+  return function(id) {
+    if (_list.indexOf(id) &gt;= 0) {
+      return false
+    } else {
+      _list.push(id)
+      return true
+    }
+  }
+}
+// 使用  判断是否第一次
+var firstLoad = isFirstLoad()
+firstLoad(10) // true
+firstLoad(10) // false
+firstLoad(20) // true
+</code></pre>
+<h1 id="异步和单线程">异步和单线程</h1>
+<h2 id="同步和异步的区别是什么">同步和异步的区别是什么</h2>
+<p>同步会阻塞代码执行，而异步不会</p>
+<p>alert 是同步，setTimeout 是异步</p>
+<h2 id="前端使用异步的场景有哪些">前端使用异步的场景有哪些</h2>
+<p>定时任务：setTimeout、setInterval</p>
+<p>网络请求：ajax 请求，动态<img>加载</p>
+<p>事件绑定</p>
+<h1 id="日期">日期</h1>
+<pre><code class="language-javascript">Date.now() // 获取当前时间毫秒数
+var dt = new Date()
+dt.getTime() // 获取毫秒数
+dt.getFullYear() // 年
+dt.getMonth() // 月(0-11)
+dt.getDate() // 日(1-31)
+dt.getHours() // 小时(0-23)
+dt.getMinutes() // 分钟(0-59)
+dt.getSeconds() // 秒(0-59)
+</code></pre>
+<h1 id="数组-api">数组 API</h1>
+<h2 id="foreach">forEach</h2>
+<pre><code class="language-javascript">var arr = [1, 2, 3]
+arr.forEach(function(item, index) {
+  //  遍历数组的所有元素
+  console.log(index, item)
+})
+</code></pre>
+<h2 id="every">every</h2>
+<pre><code class="language-javascript">var arr = [1, 2, 3]
+var result = arr.every(function(item, index) {
+  // 用来判断所有的数组元素，都满足一个条件
+  if (item &lt; 4) {
+    return true
+  }
+})
+console.log(result)
+</code></pre>
+<h2 id="some">some</h2>
+<pre><code class="language-javascript">var arr = [1, 2, 3]
+var result = arr.some(function(item, index) {
+  // 用来判断只要有一个数组元素满足条件
+  if (item &lt; 1) {
+    return true
+  }
+})
+console.log(result)
+</code></pre>
+<h2 id="sort">sort</h2>
+<pre><code class="language-javascript">var arr = [1, 3, 2, 3, 5]
+var arr2 = arr.sort(function(a, b) {
+  // 从小到大排序
+  return a - b
+  // 从大到小排序
+  // return b - a
+})
+console.log(arr)
+console.log(arr2)
+</code></pre>
+<h2 id="map">map</h2>
+<pre><code class="language-javascript">var arr = [1, 2, 3, 4]
+var arr2 = arr.map(function(item, index) {
+  // 将元素重新组装，并返回
+  return '&lt;b&gt;' + item + '&lt;/b&gt;'
+})
+console.log(arr2)
+</code></pre>
+<h2 id="filter">filter</h2>
+<pre><code class="language-javascript">var arr = [1, 2, 3]
+var arr2 = arr.filter(function(item, index) {
+  // 通过某一个条件过滤数组
+  if (item &gt;= 2) {
+    return true
+  }
+})
+console.log(arr2)
+</code></pre>
+<h1 id="对象-api">对象 API</h1>
+<pre><code class="language-javascript">var obj = {
+  x: 100,
+  y: 200,
+  z: 300
+}
+var key
+for (key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    console.log(key, obj[key])
+  }
+}
+</code></pre>
+<p><strong>获取随机数，要求是长度一致的字符串格式</strong></p>
+<pre><code class="language-javascript">var random = Math.random()
+var random = random + '0000000000' // 后面加上10个零
+var random = random.slice(0, 10)
+console.log(random)
+</code></pre>
+<p><strong>一个能遍历对象和数组的 forEach 函数</strong></p>
+<pre><code class="language-javascript">// 自定义forEach
+function forEach(obj, fn) {
+  var key
+  if (obj instanceof Array) {
+    obj.forEach(function(item, index) {
+      fn(index, item)
+    })
+  } else {
+    for (key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        fn(key, obj[key])
+      }
+    }
+  }
+}
+// 使用forEach
+// 遍历数组
+var arr = [1, 2, 3]
+// 注意,这里参数的位置顺序换了，为了和对象遍历格式一致
+forEach(arr, function(index, item) {
+  console.log(index, item)
+})
+// 遍历对象
+var obj = { x: 100, y: 200 }
+forEach(obj, function(key, value) {
+  console.log(key, value)
+})
+</code></pre>
+<h1 id="dom">DOM</h1>
+<h2 id="获取-dom-节点">获取 DOM 节点</h2>
+<pre><code class="language-javascript">var div1 = document.getElementById('div1') //元素
+var divList = document.getElementsByTagName('div') // 集合
+
+var containerList = document.getElementByClassName('.container') // 集合
+var pList = document.querySelectorAll('p') // 集合
+</code></pre>
+<h2 id="property">property</h2>
+<pre><code class="language-javascript">var obj = { x: 100, y: 200 }
+console.log(obj.x) // 100
+
+var p = document.getElementsByTagName('p')[0]
+console.log(p.nodeName) // P
+</code></pre>
+<h2 id="attribute">Attribute</h2>
+<pre><code class="language-javascript">var pList = document.querySelectorAll('p')
+var p = pList[0]
+p.getAttribute('data-name')
+p.setAttribute('data-name', 'imooc')
+p.getAttribute('style')
+p.setAttribute('style', 'font-size:30px')
+</code></pre>
+<p>property 只是一个 js 对象的属性的修改</p>
+<p>Attribute 是对 HTML 标签属性的修改</p>
+<h2 id="新增节点">新增节点</h2>
+<pre><code class="language-javascript">var div1 = document.getElementById('div1')
+// 添加新节点
+var p1 = document.createElement('p')
+p1.innerHTML = 'this is p1'
+div1.appendChild(p1) // 添加新创建的元素
+// 移动已有节点
+var p2 = document.getElementById('p2')
+div1.appendChild(p2)
+</code></pre>
+<h2 id="获取父元素和子元素">获取父元素和子元素</h2>
+<pre><code class="language-javascript">var div1 = document.getElementById('div1')
+var parent = div1.parentElement
+
+var child = div1.childNodes
+</code></pre>
+<h2 id="删除节点">删除节点</h2>
+<pre><code class="language-javascript">var div1 = document.getElementById('div1')
+var child = div1.childNodes
+div1.removeChild(child[0])
+</code></pre>
+<h1 id="bom">BOM</h1>
+<h2 id="navigator-screen">navigator &amp; screen</h2>
+<pre><code class="language-javascript">// navigator
+var ua = navigator.userAgent
+var isChrome = ua.indexOf('Chrome')
+console.log(isChrome)
+
+// screen
+console.log(screen.width)
+console.log(screen.height)
+</code></pre>
+<h2 id="location-history">location &amp; history</h2>
+<pre><code class="language-javascript">// location
+console.log(location.href)
+console.log(location.protocol) // 'http:' 'https:'
+console.log(location.host) //  域名
+console.log(location.pathname) // '/learn/199'
+console.log(location.search) // '?a=xxx'
+console.log(location.hash) // '#...'
+
+// history
+history.back()
+history.forward()
+</code></pre>
+<h1 id="事件">事件</h1>
+<h2 id="通用事件绑定">通用事件绑定</h2>
+<pre><code class="language-javascript">var btn = document.getElementById('btn1')
+btn.addEventListener('click', function(event) {
+  console.log('clicked')
+})
+
+function bindEvent(elem, type, fn) {
+  elem.addEventListener(type, fn)
+}
+var a = document.getElementById('link1')
+bindEvent(a, 'click', function(e) {
+  e.preventDefault() //阻止默认行为
+  alert('clicked')
+})
+</code></pre>
+<p>关于 IE 低版本的兼容性</p>
+<p>IE 低版本使用 attachEvent 绑定事件，和 W3C 标准不一样</p>
+<p>IE 低版本使用量已非常少，很多网站都早已不支持</p>
+<h2 id="代理">代理</h2>
+<pre><code class="language-html">&lt;div id=&quot;div1&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;a1&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;a2&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;a3&lt;/a&gt;
+  &lt;!-- 会随时新增更多a标签 --&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  var div1 = document.getElementById('div1')
+  div1.addEventListener('click', function(e) {
+    var target = e.target
+    if (target.nodeName === 'A') {
+      alert(target.innerHTML)
+    }
+  })
+&lt;/script&gt;
+</code></pre>
+<h2 id="完善通用绑定事件的函数">完善通用绑定事件的函数</h2>
+<pre><code class="language-javascript">function bindEvent(elem, type, selector, fn) {
+  if (fn == null) {
+    fn = selector
+    selector = null
+  }
+  elem.addEventListener(type, function(e) {
+    var target
+    // 代理
+    if (selector) {
+      target = e.target
+      if (target.matches(selector)) {
+        fn.call(target, e)
+      }
+    } else {
+      // 不是代理
+      fn(e)
+    }
+  })
+}
+
+// 使用代理
+var div1 = document.getElementById('div1')
+bindEvent(div1, 'click', 'a', function(e) {
+  console.log(this.innerHTML)
+})
+
+// 不使用代理
+var a = document.getElementById('a1')
+bindEvent(div1, 'click', function(e) {
+  console.log(a.innerHTML)
+})
+</code></pre>
+<h1 id="ajax">Ajax</h1>
+<h2 id="xmlhttprequest">XMLHttpRequest</h2>
+<pre><code class="language-javascript">var xhr = new XMLHttpRequest()
+Xhr.open('GET', '/api', false) // false指异步
+Xhr.onreadystatechange = function() {
+  // 这里的函数异步执行
+  if (xhr.readyState == 4) {
+    if (xhr.status == 200) {
+      console.log(xhr.responseText)
+    }
+  }
+}
+xhr.send(null)
+</code></pre>
+<p>IE 低版本使用 ActiveXObject</p>
+<h2 id="readystate">readyState</h2>
+<p>0 - (未初始化) 还没用调用 send()方法</p>
+<p>1 - (载入) 已调用 send()方法，正在发送请求</p>
+<p>2 - (载入完成) send()方法执行完成，已经接收到全部响应内容</p>
+<p>3 - (交互) 正在解析响应内容</p>
+<p>4 - (完成) 响应内容解析完成，可以在客户端调用了</p>
+<h2 id="status">status</h2>
+<p>2xx - 表示成功处理请求。 如 200</p>
+<p>3xx - 需要重定向，浏览器直接跳转</p>
+<p>4xx - 客户端请求错误，如 404</p>
+<p>5xx - 服务端错误</p>
+<h1 id="跨域">跨域</h1>
+<p>浏览器有同源策略，不允许 ajax 访问其他域接口</p>
+<p>跨域条件：协议、域名、端口，有一个不同就算跨域</p>
+<h2 id="允许跨域的三个标签">允许跨域的三个标签</h2>
+<p>img</p>
+<p>link</p>
+<p>script</p>
+<p><img> 用于打点统计，统计网站可能是其他域</p>
+<link><script> 可以使用CDN,CDN的也是其他域
+<script>可以用于JSONP
+
+
+
+## 跨域注意事项
+
+所有的跨域请求都必须经过信息提供方允许
+
+如果未经允许即可获取，那是浏览器同源策略出现漏洞
+
+
+
+## JSONP实现原理
+
+加载http://coding.m.imooc.com/classindex.html
+
+不一定服务器端存在一个classindex.html文件
+
+服务器跨域根据请求，动态生成一个文件，返回
+
+同理于 <script src="http://coding.m.imooc.com/api.js">
+
+
+
+例如你的网站要跨域访问慕课网的一个接口
+
+慕课给你一个地址http://coding.m.imooc.com/api.js
+
+返回内容格式如 callback({x:100,y:200}) (可动态生成)
+
+```javascript
+window.callback = function(data) {
+    // 这是我们跨域得到的信息
+  	console.log(data)
+}
+<script src="http://coding.m.imooc.com/api.js"></script>
+<!-- 以上将返回 callback({x:100,y:200}) -->
+<pre><code>
+
+
+# 存储
+
+描述一下cookie,sessionStorage和localStorage的区别
+
+## cookie
+
+本身用于客户端和服务器端通信
+
+但是它有本地存储的功能，于是就被“借用”
+
+使用document.cookie = … 获取和修改
+
+
+
+**cookie用于存储的缺点**
+
+存储量太小，只有4KB
+
+所有http请求都带有，会影响获取资源的效率
+
+API简单，需要封装才能用 document.cookie = ...
+
+
+
+## sessionStorage和localStorage的
+
+HTML5专门为存储而设计，最大容量5M
+
+API简答易用
+
+localStorage.setItem(key, value); localStorage.getItem(key)
+
+
+
+
+
+
+
+# 页面加载
+
+## 加载一个资源的过程
+
+浏览器根据DNS服务器得到域名的IP地址
+
+向这个IP的机器发送http(或https)请求
+
+服务器收到、处理并返回http(或https)请求
+
+浏览器得到返回内容
+
+## 浏览器渲染页面的过程
+
+根据HTML结果生成DOM Tree
+
+根据CSS生成CSSOM
+
+将DOM和CSSOM整合成RenderTree
+
+根据RenderTree开始渲染和展示
+
+遇到&lt;script&gt;时，会执行并阻塞渲染
+
+
+
+## window.onload 和 DOMContentLoaded
+
+```javascript
+window.addEventListener('load',function () {
+    // 页面的全部资源加载完才会执行，包括图片、视频等
+})
+document.addEventListener('DOMContentLoaded', function () {
+    // DOM渲染完即可执行，此时图片、视频还可能没有加载完
+})
+</code></pre>
+<h1 id="性能优化">性能优化</h1>
+<p><strong>原则</strong></p>
+<p>多使用内存、缓存或者其他方法</p>
+<p>减少 CPU 计算、减少网络请求</p>
+<p><strong>从哪里入手</strong></p>
+<p>加载页面和静态资源</p>
+<p>页面渲染</p>
+<p><strong>加载资源优化</strong></p>
+<p>静态资源的压缩合并</p>
+<p>静态资源缓存</p>
+<p>使用 CDN 让资源加载更快</p>
+<p>使用 SSR 后端渲染，数据直接输出到 HTML 中</p>
+<p><strong>渲染优化</strong></p>
+<p>CSS 放前面、JS 放后面</p>
+<p>懒加载(图片懒加载、下拉加载更多)</p>
+<p>减少 DOM 查询，对 DOM 查询做缓存</p>
+<p>减少 DOM 操作，多个操作尽量合并在一起执行</p>
+<p>事件节流</p>
+<p>尽早执行操作（如 DOMContentLoaded）</p>
+<h2 id="缓存-dom-查询">缓存 DOM 查询</h2>
+<pre><code class="language-javascript">// 未缓存DOM查询
+var i
+for (i = 0; i &lt; document.getElementByTagName('p').length; i++) {
+  // todo
+}
+
+// 缓存了DOM查询
+var pList = document.getElementByTagName('p')
+var i
+for (i = 0; i &lt; pList.length; i++) {
+  //todo
+}
+</code></pre>
+<h2 id="合并-dom-插入">合并 DOM 插入</h2>
+<pre><code class="language-javascript">var listNode = document.getElementById('list')
+
+// 要插入 10 个 li 标签
+var frag = document.createDocumentFragment()
+var x, li
+for (x = 0; x &lt; 10; x++) {
+  li = document.createElement('li')
+  li.innerHTML = 'List item' + x
+  frag.appendChild(li)
+}
+listNode.appendChild(frag)
+</code></pre>
+<h2 id="事件节流">事件节流</h2>
+<pre><code class="language-javascript">var textarea = document.getElementById('text')
+var timeoutId
+textarea.addEventListener('keyup', function() {
+  if (timeoutId) {
+    clearTimeout(timeoutId)
+  }
+  timeoutId = setTimeout(function() {
+    // 触发 change 事件
+  }, 100)
+})
+</code></pre>
+<h2 id="尽早操作">尽早操作</h2>
+<pre><code class="language-javascript">window.addEventListener('load', function() {
+  // 页面的全部资源加载完才会执行，包括图片、视频等
+})
+document.addEventListener('DOMContentLoaded', function() {
+  // DOM渲染完即可执行，此时图片、视频还可能没有加载完
+})
+</code></pre>
+<h1 id="安全性">安全性</h1>
+<p>XSS 跨站请求攻击</p>
+<p>XSRF 跨站请求伪造</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[interview]]></title>
+        <id>https://chenggr.github.io/post/interview/</id>
+        <link href="https://chenggr.github.io/post/interview/">
+        </link>
+        <updated>2019-05-22T00:38:57.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>imooc 面试笔记</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>imooc 面试笔记</p>
+</blockquote>
+<!--more-->
+<h1 id="dom-事件">DOM 事件</h1>
+<p>基本概念：DOM 事件级别</p>
+<p>DOM 事件级别</p>
+<p>DOM 事件流</p>
+<p>描述 DOM 事件捕获的具体流程</p>
+<p>Event 对象的常用应用</p>
+<p>自定义事件</p>
+<h2 id="dom-事件类-事件级别">DOM 事件类 事件级别</h2>
+<p>DOM0 element.onclick=function(){}</p>
+<p>DOM2 element.addEventListener('click',function(){},false)</p>
+<p>DOM3 element.addEventListener('keyup',function(){},false)</p>
+<h2 id="dom-事件模型">DOM 事件模型</h2>
+<p>事件模型</p>
+<p>​ 捕获 ↓ 冒泡 ↑</p>
+<h2 id="dom-事件流">DOM 事件流</h2>
+<p>三阶段</p>
+<p>捕获-&gt;目标阶段-&gt;冒泡</p>
+<h2 id="描述-dom-事件捕获的具体流程">描述 DOM 事件捕获的具体流程</h2>
+<p>window-&gt;</p>
+<p>​ document-&gt;</p>
+<p>​ html-&gt;</p>
+<p>​ body-&gt;</p>
+<p>​ ….</p>
+<p>​ 目标元素</p>
+<pre><code class="language-javascript">var ev = document.getElementById('ev')
+
+window.addEventListener(
+  'click',
+  function(e) {
+    console.log('window captrue')
+  },
+  true
+)
+
+document.addEventListener(
+  'click',
+  function(e) {
+    console.log('document captrue')
+  },
+  true
+)
+
+document.documentElement.addEventListener(
+  'click',
+  function(e) {
+    console.log('html captrue')
+  },
+  true
+)
+
+document.body.addEventListener(
+  'click',
+  function(e) {
+    console.log('body captrue')
+  },
+  true
+)
+
+ev.addEventListener(
+  'click',
+  function(e) {
+    console.log('ev captrue')
+  },
+  true
+)
+</code></pre>
+<h2 id="event-对象的常用应用">Event 对象的常用应用</h2>
+<p>event.preventDefault() //阻止默认行为</p>
+<p>Event.stopPropagation() //阻止冒泡行为</p>
+<p>Event.stopImmediatePropagation()</p>
+<p>​ //同一元素绑定两个点击事件 A 和 B 在事件 A 中使用该事件 Event.stopImmediatePropagation()可以阻止事件 B 的触发</p>
+<p>Event.currentTarget //当前绑定的事件</p>
+<p>Event.target //当前被点击的元素</p>
+<h2 id="自定义事件">自定义事件</h2>
+<pre><code class="language-Javascript">var eve = new Event('custome');
+el.addEventListener('custome',function(){
+  console.log('custome');
+});
+el.dispatchEvent(eve)
+</code></pre>
+<p>CustomEvent 可以添加参数</p>
+<h1 id="http-协议类">HTTP 协议类</h1>
+<p>HTTP 协议的主要特点</p>
+<p>HTTP 报文的组成部分</p>
+<p>HTTP 方法</p>
+<p>POST 和 GET 的区别</p>
+<p>HTTP 状态码</p>
+<p>什么是持久链接</p>
+<p>什么是管线化</p>
+<h2 id="http-协议的主要特点">HTTP 协议的主要特点</h2>
+<h3 id="简单快速">简单快速</h3>
+<p>​ 每个资源(URI)都是固定的</p>
+<h3 id="灵活">灵活</h3>
+<p>​ 通过头部分，一个 HTTP 协议可以完成不同数据类型的传输</p>
+<h3 id="无连接">无连接</h3>
+<p>​ 连接一次，它就会断掉，不会保持连接</p>
+<h3 id="无状态">无状态</h3>
+<p>​ 单从 HTTP 协议上，是不能区分两次连接者的身份的</p>
+<h2 id="http-报文的组成部分">HTTP 报文的组成部分</h2>
+<h3 id="请求报文">请求报文</h3>
+<p>​ 请求行</p>
+<p>​ http 方法、页面地址、http 协议、版本</p>
+<p>​ 请求头</p>
+<p>​ 空行</p>
+<p>​ 请求体</p>
+<h3 id="响应报文">响应报文</h3>
+<p>​ 状态行</p>
+<p>​ 响应头</p>
+<p>​ 空行</p>
+<p>​ 响应体</p>
+<h2 id="http-协议类-2">HTTP 协议类</h2>
+<h3 id="http-方法">HTTP 方法</h3>
+<p>​ GET 获取资源</p>
+<p>​ POST 传输资源</p>
+<p>​ PUT 更新资源</p>
+<p>​ DELETE 删除资源</p>
+<p>​ HEAD 获得报文首部</p>
+<h2 id="post-和-get-的区别">POST 和 GET 的区别</h2>
+<ul>
+<li>
+<p>GET 在浏览器回退时是无害的，而 POST 会再次提交请求</p>
+</li>
+<li>
+<p>GET 产生的 URL 地址可以被收藏，而 POST 不可以</p>
+</li>
+<li>
+<p>GET 请求会被浏览器主动缓存，而 POST 不会，除非手动设置</p>
+</li>
+<li>
+<p>GET 请求只能进行 url 编码，而 POST 支持多种编码方式</p>
+</li>
+<li>
+<p>GET 请求参数会被完整保留在浏览器历史记录里，而 POST 中的参数不会被保留</p>
+</li>
+<li>
+<p>GET 请求在 URL 中传送的参数是有长度限制的，而 POST 没有限制</p>
+</li>
+<li>
+<p>对参数的数据类型，GET 只接受 ASCII 字符，而 POST 没有限制</p>
+</li>
+<li>
+<p>GET 比 POST 更不安全，因为参数直接暴露在 URL 上，所以不能用来传递敏感信息</p>
+</li>
+<li>
+<p>GET 参数通过 URL 传递，POST 放在 Request body 中</p>
+</li>
+</ul>
+<h2 id="http-状态码">HTTP 状态码</h2>
+<p>1xx: 指示信息-表示请求已接受，继续处理</p>
+<p>2xx: 成功-表示请求已被成功接受</p>
+<p>3xx: 重定向-要完成请求必须进行更进一步的操作</p>
+<p>4xx: 客户端错误-请求语法错误或请求无法实现</p>
+<p>5xx: 服务器错误-服务器未能实现合法的请求</p>
+<p>200 OK : 客户端请求成功</p>
+<p>206 Partial Content: 客户发送了一个带有 Range 头的 GET 请求，服务器完成了它</p>
+<p>301 Moved Permanently: 所请求的页面已经转移至新的 url</p>
+<p>302 Found: 所请求的页面已经临时转移至新的 url</p>
+<p>304 Not Modified: 客户端有缓存的文档并发出了一个条件性的请求，服务器告诉客户，原来缓存的文档还可以继续使用</p>
+<p>400 Bad Request: 客户端请求有语法错误，不能被服务器所理解</p>
+<p>401 Unauthorized: 请求未经许可，这个状态码必须和 WWW-Authenticate 报头域一起使用</p>
+<p>403 Forbidden: 对被请求页面的访问被禁止</p>
+<p>404 Not Found: 请求资源不存在</p>
+<p>500 Internal Server Error: 服务器发生不可预测的错误原来缓存的文档还可以继续使用</p>
+<p>503 Server Unavailable: 请求未完成，服务器临时过载或当机，一段时间后可能恢复正常</p>
+<h2 id="持久链接">持久链接</h2>
+<p>HTTP 协议采用“请求-应答”模式，当使用普通模式，即非 Keep-Alive 模式时，每个请求/应答客户和服务器都要新建立一个连接，完成之后立即断开连接（HTTP 协议为无连接的协议）</p>
+<p>当使用 Keep-Alive 模式(又称持久连接、连接重用)时，Keep-Alive 功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive 功能避免了建立或重新建立连接</p>
+<p>1.1 才支持持久连接</p>
+<h2 id="管线化">管线化</h2>
+<p><strong>在使用持久连接的情况下</strong>，某个连接上消息的传递类似于</p>
+<p>请求 1-&gt;响应 1-&gt;请求 2-&gt;响应 2-&gt;请求 3-&gt;响应 3</p>
+<p>某个连接上的消息变成了类似这样</p>
+<p>请求 1-&gt;请求 2-&gt;请求 3-&gt;响应 1-&gt;响应 2-&gt;响应 3</p>
+<ul>
+<li>管线化机制通过持久连接完成，仅 HTTP/1.1 支持此技术</li>
+<li>只有 GET 和 HEAD 请求可以进行管线化，而 POST 则有所限制</li>
+<li>初次创建连接时不应启动管线机制，因为对方(服务器)不一定支持 HTTP/1.1 版本的协议</li>
+<li>管线化不会影响响应到来的顺序，如上面的例子所示，响应返回的顺序并未改变</li>
+<li>HTTP/1.1 要求服务器端支持管线化，但并不要求服务器端也对响应进行管线化处理，只是要求对于管线化的请求不失败即可</li>
+<li>由于上面提到的服务器端的问题，开启管线化很可能并不会带来大幅度的性能提升，而且很多服务器端和代理 程序对管线化的支持并不好，因此现代浏览器如 Chrome 和 Firefox 默认并未开启管线化支持</li>
+</ul>
+<h1 id="原型链类">原型链类</h1>
+<p>创建对象有几种方法</p>
+<p>原型、构造函数、实例、原型链</p>
+<p>instanceof 的原理</p>
+<p>new 运算符</p>
+<h2 id="创建对象的几种方法">创建对象的几种方法</h2>
+<p>// 字面量创建对象</p>
+<p>var o1 = {name:'o1'}</p>
+<p>var o11 = new Object({name:'o11'})</p>
+<p>// 显示构造函数创建对象</p>
+<p>var M = function(){this.name = 'o2'}</p>
+<p>var o2 = new M();</p>
+<p>// 通过 Object.create</p>
+<p>var P = {name: 'o3'}</p>
+<p>var o3 = Object.create(P)</p>
+<h2 id="new-运算符">new 运算符</h2>
+<p>一个新对象被创建。它继承自 foo.prototype</p>
+<p>​ ↓</p>
+<p>构造函数 foo 被执行。执行的时候，相应的传参会被传入，同时上下文（this）会被指定为这个新实例。new foo 等同于 new foo(),只能用在不传递任何参数的情况</p>
+<p>​ ↓</p>
+<p>如果构造函数返回一个“对象”，那么这个对象会取代整个 new 处理的结果。如果构造函数没有返回对象，那么 new 出来的结果为步骤 1 创建的对象。</p>
+<pre><code class="language-javascript">var new2 = function(func) {
+  var o = Object.create(func.prototype) //传入一个构造函数的原型对象来创建对象
+  var k = func.call(o) //上下文（this）会指定为这个新实例
+  if (typeof k === 'object') {
+    return k
+  } else {
+    return o
+  }
+}
+</code></pre>
+<h1 id="通信类">通信类</h1>
+<p>什么是同源策略及限制</p>
+<p>前后端如何通信</p>
+<p>如何创建 Ajax</p>
+<p>跨域通信的几种方式</p>
+<h2 id="什么是同源策略及限制">什么是同源策略及限制</h2>
+<p>同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。</p>
+<p>这是一个用于隔离潜在恶意文件的关键的安全机制。</p>
+<ul>
+<li>
+<p>Cookie、LocalStorage 和 IndexDB 无法读取</p>
+</li>
+<li>
+<p>DOM 无法获得</p>
+</li>
+<li>
+<p>AJAX 请求不能发送</p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="前后端如何通信">前后端如何通信</h2>
+<p>Ajax</p>
+<p>WebSocket</p>
+<p>CORS</p>
+<h2 id="如何创建-ajax">如何创建 Ajax</h2>
+<p>XMLHttpRequest 对象的工作流程</p>
+<p>兼容性处理</p>
+<p>事件的触发条件</p>
+<p>事件的触发顺序</p>
+<h2 id="跨域通信的几种方式">跨域通信的几种方式</h2>
+<p>JSONP</p>
+<p>Hash</p>
+<p>postMessage</p>
+<p>WebSocket</p>
+<p>CORS</p>
+<h1 id="安全类">安全类</h1>
+<h2 id="csrf">CSRF</h2>
+<p>CSRF,通常称为跨站请求伪造，英文名 Cross-site request forgery</p>
+<h2 id="csrf-防御措施">CSRF 防御措施</h2>
+<p>Token 验证</p>
+<p>Referer 验证</p>
+<p>隐藏令牌</p>
+<h2 id="xss">XSS</h2>
+<p>XSS（cross-site scripting）跨域脚本攻击</p>
+<h1 id="算法类">算法类</h1>
+<p>排序</p>
+<p>堆栈、队列、链表</p>
+<p>递归</p>
+<p>波兰式和逆波兰式</p>
+<h1 id="渲染机制">渲染机制</h1>
+<h2 id="什么是-doctype-及作用">什么是 DOCTYPE 及作用</h2>
+<p>DTD(doucument type definition,文档类型定义)是一系列的语法规则，用来定义 XML 或(x)HTML 的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式</p>
+<p>DOCTYPE 是用来声明文档类型和 DTD 规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一些差错</p>
+<h2 id="浏览器渲染过程">浏览器渲染过程</h2>
+<h2 id="重排-reflow">重排 Reflow</h2>
+<p><strong>定义</strong></p>
+<p>DOM 结构中的各个元素都有自己的盒子（模型），这些都需要浏览器根据各种样式来计算并根据计算结果将元素放到它该出现的位置，这个过程称之为 reflow</p>
+<p><strong>触发 Reflow</strong></p>
+<p>当你增加、删除、修改 DOM 节点时，会导致 Reflow 或 Repaint</p>
+<p>当你移动 DOM 的位置，或是搞个动画的时候</p>
+<p>当你修改 CSS 样式的时候</p>
+<p>当你 Resize 窗口的时候（移动端没有这个问题），或是滚动的时候</p>
+<p>当你修改网页的默认字体时</p>
+<h2 id="重绘-repaint">重绘 Repaint</h2>
+<p><strong>定义</strong></p>
+<p>当各种盒子的位置、大小以及其他属性，例如颜色、字体大小等确定下来后，浏览器于是便把这些元素都按照各自的特性绘制一遍，于是页面的内容出现了，这个过程称之为 repaint</p>
+<p><strong>触发 Repaint</strong></p>
+<p>DOM 改动</p>
+<p>CSS 改动</p>
+<h2 id="布局-layout">布局 Layout</h2>
+<h1 id="js-运行机制">JS 运行机制</h1>
+<p>异步任务</p>
+<p>setTimeout 和 setInterval</p>
+<p>DOM 事件</p>
+<p>ES6 中的 Promise</p>
+<h1 id="页面性能">页面性能</h1>
+<p>提升页面性能的方法有哪些？</p>
+<p>1、资源压缩合并，减少 HTTP 请求</p>
+<p>2、非核心代码异步加载-&gt;异步加载的方式-&gt;异步加载的区别</p>
+<p>3、利用浏览器缓存-&gt;缓存的分类-&gt;缓存的原理</p>
+<p>4、使用 CDN</p>
+<p>5、预解析 DNS</p>
+<p>​ <meta http-equiv="x-dns-prefetch-control" content="on"> // https 中 a 链接打开 DNS 预解析</p>
+<p>​ <link rel="dns-prefetch" href="//host_name_to_prefetch.com"></p>
+<p><strong>异步加载</strong></p>
+<p>1、异步加载的方式</p>
+<p>​ 1）动态脚本加载 2）defer 3）async</p>
+<p>2、异步加载的区别</p>
+<p>​ 1）defer 是在 HTML 解析完之后才会执行，如果是多个，按照加载的顺序依次执行</p>
+<p>​ 2）async 是在加载之后立即执行，如果是多个，执行顺序和加载顺序无关</p>
+<p><strong>浏览器缓存</strong></p>
+<p>1、缓存的分类</p>
+<p>​ 1）强缓存</p>
+<p>​ Expires Expires:Thu,21 Jan 2017 23:39:02 GMT</p>
+<p>​ Cache-Control Cache-Control:max-age=3600</p>
+<p>​ 2）协商缓存</p>
+<p>​ Last-Modified If-Modified-Since Last-Modified:Wed,26 Jan 2017 00:35:11 GMT</p>
+<p>​ Etag If-None-Match</p>
+<h1 id="错误监控">错误监控</h1>
+<p>前端错误的分类</p>
+<p>错误的捕获方式</p>
+<p>上报错误的基本原理</p>
+<p><strong>即时运行错误的捕获方式</strong></p>
+<p>1）try…catch 2）window.onerror</p>
+<p><strong>资源加载错误</strong></p>
+<p>1）object.onerror 2）performance.getEntries() 3）Error 事件捕获</p>
+<p><strong>延伸：跨域的 js 运行错误跨域捕获吗，错误提示什么，应该怎么处理？</strong></p>
+<p>1、在 script 标签增加 crossorigin 属性</p>
+<p>2、设置 js 资源响应头 Access-Control-Allow-Origin:*</p>
+<p><strong>上报错误的基本原理</strong></p>
+<p>1、采用 Ajax 通信的方式上报</p>
+<p>2、利用 Image 对象上报</p>
+<h1 id="业务能力">业务能力</h1>
+<p>我做过什么业务？</p>
+<p>负责的业务有什么业绩？</p>
+<p>使用了什么技术方案？</p>
+<p>突破了什么技术难点？</p>
+<p>遇到了什么问题？</p>
+<p>最大的收获是什么？</p>
+<h1 id="事物推动能力">事物推动能力</h1>
+<p>主动描述</p>
+<h1 id="终面">终面</h1>
+<p>1、职业竞争力</p>
+<p>2、职业规划</p>
+<h2 id="职业竞争力">职业竞争力</h2>
+<p>1、业务能力</p>
+<p>2、思考能力</p>
+<p>3、学习能力</p>
+<p>4、无上限的付出</p>
+<h1 id="职业规划">职业规划</h1>
+<p>1、目标是什么</p>
+<p>​ 在业务上成为专家，在技术上成为行业大牛</p>
+<p>2、近阶段的目标</p>
+<p>​ 不断的学习积累各方面的经验，以学习为主</p>
+<p>3、长期目标</p>
+<p>​ 做几件很有价值的事情，如开源作品、技术框架等</p>
+<p>4、方式方法</p>
+<p>​ 先完成业务上的主要问题，做到极致、然后逐步向目标靠拢</p>
+<h1 id="面试技巧">面试技巧</h1>
+<p>1、乐观积极</p>
+<p>2、主动沟通</p>
+<p>3、逻辑顺畅</p>
+<p>4、上进有责任心</p>
+<p>5、有主张、做事果断</p>
 ]]></content>
     </entry>
     <entry>
