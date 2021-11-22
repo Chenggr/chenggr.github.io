@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenggr.github.io</id>
     <title>chenggr&apos;s blog</title>
-    <updated>2021-08-13T06:27:30.057Z</updated>
+    <updated>2021-11-22T06:54:02.386Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenggr.github.io"/>
     <link rel="self" href="https://chenggr.github.io/atom.xml"/>
@@ -10,6 +10,67 @@
     <logo>https://chenggr.github.io/images/avatar.png</logo>
     <icon>https://chenggr.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, chenggr&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[IDEA的使用]]></title>
+        <id>https://chenggr.github.io/post/idea-de-shi-yong/</id>
+        <link href="https://chenggr.github.io/post/idea-de-shi-yong/">
+        </link>
+        <updated>2021-11-22T01:34:24.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>记录IDEA常用快捷键配置。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>记录IDEA常用快捷键配置。</p>
+</blockquote>
+<!--more-->
+<h3 id="idea常用快捷键">IDEA常用快捷键</h3>
+<ul>
+<li>
+<p>删除当前行<br>
+ctrl + d</p>
+</li>
+<li>
+<p>复制当前行<br>
+ctrl + alt + 向下光标</p>
+</li>
+<li>
+<p>补全代码<br>
+alt + /</p>
+</li>
+<li>
+<p>添加和取消注释<br>
+ctrl + /</p>
+</li>
+<li>
+<p>导入该行需要的类 先配置auto import，然后使用<br>
+alt + enter</p>
+</li>
+<li>
+<p>快速格式化代码<br>
+alt + ctrl + L</p>
+</li>
+<li>
+<p>快速运行程序 自定义<br>
+alt + R</p>
+</li>
+<li>
+<p>生成构造器 generate<br>
+control + N</p>
+</li>
+<li>
+<p>查看一个类的层级关系<br>
+control + H</p>
+</li>
+<li>
+<p>把光标放在方法上，ctrl + B，可以定位到方法</p>
+</li>
+<li>
+<p>自动分配变量名，通过在后面加 .var</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我的macOS常用软件及配置]]></title>
         <id>https://chenggr.github.io/post/wo-de-macos-chang-yong-ruan-jian-ji-pei-zhi/</id>
