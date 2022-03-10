@@ -9,7 +9,7 @@
 <meta name="description" content="一个记录与分享的地方~">
 <meta name="theme-color" content="#000">
 <title>chenggr&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1646880248371">
+<link rel="shortcut icon" href="/favicon.ico?v=1646881667160">
 <link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -173,7 +173,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">7</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -224,6 +224,8 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
       
       
       
@@ -503,6 +505,1642 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/interview-questions/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;Summary of interview questions for Han Qi&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!--more--&gt;
+&lt;h1 id=&#34;vue&#34;&gt;VUE&lt;/h1&gt;
+&lt;h4 id=&#34;vue的生命周期是什么&#34;&gt;&lt;strong&gt;vue的生命周期是什么&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;vue每个组件都是独立的，每个组件都有一个属于它的生命周期，从一个组件创建、数据初始化、挂载、更新、销毁，这就是一个组件所谓的生命周期。
+beforeCreate() 在实例创建之间执行，数据未加载状态
+created() 在实例创建、数据加载后，能初始化数据，dom渲染之前执行
+beforeMount() 虚拟dom已创建完成，在数据渲染前最后一次更改数据
+mounted() 页面、数据渲染完成，真实dom挂载完成
+beforeUpadate() 重新渲染之前触发
+updated() 数据已经更改完成，dom 也重新 render 完成,更改数据会陷入死循环
+beforeDestory() 和 destoryed() 前者是销毁前执行（实例仍然完全可用），后者则是销毁后执行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;为什么要有生命周期&#34;&gt;为什么要有生命周期&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;因为：VUE中MVVM思想、虚拟DOM等机制
+所以：需要钩子函数/生命周期，从而方便开发、提升性能等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;你说下vue路由模式有几种&#34;&gt;你说下vue路由模式有几种？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;常用路由模式有2个，分别为hash和history  直接修改路由构造函数加个mode键即可
+准备说有3个，hash/history用于客户端，abstract用户服务端
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;你说下vue路由原理&#34;&gt;你说下vue路由原理？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;vue路由是基于SPA单页面应用思想去开发的
+利用BOM API 来使用
+hash模式    通过 BOM  location对象的hash属性来改变路由
+history模式   通过BOM history对象的pushState属性来改变路由
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;那你说下什么是单页面应用spa优缺点如何选择&#34;&gt;那你说下什么是单页面应用SPA优缺点，如何选择&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;SPA优点：1.切换速度快、减少HTTP请求、便于加特效
+2.前后端分离便于后期扩展
+3.转场动画，也就是一个页面切换另一个页面  transition
+缺点：1. 不利于seo优化
+	2. 初次加载耗时（注：这时候可能问vue首屏加载慢如何解决 见优化部分答案）SPA缺点：不利于SEO优化（就是百度可以搜到你）
+MPA多页面的好处
+概念：有多个页面，跳转方式是页面之间的跳转
+优点：首屏加载快；seo优化好
+缺点：跳转较慢；相对复杂，没有实现前后端分离
+如何选择
+根据项目需求，老板没有明确说直接用vue脚手架创建框架就行，
+但是老板说需要seo优化则通过：Vue.js 服务器端渲染（nuxt.js）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;声明式导航和&#34;&gt;声明式导航和&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;写法不一样,声明式导航是写在组件的template中,通过router-link来触发,
+编程式导航写在js函数中,通过this.$router.push(xxx)来触发路径
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vuex是什么怎么使用哪种功能场景使用它&#34;&gt;vuex是什么？怎么使用？哪种功能场景使用它？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;就是用来存放所有组件数据的仓库,也就是组件状态管理工具
+state:存储数据；
+mutations:更新数据的方法；
+actions:调用mutations方法，更新state数据；
+getters:对state中的数据进行预处理；
+vuex 的作用
+￼
+实现所有组件相互通信，数据共享
+组件之间需要相互通信时，例如购物车购买数量、登录信息等
+什么是计算属性和侦听器
+￼
+计算属性：普通方法的升级版，有缓存
+怎么用：在data同级定义computed对象来声明计算属性、调用不加小括号
+侦听器：用来监控模型数据变化
+ 怎么用：在data同级定义watch对象声明侦听器、方法名就是data中的键、不能调用
+ 如何选：
+  1 事件 和 封装减少视图代码冗余便于后期维护 先用普通方法
+  2 上述多次执行耗时 计算属性优化
+3 当需要监控模型数据改变 使用侦听器。例如：搜索、全选全不选等等
+什么是混入
+￼
+是什么：vue中提供的解决组件代码冗余的技术，可以提起相同的普通方法、模型数据等
+怎么用：Vue.mixin 或 mixins键来定义
+实战用：后期项目的跳转、返回上一页、提示信息等等
+什么是vue组件
+￼
+是什么：用来代替传统HTML的一种解决方案、里面还是HTML、JS、CSS
+好处：倡导模块化、便于后期相互调用、从而减少代码冗余、方便维护
+怎么用： Vue.component(组件名，{template, methods, data, ....})
+组件通信工作流
+￼
+父传子： 子组件通过 props 属性，绑定父组件数据，实现双方通信
+子传父：    将父组件的事件在子组件中通过 $emit 触发
+兄弟  ：1 创建bus总线 全局仓库 
+        2 传递数据 bus.$emit
+         3 接受数据 bus.$on
+vue中的事件修饰符
+￼
+事件修饰符：.stop、.prevent、.once等
+键盘修饰符：.enter、.ctrl .enter等
+什么是路由懒加载
+￼
+路由懒加载是通过异步的方式来加载对应的路由组件，提高页面相应速度
+vue的路由使用步骤？
+￼
+1.下载vue-router路由模块；
+2.创建路由对象；
+3.配置路由规则；
+4.将路由对象注册为vue实例对象的成员属性；
+http协议状态码301和302的区别
+￼
+301 redirect: 301 代表永久性转移(Permanently Moved)
+302 redirect: 302 代表暂时性转移(Temporarily Moved )
+302重定向只是暂时的重定向，浏览器会抓取新的内容而保留旧的地址，因为服务器返回302，所以，搜索浏览器认为新的网址是暂时的。
+301重定向是永久的重定向，浏览器在抓取新的内容的同时也将旧的网址替换为了重定向之后的网址
+谈谈你对虚拟DOM的理解？
+￼
+就是用JS 的Object对象模拟DOM中的节点，然后再通过特定的render方法将其渲染成真实的DOM节点，因为浏览器工作机制，通过虚拟DOM提升性能。
+回流重绘
+￼
+回流：重新布局
+重绘：改变元素属性样式
+谈谈你对diff算法的理解？
+￼
+diff算法是虚拟DOM技术的产物，核心思想是通过新旧虚拟DOM做对比，（即diff），将变化的地方更新在真实的DOM上，也需要diff高效执行对比的过程，从而降低时间复杂度为O(n).
+步骤一：用JS对象模拟DOM树
+步骤二：比较新旧虚拟DOM树的差异
+步骤三：把差异应用到真正的DOM树上
+v-for中有key值和没有key值的区别
+￼
+它们区别主要在于虚拟DOM的复用，绑定key可以更好的复用，避免重复渲染
+fetch、axios区别
+￼
+相同点：都是基于promise封装的HTTP库
+不同点:1 fetch官方 axios第三方
+    2 axios更强例如拦截器、而fetch需要自己封装等
+请谈谈对http的理解	
+￼
+HTTP：超文本传输协议，主要由request请求 和response响应 组成，规定了计算机之间如何相互通信
+项目开发中常遇到的
+请求方式常用的有get、post、put、delete
+HTTP状态码：...
+请求头：expire、gzip、content-type等
+HTTP状态码
+￼
+100 Continue 继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息
+200 OK 请求成功
+201 Created 请求成功并且服务器创建了新的资源
+202 Accepted 服务器已接受请求，但尚未处理
+301 Moved Permanently 永久性重定向。
+302 Found 临时性重定向。
+303 SeeOther 临时性重定向，且总是使用 GET 请求新的 URI。
+304 Not Modified 浏览器缓存
+400 BadRequest 参数有误。
+401 Unauthorized 密码错误。
+403Forbidden 没有权限。
+404 NotFound 文件不存在。
+500 InternalServer Error 服务器错误。
+503 ServiceUnavailable 服务器端暂时无法处理请求（可能是过载或维护）。
+vue实现数据双向绑定的原理
+￼
+采用数据劫持结合发布者-订阅者模式的方式，通过 Object.defineProperty() 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调
+Created与Mounted的区别
+￼
+Created：在dom渲染之前调用，通常初始化某些属性值，然后再渲染成视图。
+Mounted：在dom渲染之后调用，初始化页面完成后，再对dom节点进行一些需要的操作。
+vue中mounted和updated这两个生命周期怎么运行的
+￼
+mounted 页面首次渲染完毕时触发
+updated 模型数据更新时候触发
+vue首屏加载过慢如何解决
+￼
+1、路由懒加载（也就是要的时候的时候进行加载。
+2、UI组件按需加载
+3、webpack启用gzip压缩
+什么是JSX
+￼
+JSX即JavaScript XML，是JS的一种扩展语言。
+解释单向数据流和双向数据绑定
+￼
+单向数据流： 顾名思义，数据流是单向的。数据流动方向可以跟踪，流动单一，追查问题的时候可以更快捷。缺点就是写起来不太方便。要使UI发生变更就必须创建各种 action 来维护对应的 state；
+双向数据绑定：数据之间是相通的，将数据变更的操作隐藏在框架内部。优点是在表单交互较多的场景下，会简化大量与业务无关的代码。缺点就是无法追踪局部状态的变化，增加了出错时 debug 的难度。
+Vue 如何去除url中的
+￼
+vue-router 默认使用 hash 模式，所以在路由加载的时候，项目中的 url 会自带 #。如果不想使用 #， 可以使用 vue-router 的另一种模式 history。
+需要注意的是，当我们启用 history 模式的时候，由于我们的项目是一个单页面应用，所以在路由跳转的时候，就会出现访问不到静态资源而出现 404 的情况，这时候就需要服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面(重定向)。
+和
+router的区别
+￼
+$router 为 VueRouter 实例，想要导航到不同 URL，则使用 $router.push 方法$route 为当前 router 跳转对象里面可以获取 name 、 path 、 query 、 params 等
+NextTick 是做什么的
+￼
+$nextTick 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用 $nextTick，则可以在回调中获取更新后的 DOM
+当你修改了data的值然后马上获取这个dom元素的值，是不能获取到更新后的值，
+你需要使用$nextTick这个回调，让修改后的data值渲染更新到dom元素之后在获取，才能成功
+Vue 组件 data 为什么必须是函数
+￼
+因为js本身的特性带来的，如果 data 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 data 作为一个函数返回一个对象，那么每一个实例的 data 属性都是独立的，不会相互影响了
+计算属性computed 和事件 methods 有什么区别
+￼
+我们可以将同一函数定义为一个 method 或者一个计算属性。对于最终的结果，两种方式是相同的
+不同点：
+computed: 计算属性是基于它们的依赖进行缓存的,只有在它的相关依赖发生改变时才会重新求值对于 method ，只要发生重新渲染，method 调用总会执行该函数
+watch和computed区别
+  computed结果会缓存,依赖于外界响应式依赖发生变化而变化
+  watch是直接监听某个属性,只要这个属性发生了变化,就会触发相应的函数回调,并且能获取到变更值以及变更之前的值 
+
+清除keep-alive缓存
+￼
+deactivated () { //清除keep-alive的缓存
+    this.$destroy(true)
+  }
+对比 jQuery ，Vue 有什么不同
+￼
+jQuery 专注视图层，通过操作 DOM 去实现页面的一些逻辑渲染； Vue 专注于数据层，通过数据的双向绑定，最终表现在 DOM 层面，减少了 DOM 操作Vue 使用了组件化思想，使得项目子集职责清晰，提高了开发效率，方便重复利用，便于协同开发
+vue-router 路由实现
+￼
+路由就是用来跟后端服务器进行交互的一种方式，通过不同的路径，来请求不同的资源，请求不同的页面是路由的其中一种功能
+Vue 组件 data 为什么必须是函数
+￼
+因为js本身的特性带来的，如果 data 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 data 作为一个函数返回一个对象，那么每一个实例的 data 属性都是独立的，不会相互影响了
+Vue 中怎么自定义指令
+￼
+全局注册
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive(&#39;focus&#39;, {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+局部注册
+directives: {
+  focus: {
+    // 指令的定义
+    inserted: function (el) {
+      el.focus()
+    }
+  }
+}
+Vue 中怎么自定义过滤器
+￼
+可以用全局方法 Vue.filter() 注册一个自定义过滤器，它接收两个参数：过滤器 ID 和过滤器函数。过滤器函数以值为参数，返回转换后的值
+Vue.filter(&#39;reverse&#39;, function (value) {
+  return value.split(&#39;&#39;).reverse().join(&#39;&#39;)
+})
+&amp;lt;!-- &#39;abc&#39; =&amp;gt; &#39;cba&#39; --&amp;gt;
+&amp;lt;span v-text=&amp;quot;message | reverse&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+过滤器也同样接受全局注册和局部注册
+对 keep-alive 的了解
+￼
+keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染
+&amp;lt;keep-alive&amp;gt;
+  &amp;lt;component&amp;gt;
+    &amp;lt;!-- 该组件将被缓存！ --&amp;gt;
+  &amp;lt;/component&amp;gt;
+&amp;lt;/keep-alive&amp;gt;
+可以使用API提供的props，实现组件的动态缓存
+
+钩子函数
+	1.activated：页面第一次进入的时候，钩子触发的顺序是created-&amp;gt;mounted-&amp;gt;activated
+	2.deactivated ：页面退出的时候会触发deactivated，当再次前进或者后退的时候只触发activated
+属性:include包含的组件会被缓存，exclude排除的组件不会被缓存
+Vue 的核心是什么
+￼
+数据驱动 组件系统
+vue 等单页面应用的优缺点
+￼
+优点：1.良好的交互体验 2.良好的前后端工作分离模式 3.减轻服务器压力
+缺点：1.SEO难度较高 2.前进、后退管理  3.初次加载耗时多
+vue-router有哪几种导航守卫
+￼
+1&amp;gt;全局守卫
+a：router.beforeEach 全局前置守卫，进入路由之前
+b：router.beforResolve 全局解析守卫，在beforeRouterEnter调用之后调用
+c：router.afterEach 全局后置钩子，进入路由之后
+2&amp;gt;路由独享守卫
+如果不想全局配置守卫的话，可以为某些路由单独配置守卫
+3&amp;gt;路由组件内的守卫
+beforeRouteEnter 进入路由前, 在路由独享守卫后调用 不能 获取组件实例 this，组件实例还没被创建beforeRouteUpdate (2.2)路由复用同一个组件时,在当前路由改变，但是该组件被复用时调用 可以访问组件实例this
+beforeRouteLeave 离开当前路由时, 导航离开该组件的对应路由时调用，可以访问组件实例 this
+vue-router 使用params与query传参有什么区别
+￼
+vue-router 可以通过 params 与 query 进行传参
+// 传递
+this.$router.push({path: &#39;./xxx&#39;, params: {xx:xxx}})
+this.$router.push({path: &#39;./xxx&#39;, query: {xx:xxx}})
+// 接收
+this.$route.params
+this.$route.query
+params 是路由的一部分,必须要有。query 是拼接在 url 后面的参数，没有也没关系
+params 不设置的时候，刷新页面或者返回参数会丢，query 则不会有这个问题
+你在什么场景下使用了vuex？ 
+￼
+当应用遇到多个组件共享状态的时候，即：多个视图依赖于同一个状态，不同视图的行为需要变更同一个状态
+如：
+用户的个人信息管理模块
+电商项目购物车模块
+props和data的优先级，区别
+￼
+props&amp;gt;data
+props就相当于你的参数，data就相当于局部变量，组件其实就是一个函数
+xxxxxxxxxx vuex是：就是用来存放所有组件数据的仓库,也就是组件状态管理工具state:存储数据；mutations:更新数据的方法；actions:调用mutations方法，更新state数据；getters:对state中的数据进行预处理；
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vuex-的作用&#34;&gt;vuex 的作用&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;实现所有组件相互通信，数据共享
+组件之间需要相互通信时，例如购物车购买数量、登录信息等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;什么是计算属性和侦听器&#34;&gt;什么是计算属性和侦听器&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;计算属性：普通方法的升级版，有缓存
+怎么用：在data同级定义computed对象来声明计算属性、调用不加小括号
+侦听器：用来监控模型数据变化
+ 怎么用：在data同级定义watch对象声明侦听器、方法名就是data中的键、不能调用
+ 如何选：
+  1 事件 和 封装减少视图代码冗余便于后期维护 先用普通方法
+  2 上述多次执行耗时 计算属性优化
+3 当需要监控模型数据改变 使用侦听器。例如：搜索、全选全不选等等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;什么是混入&#34;&gt;什么是混入&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;是什么：vue中提供的解决组件代码冗余的技术，可以提起相同的普通方法、模型数据等
+怎么用：Vue.mixin 或 mixins键来定义
+实战用：后期项目的跳转、返回上一页、提示信息等等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;什么是vue组件&#34;&gt;什么是vue组件&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;是什么：用来代替传统HTML的一种解决方案、里面还是HTML、JS、CSS
+好处：倡导模块化、便于后期相互调用、从而减少代码冗余、方便维护
+怎么用： Vue.component(组件名，{template, methods, data, ....})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;组件通信工作流&#34;&gt;组件通信工作流&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;父传子： 子组件通过 props 属性，绑定父组件数据，实现双方通信
+子传父：	将父组件的事件在子组件中通过 $emit 触发
+兄弟	：1 创建bus总线 全局仓库	
+     	2 传递数据 bus.$emit
+         3 接受数据 bus.$on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue中的事件修饰符&#34;&gt;vue中的事件修饰符&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;事件修饰符：.stop、.prevent、.once等
+键盘修饰符：.enter、.ctrl .enter等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;什么是路由懒加载&#34;&gt;什么是路由懒加载&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;路由懒加载是通过异步的方式来加载对应的路由组件，提高页面相应速度
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue的路由使用步骤&#34;&gt;vue的路由使用步骤？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.下载vue-router路由模块；
+2.创建路由对象；
+3.配置路由规则；
+4.将路由对象注册为vue实例对象的成员属性；
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;http协议状态码301和302的区别&#34;&gt;http协议状态码301和302的区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;301 redirect: 301 代表永久性转移(Permanently Moved)
+302 redirect: 302 代表暂时性转移(Temporarily Moved )
+302重定向只是暂时的重定向，浏览器会抓取新的内容而保留旧的地址，因为服务器返回302，所以，搜索浏览器认为新的网址是暂时的。
+301重定向是永久的重定向，浏览器在抓取新的内容的同时也将旧的网址替换为了重定向之后的网址
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;谈谈你对虚拟dom的理解&#34;&gt;谈谈你对虚拟DOM的理解？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;就是用JS 的Object对象模拟DOM中的节点，然后再通过特定的render方法将其渲染成真实的DOM节点，因为浏览器工作机制，通过虚拟DOM提升性能。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;回流重绘&#34;&gt;回流重绘&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;回流：重新布局
+重绘：改变元素属性样式
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;谈谈你对diff算法的理解&#34;&gt;谈谈你对diff算法的理解？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;diff算法是虚拟DOM技术的产物，核心思想是通过新旧虚拟DOM做对比，（即diff），将变化的地方更新在真实的DOM上，也需要diff高效执行对比的过程，从而降低时间复杂度为O(n).
+步骤一：用JS对象模拟DOM树
+步骤二：比较新旧虚拟DOM树的差异
+步骤三：把差异应用到真正的DOM树上
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;v-for中有key值和没有key值的区别&#34;&gt;v-for中有key值和没有key值的区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;它们区别主要在于虚拟DOM的复用，绑定key可以更好的复用，避免重复渲染
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;fetch-axios区别&#34;&gt;fetch、axios区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;相同点：都是基于promise封装的HTTP库
+不同点:1 fetch官方 axios第三方
+	2 axios更强例如拦截器、而fetch需要自己封装等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;请谈谈对http的理解&#34;&gt;请谈谈对http的理解&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;HTTP：超文本传输协议，主要由request请求 和response响应 组成，规定了计算机之间如何相互通信
+项目开发中常遇到的
+请求方式常用的有get、post、put、delete
+HTTP状态码：...
+请求头：expire、gzip、content-type等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;http状态码&#34;&gt;HTTP状态码&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;100 Continue 继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息
+200 OK 请求成功
+201 Created 请求成功并且服务器创建了新的资源
+202 Accepted 服务器已接受请求，但尚未处理
+301 Moved Permanently 永久性重定向。
+302 Found 临时性重定向。
+303 SeeOther 临时性重定向，且总是使用 GET 请求新的 URI。
+304 Not Modified 浏览器缓存
+400 BadRequest 参数有误。
+401 Unauthorized 密码错误。
+403Forbidden 没有权限。
+404 NotFound 文件不存在。
+500 InternalServer Error 服务器错误。
+503 ServiceUnavailable 服务器端暂时无法处理请求（可能是过载或维护）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue实现数据双向绑定的原理&#34;&gt;vue实现数据双向绑定的原理&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;采用数据劫持结合发布者-订阅者模式的方式，通过 Object.defineProperty() 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;created与mounted的区别&#34;&gt;Created与Mounted的区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Created：在dom渲染之前调用，通常初始化某些属性值，然后再渲染成视图。
+Mounted：在dom渲染之后调用，初始化页面完成后，再对dom节点进行一些需要的操作。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue中mounted和updated这两个生命周期怎么运行的&#34;&gt;vue中mounted和updated这两个生命周期怎么运行的&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mounted 页面首次渲染完毕时触发
+updated 模型数据更新时候触发
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue首屏加载过慢如何解决&#34;&gt;vue首屏加载过慢如何解决&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1、路由懒加载（也就是要的时候的时候进行加载。
+2、UI组件按需加载
+3、webpack启用gzip压缩
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;什么是jsx&#34;&gt;什么是JSX&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;JSX即JavaScript XML，是JS的一种扩展语言。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;解释单向数据流和双向数据绑定&#34;&gt;解释单向数据流和双向数据绑定&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;单向数据流： 顾名思义，数据流是单向的。数据流动方向可以跟踪，流动单一，追查问题的时候可以更快捷。缺点就是写起来不太方便。要使UI发生变更就必须创建各种 action 来维护对应的 state；
+双向数据绑定：数据之间是相通的，将数据变更的操作隐藏在框架内部。优点是在表单交互较多的场景下，会简化大量与业务无关的代码。缺点就是无法追踪局部状态的变化，增加了出错时 debug 的难度。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-如何去除url中的&#34;&gt;Vue 如何去除url中的&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;vue-router 默认使用 hash 模式，所以在路由加载的时候，项目中的 url 会自带 #。如果不想使用 #， 可以使用 vue-router 的另一种模式 history。
+需要注意的是，当我们启用 history 模式的时候，由于我们的项目是一个单页面应用，所以在路由跳转的时候，就会出现访问不到静态资源而出现 404 的情况，这时候就需要服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面(重定向)。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;route和router的区别&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;和&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;route和&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;和&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;router的区别&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$router 为 VueRouter 实例，想要导航到不同 URL，则使用 $router.push 方法$route 为当前 router 跳转对象里面可以获取 name 、 path 、 query 、 params 等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;nexttick-是做什么的&#34;&gt;NextTick 是做什么的&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$nextTick 是在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后使用 $nextTick，则可以在回调中获取更新后的 DOM
+当你修改了data的值然后马上获取这个dom元素的值，是不能获取到更新后的值，
+你需要使用$nextTick这个回调，让修改后的data值渲染更新到dom元素之后在获取，才能成功
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;vue-组件-data-为什么必须是函数&#34;&gt;Vue 组件 data 为什么必须是函数&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;因为js本身的特性带来的，如果 data 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 data 作为一个函数返回一个对象，那么每一个实例的 data 属性都是独立的，不会相互影响了
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;计算属性computed-和事件-methods-有什么区别&#34;&gt;计算属性computed 和事件 methods 有什么区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;我们可以将同一函数定义为一个 method 或者一个计算属性。对于最终的结果，两种方式是相同的
+不同点：
+computed: 计算属性是基于它们的依赖进行缓存的,只有在它的相关依赖发生改变时才会重新求值对于 method ，只要发生重新渲染，method 调用总会执行该函数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;watch和computed区别&#34;&gt;watch和computed区别&lt;/h1&gt;
+&lt;p&gt;computed结果会缓存,依赖于外界响应式依赖发生变化而变化&lt;br&gt;
+watch是直接监听某个属性,只要这个属性发生了变化,就会触发相应的函数回调,并且能获取到变更值以及变更之前的值&lt;/p&gt;
+&lt;h1 id=&#34;清除keep-alive缓存&#34;&gt;清除keep-alive缓存&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;deactivated () { //清除keep-alive的缓存
+    this.$destroy(true)
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;对比-jquery-vue-有什么不同&#34;&gt;对比 jQuery ，Vue 有什么不同&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;jQuery 专注视图层，通过操作 DOM 去实现页面的一些逻辑渲染； Vue 专注于数据层，通过数据的双向绑定，最终表现在 DOM 层面，减少了 DOM 操作Vue 使用了组件化思想，使得项目子集职责清晰，提高了开发效率，方便重复利用，便于协同开发
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-router-路由实现&#34;&gt;vue-router 路由实现&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;路由就是用来跟后端服务器进行交互的一种方式，通过不同的路径，来请求不同的资源，请求不同的页面是路由的其中一种功能
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-组件-data-为什么必须是函数-2&#34;&gt;Vue 组件 data 为什么必须是函数&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;因为js本身的特性带来的，如果 data 是一个对象，那么由于对象本身属于引用类型，当我们修改其中的一个属性时，会影响到所有Vue实例的数据。如果将 data 作为一个函数返回一个对象，那么每一个实例的 data 属性都是独立的，不会相互影响了
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-中怎么自定义指令&#34;&gt;Vue 中怎么自定义指令&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;全局注册
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive(&#39;focus&#39;, {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function (el) {
+    // 聚焦元素
+    el.focus()
+  }
+})
+局部注册
+directives: {
+  focus: {
+    // 指令的定义
+    inserted: function (el) {
+      el.focus()
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-中怎么自定义过滤器&#34;&gt;Vue 中怎么自定义过滤器&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;可以用全局方法 Vue.filter() 注册一个自定义过滤器，它接收两个参数：过滤器 ID 和过滤器函数。过滤器函数以值为参数，返回转换后的值
+Vue.filter(&#39;reverse&#39;, function (value) {
+  return value.split(&#39;&#39;).reverse().join(&#39;&#39;)
+})
+&amp;lt;!-- &#39;abc&#39; =&amp;gt; &#39;cba&#39; --&amp;gt;
+&amp;lt;span v-text=&amp;quot;message | reverse&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+过滤器也同样接受全局注册和局部注册
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;对-keep-alive-的了解&#34;&gt;对 keep-alive 的了解&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染
+&amp;lt;keep-alive&amp;gt;
+  &amp;lt;component&amp;gt;
+    &amp;lt;!-- 该组件将被缓存！ --&amp;gt;
+  &amp;lt;/component&amp;gt;
+&amp;lt;/keep-alive&amp;gt;
+可以使用API提供的props，实现组件的动态缓存
+
+钩子函数:activated deactivated
+属性:include包含的组件会被缓存，exclude排除的组件不会被缓存
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-的核心是什么&#34;&gt;Vue 的核心是什么&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;数据驱动 组件系统
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-等单页面应用的优缺点&#34;&gt;vue 等单页面应用的优缺点&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;优点：1.良好的交互体验 2.良好的前后端工作分离模式 3.减轻服务器压力
+缺点：1.SEO难度较高 2.前进、后退管理 	3.初次加载耗时多
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-router有哪几种导航守卫&#34;&gt;&lt;strong&gt;vue-router有哪几种导航守卫&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1&amp;gt;全局守卫
+a：router.beforeEach 全局前置守卫，进入路由之前
+b：router.beforResolve 全局解析守卫，在beforeRouterEnter调用之后调用
+c：router.afterEach 全局后置钩子，进入路由之后
+2&amp;gt;路由独享守卫
+如果不想全局配置守卫的话，可以为某些路由单独配置守卫
+3&amp;gt;路由组件内的守卫
+beforeRouteEnter 进入路由前, 在路由独享守卫后调用 不能 获取组件实例 this，组件实例还没被创建beforeRouteUpdate (2.2)路由复用同一个组件时,在当前路由改变，但是该组件被复用时调用 可以访问组件实例this
+beforeRouteLeave 离开当前路由时, 导航离开该组件的对应路由时调用，可以访问组件实例 this
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;vue-router-使用params与query传参有什么区别&#34;&gt;vue-router 使用params与query传参有什么区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;vue-router 可以通过 params 与 query 进行传参
+// 传递
+this.$router.push({path: &#39;./xxx&#39;, params: {xx:xxx}})
+this.$router.push({path: &#39;./xxx&#39;, query: {xx:xxx}})
+// 接收
+this.$route.params
+this.$route.query
+params 是路由的一部分,必须要有。query 是拼接在 url 后面的参数，没有也没关系
+params 不设置的时候，刷新页面或者返回参数会丢，query 则不会有这个问题
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;你在什么场景下使用了vuex&#34;&gt;你在什么场景下使用了vuex？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;当应用遇到多个组件共享状态的时候，即：多个视图依赖于同一个状态，不同视图的行为需要变更同一个状态
+如：
+用户的个人信息管理模块
+电商项目购物车模块
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;props和data的优先级区别&#34;&gt;props和data的优先级，区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;props&amp;gt;data
+props就相当于你的参数，data就相当于局部变量，组件其实就是一个函数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;地址栏输入一个url发生了什么&#34;&gt;地址栏输入一个url发生了什么&lt;/h1&gt;
+&lt;p&gt;1.DNS解析寻址,将输入的url解析为ip地址&lt;br&gt;
+2.TCP三次握手:根据ip地址与服务器进行连接通信&lt;br&gt;
+3.发送HTTP请求,请求相关资源&lt;br&gt;
+4.服务器接收请求并返回HTTP报文,携带指定资源&lt;br&gt;
+5.浏览器解析资源,渲染页面&lt;br&gt;
+6.TCP四次挥手,关闭连接&lt;/p&gt;
+&lt;h4 id=&#34;js执行机制&#34;&gt;js执行机制&lt;/h4&gt;
+&lt;p&gt;a、首先 js 是单线程运行的，在代码执行的时候，通过将不同函数的执行上下文压入执行栈中来保证代码的有序执行。&lt;/p&gt;
+&lt;p&gt;b、在执行同步代码的时候，如果遇到了异步事件，会将异步代码放到事件循环中，继续执行执行栈中的其他任务;&lt;/p&gt;
+&lt;p&gt;c、当同步事件执行完毕后，再将异步事件对应的回调加入到与当前执行栈中不同的另一个任务队列中等待执行&lt;br&gt;
+d、任务队列可以分为宏任务对列和微任务对列，当当前执行栈中的事件执行完毕后，js引擎首先会判断微任务对列中是否有任务可以执行，如果有就将微任务队首的事件压入栈中执行&lt;br&gt;
+e、当微任务对列中的任务都执行完成后再去判断宏任务对列中的任务&lt;/p&gt;
+&lt;h4 id=&#34;&#34;&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;深拷贝与浅拷贝的区别&#34;&gt;深拷贝与浅拷贝的区别？&lt;/h4&gt;
+&lt;p&gt;深拷贝递归地复制新对象中的所有值或属性，而拷贝只复制引用。&lt;/p&gt;
+&lt;p&gt;在深拷贝中，新对象中的更改不会影响原始对象，而在浅拷贝中，新对象中的更改，原始对象中也会跟着改。&lt;/p&gt;
+&lt;p&gt;在深拷贝中，原始对象不与新对象共享相同的属性，而在浅拷贝中，它们具有相同的属性。&lt;/p&gt;
+&lt;p&gt;方法：深拷贝：1.递归，2.JSON.stringify(JSON.parse())，3. JQ的extend方法&lt;/p&gt;
+&lt;p&gt;​			浅拷贝：1. Object.assign()  2. 使用 for in 循环，遍历每一个属性，将他们赋值给新的对象 3. 直接用=赋值 							4  ...扩展运算符&lt;/p&gt;
+&lt;h5 id=&#34;js-中分全局作用域和函数作用&#34;&gt;Js 中分全局作用域和函数作用&lt;/h5&gt;
+&lt;p&gt;全局作用域：在任何地方都能被访问，window对象下的内置属性都是全局作用域&lt;/p&gt;
+&lt;p&gt;函数作用域：固定代码片段中&lt;/p&gt;
+&lt;p&gt;作用域链：作用域都有上下级关系，上下级关系确定函数在哪个作用域下创建，变量取值都会在当前作用域中查找，如果没有查到就会像上级作用域查找，直到查到全局作用域，这个查找的过程叫做作用域链&lt;/p&gt;
+&lt;h1 id=&#34;react&#34;&gt;React&lt;/h1&gt;
+&lt;h4 id=&#34;react如何实现双向绑定&#34;&gt;react如何实现双向绑定&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;在React当中，有个onChange属性，可以给input绑定事件，当input框里的值发生变化时会触发调用方法，这个方法会合并data到this.state,并重新渲染组件。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;高阶组件是什么-什么情况下有用到&#34;&gt;高阶组件是什么 什么情况下有用到&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;如果一个函数 接受一个或多个组件作为参数并且返回一个组件 就可称之为 高阶组件。
+什么时候使用：页面复用,组件渲染性能追踪，权限控制。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;react生命周期&#34;&gt;react生命周期&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;React组件的生命周期可以分为挂载、渲染和卸载这几个阶段，当渲染后的组件需要更新的时候，我们会重新去渲染组件，直到卸载。
+因此，我们可以把React生命周期分为两类：
+1 当组件在挂载或卸载时
+2 当组件接收新的数据时，即组件更新时
+
+componentWillMount  在渲染前调用
+componentDidMount  在第一次渲染后调用
+componentWillReceiveProps  在组件接受一个新的prop时调用，这个方法在第一次渲染的时候不会被调用。
+shouldComponentUpdate  返回一个布尔值，在组件接受到新的props或是state时被调用。在初始化时或是使用forceUpdate时不被调用。可以在你确认不需要更新组件时使用。
+componentWillUpdate 在组件接受到新的props或是state但还没有render时被调用。在初始化时不会被调用。
+componentDidUpdate  在组件完成更新后立即调用。在初始化时不会被调用
+componentWillUnmount  在组件从DOM中移除的时候立即被调用
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;react做过哪些优化&#34;&gt;react做过哪些优化&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1 减少不必要的props引起的重绘
+2 减少不必要state引起的重绘
+3 长列表优化
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;redux-流程&#34;&gt;redux 流程&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.View在redux中会派发action方法;
+2.action通过store的dispatch方法会派发给store;
+3.store接收action，连同之前的state，一起传递给reducer；
+4.reducer返回新的数据给store；
+5.store去改变自己的state。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;说一下react中的key&#34;&gt;说一下react中的key&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;它主要在于虚拟DOM的复用，绑定key可以更好的复用，避免重复渲染
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;redux-数据流动-有什么组件-redux中connect介绍一下-connect的底层是什么&#34;&gt;Redux 数据流动 有什么组件 redux中connect介绍一下   connect的底层是什么&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;connect是一个高阶函数，首先传入mapStateToProps、mapDispatchToProps，然后返回一个生产Component的函数(wrapWithConnect)，然后再将真正的Component作为参数传入wrapWithConnect，这样就生产出一个经过包裹的Connect组件。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;react的路由-项目中用到什么路由-介绍一下&#34;&gt;React的路由 项目中用到什么路由 介绍一下&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1 两种常用的路由：HashRouter和BrowserRouter
+2 路由组件：包裹整个应用：一个React应用只使用一次
+3 HashRouter：使用URL的哈希值实现，就是在地址栏的后面有#（localhost:3000/#/sdjdjdj）
+4 推荐使用BrowserRouter：使用H5的historyAPI实现（localhost:3000/djjdd）
+5 Link:组件：用于指定导航链接（a标签） 在浏览器解析时，会将link组件解析成a标签
+6 Router组件：指定路由展示相关的组件信息
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;react路由传参方法&#34;&gt;React路由传参方法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;  通过params
+        1.路由表中      
+              &amp;lt;Route path=&#39; /sort/:id &#39;   component={Sort}&amp;gt;&amp;lt;/Route&amp;gt;
+        2.Link处        
+          HTML方式
+                 &amp;lt;Link to={ &#39; /sort/ &#39; + &#39; 2 &#39; }  activeClassName=&#39;active&#39;&amp;gt;XXXX&amp;lt;/Link&amp;gt;   
+          JS方式
+                this.props.history.push(  &#39;/sort/&#39;+&#39;2&#39;  )
+        3.sort页面       
+               通过  this.props.match.params.id        就可以接受到传递过来的参数（id）
+  通过query
+      前提：必须由其他页面跳过来，参数才会被传递过来
+　　　 注：不需要配置路由表。路由表中的内容照常：&amp;lt;Route path=&#39;/sort&#39; component={Sort}&amp;gt;&amp;lt;/Route&amp;gt;
+        1.Link处      
+         HTML方式
+            &amp;lt;Link to={{ path : &#39; /sort &#39; , query : { name : &#39;sunny&#39; }}}&amp;gt;
+       JS方式
+            this.props.history.push({ path : &#39;/sort&#39; ,query : { name: &#39; sunny&#39;} })
+        2.sort页面     
+              this.props.location.query.name
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;原型原型链&#34;&gt;原型，原型链&lt;/h1&gt;
+&lt;p&gt;原型：js给每个函数分配的公共空间，减少内存占用&lt;/p&gt;
+&lt;p&gt;原型链：多个原型的集合，当调用对象的属性或方法时，先自身找，找不到去原型链上找，一直找到Object构造函数得原型链&lt;/p&gt;
+&lt;h1 id=&#34;其他&#34;&gt;其他&lt;/h1&gt;
+&lt;h4 id=&#34;sass和less区别&#34;&gt;sass和less区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.编译环境不一样,less是基于JavaScript的在客户端处理 所以安装的时候用npm，sass是基于ruby所以在服务器处理。
+2.变量符不一样，Less是@，而Scss是$，而且变量的作用域也不一样。
+Sass的功能比Less强大
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;link和inmport的区别&#34;&gt;&lt;strong&gt;link和@inmport的区别&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1》link是html的标签，不仅可以加载css还可以定义Rss , rel连接属性；@import是css的语法规则，只能引入样式；
+2》加载页面时，link是同时加载的，@impor是页面加载完后才加载
+3》link没有兼容性的问题，而@import只在较高版本的浏览器才可以识别
+4》link可以通过js插入操作dom，@import 不可以！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;如何理解js中的原型链&#34;&gt;&lt;strong&gt;如何理解js中的原型链&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1；每个构造函数都有一个原型对象
+2；每个原型对象都有一个指向构造函数的指针
+3；每个实例函数都有一个指向原型对象的指针。
+4；查找方式是一层一层查找，直至顶层。Object.prototype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;图片懒加载原理&#34;&gt;图片懒加载原理&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;就是我们先设置图片的data-set属性（当然也可以是其他任意的，只要不会发送http请求就行了，作用就是为了存取值）值为其图片路径，由于不是src，所以不会发送http请求。 然后我们计算出页面scrollTop的高度和浏览器的高度之和， 如果图片举例页面顶端的坐标Y（相对于整个页面，而不是浏览器窗口）小于前两者之和，就说明图片就要显示出来了（合适的时机，当然也可以是其他情况），这时候我们再将 data-set 属性替换为 src 属性即可。
+
+或
+好处：减少HTTP请求
+1、监控滚动条滚动
+2、获取总可视内容高度（可见视口高度+滚动条滚动高度）
+3、获取所有图片
+4、遍历步骤3
+5、在步骤4中判断，图片.offsetTop &amp;lt;= 步骤2    成立-修改src属性为data-src、失败-不管
+6、节流防抖优化
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;react和vue有哪些不同说说你对这两个框架的看法&#34;&gt;&lt;strong&gt;react和vue有哪些不同，说说你对这两个框架的看法&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;相同点:
+· 都支持服务器端渲染
+· 都有Virtual DOM,组件化开发,通过props参数进行父子组件数据的传递,都实现webComponent规范
+· 数据驱动视图
+· 都有支持native的方案,React的React native,Vue的weex
+不同点:
+· React严格上只针对MVC的view层,Vue则是MVVM模式
+· virtual DOM不一样,vue会跟踪每一个组件的依赖关系,不需要重新渲染整个组件树.而对于React而言,每当应用的状态被改变时,全部组件都会重新渲染,所以react中会需要shouldComponentUpdate这个生命周期函数方法来进行控制
+· 组件写法不一样, React推荐的做法是 JSX + inline style, 也就是把HTML和CSS全都写进JavaScript了,即&#39;all in js&#39;; Vue推荐的做法是webpack+vue-loader的单文件组件格式,即html,css,jd写在同一个文件;
+· 数据绑定: vue实现了数据的双向绑定,react数据流动是单向的
+· state对象在react应用中不可变的,需要使用setState方法更新状态;在vue中,state对象不是必须的,数据由data属性在vue对象中管理
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;px和em的区别&#34;&gt;&lt;strong&gt;px和em的区别&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;相同点：px和em都是长度单位；
+异同点：px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。
+浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;js哪些操作会造成内存泄露&#34;&gt;&lt;strong&gt;JS哪些操作会造成内存泄露&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1）意外的全局变量引起的内存泄露
+function leak(){  leak=&amp;quot;xxx&amp;quot;;//leak成为一个全局变量，不会被回收  }
+2）闭包引起的内存泄露
+3）没有清理的DOM元素引用
+4）被遗忘的定时器或者回调 
+5）子元素存在引起的内存泄露
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;浏览器缓存有哪些通常缓存有哪几种&#34;&gt;&lt;strong&gt;浏览器缓存有哪些，通常缓存有哪几种&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;http缓存
+websql
+cookie
+localstorage
+sessionstorage
+flash缓存
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;浏览器是如何渲染页面的&#34;&gt;&lt;strong&gt;浏览器是如何渲染页面的？&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;渲染的流程如下：
+1.解析HTML文件，创建DOM树。
+   自上而下，遇到任何样式（link、style）与脚本（script）都会阻塞（外部样式不阻塞后续外部脚本的加载）。
+2.解析CSS。优先级：浏览器默认设置&amp;lt;用户设置&amp;lt;外部样式&amp;lt;内联样式&amp;lt;HTML中的style样式；
+3.将CSS与DOM合并，构建渲染树（Render Tree）
+4.布局和绘制，重绘（repaint）和重排（reflow）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;css3新增的属性&#34;&gt;&lt;strong&gt;CSS3新增的属性&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;CSS3实现圆角（border-radius），阴影（box-shadow），
+对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform）
+transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px) skew(-9deg,0deg);//旋转,缩放,定位,倾斜
+增加了更多的CSS选择器  多背景 rgba 
+在CSS3中唯一引入的伪元素是::selection.
+媒体查询，多栏布局
+border-image
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;h5新特性&#34;&gt;&lt;strong&gt;H5新特性&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;(1)新的语义标签和属性
+(2)表单新特性
+(3)视频和音频
+(4)Canvas绘图
+(5)SVG绘图
+(6)地理定位
+(7)拖放API
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;谈一下js的继承&#34;&gt;谈一下JS的继承&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.借用构造函数继承，使用call或apply方法，将父对象的构造函数绑定在子对象上
+2.原型继承，将子对象的prototype指向父对象的一个实例
+3.组合继承
+原型链继承的缺点:
+字面量重写原型会中断关系，使用引用类型的原型，并且子类型还无法给超类型传递参数。
+借用构造函数（类式继承）:
+借用构造函数虽然解决了刚才两种问题，但没有原型，则复用无从谈起。
+组合式继承:
+组合式继承是比较常用的一种继承方法，其背后的思路是使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又保证每个实例都有它自己的属性。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;跨域的解决方法&#34;&gt;跨域的解决方法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;前端:1.浏览器插件2.前端代理3.SONP
+后端:1.声明header头2.后端代理
+运维:web服务器配置
+等等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;谈谈你对闭包的理解&#34;&gt;谈谈你对闭包的理解&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;使用闭包主要是为了设置私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。在js中，函数即闭包，只有函数才会产生作用域的概念
+闭包有三个特性：
+1.函数嵌套函数
+2.函数内部可以引用外部的参数和变量
+3.参数和变量不会被垃圾回收机制回收
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;浏览器兼容&#34;&gt;浏览器兼容&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;浏览器兼容性问题，是指因为不同的浏览器对同一段代码有不同的解析，造成页面显示效果不统一的情况。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;做过哪些性能优化&#34;&gt;做过哪些性能优化&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1 尽量减少HTTP请求次数
+2 压缩合并js
+3 css精灵
+4 减少DOM元素数量
+5 使用CDN(网站上静态资源即css、js全都使用cdn分发，图片亦然,因为cdn拥有众多服务器，用户请求可以请求距离他近的服务器，加快速度)
+6 把CSS放到顶部,把JS放到底部
+7 使用gzip压缩内容(服务端)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;bfc的理解&#34;&gt;BFC的理解&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt; BFC，块级格式化上下文，一个创建了新的BFC的盒子是独立布局的，盒子里面的子元素的样式不会影响到外面的元素。在同一个BFC中的两个毗邻的块级盒在垂直方向（和布局方向有关系）的margin会发生折叠。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;js执行机制浏览器运行机制&#34;&gt;JS执行机制（浏览器运行机制）&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.JavaScript是一门单线程语言。
+2.Event Loop(事件循环)是JavaScript的执行机制。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;关于配置webpack的了解&#34;&gt;关于配置webpack的了解？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;它属于一个预编译模块方案（模块打包工具），我们现在的前端代码开始分模块进行构建，则会用到import &amp;quot;./a.js&amp;quot;; 、require (&amp;quot;a.js&amp;quot;); 等方法。但是浏览器是不认识这样的方法。这时，webpack 就出现了，它采用预编译的方式，在代码加载到页面前，把这些模块引用的方式转换成浏览器可以识别的js代码。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;怎么配置cli的三种环境&#34;&gt;怎么配置cli的三种环境？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.创建环境env文件
+2.修改package.json
+3.vue.config.js中引用环境变量
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;组件的预加载说几种方式&#34;&gt;组件的预加载，说几种方式。&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1、使用import导入组件，可以获取到组件
+2、使用import导入组件，直接将组件赋值给componet
+3、使用require 导入组件，可以获取到组件
+4、使用require 导入组件，直接将组件赋值给componet
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;mpvue遇到的坑&#34;&gt;mpvue遇到的坑&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.文件夹名字不能大写。
+2.两层v-for不能用index的名字来作为索引
+3.合法域名校验出错，不在以下合法域名列表中
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;说一下盒模型&#34;&gt;说一下盒模型&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;盒模型的组成，由里向外content，padding，border，margin。
+盒模型有两种标准，一个是标准模型，一个是怪异盒模型。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;函数的this指向bind-call-apply-的区别-bind怎么立即调用call-apply怎么延迟调用&#34;&gt;函数的this指向，bind call apply 的区别  bind怎么立即调用，call apply怎么延迟调用&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;A普通函数调用   	this =&amp;gt;  window   	
+B对象函数调用   	this =&amp;gt;  对象本身    
+C事件处理函数调用  this =&amp;gt;  事件源    
+D定时器调用       this =&amp;gt;  window 
+E箭头函数中调用    this  =&amp;gt;  父function中的this    父没有function则window
+F bind/apply/call this=&amp;gt;   用来改变this指向 
+
+区别：都用来改变this的指向，bind后函数不会执行，而只是返回一个改变了上下文的另一个函数，而call和apply是直接执行函数。若无参数，apply与call基本没什么区别
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;es6&#34;&gt;es6&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.不一样的变量声明：const和let
+2.模板字符串
+3.箭头函数（Arrow Functions）
+4. 函数的参数默认值
+5.Spread / Rest 操作符
+6.二进制和八进制字面量
+7.对象和数组解构
+8.对象超类
+9.for...of 和 for...in
+10.ES6中的类
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;promise是什么-和-async-await的区别-async-await-的底层&#34;&gt;Promise是什么   和 async await的区别 async await 的底层&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大，简单地说，Promise好比容器，里面存放着一些未来才会执行完毕（异步）的事件的结果，而这些结果一旦生成是无法改变的
+
+区别：1 Promise的出现解决了传统callback函数导致的“地域回调”问题，但它的语法导致了它向纵向发展行成了一个回调链，遇到复杂的业务场景，这样的语法显然也是不美观的。而async await代码看起来会简洁些，使得异步代码看起来像同步代码，await的本质是可以提供等同于”同步效果“的等待异步返回能力的语法糖，只有这一句代码执行完，才会执行下一句。
+2 async await与Promise一样，是非阻塞的。
+3 async await是基于Promise实现的，可以说是改良版的Promise，它不能用于普通的回调函数。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;echarts是什么&#34;&gt;Echarts是什么&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;商业级数据图表，它是一个纯JavaScript的图标库，兼容绝大部分的浏览器，底层依赖轻量级的canvas类库ZRender，提供直观，生动，可交互，可高度个性化定制的数据可视化图表。创新的拖拽重计算、数据视图、值域漫游等特性大大增强了用户体验，赋予了用户对数据进行挖掘、整合的能力。
+Echarts支持的图表：折线图（区域图）、柱状图（条状图）、散点图（气泡图）、K线图、饼图（环形图）
+雷达图（填充雷达图）、和弦图、力导向布局图、地图、仪表盘、漏斗图、事件河流图等12类图表
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;说一下深浅拷贝&#34;&gt;说一下深浅拷贝&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;浅拷贝 shadow copy (传地址)
+仅仅只拷贝对象自身，内部元素引用的其他对象只拷贝一个引用。
+深拷贝 deep copy (传值)
+外围和内部元素都拷贝了对象本身。而不是引用。因此深拷贝产生的副本可以随意修改，而不用担心会影响原始值。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;清除浮动的几种方法&#34;&gt;清除浮动的几种方法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1，额外标签法，&amp;lt;divstyle=&amp;quot;clear:both;&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;（缺点：不过这个办法会增加额外的标签使HTML结构看起来不够简洁。）
+2，使用after伪类
+#parent:after{
+content:&amp;quot;.&amp;quot;;
+height:0;
+visibility:hidden;
+display:block;
+clear:both;
+}
+3,浮动外部元素
+4,设置overflow为hidden或者auto
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;commonjs的理解&#34;&gt;Commonjs的理解&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;CommonJS是服务器端模块的规范，Node.js采用了这个规范。CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;请解释什么是事件代理&#34;&gt;请解释什么是事件代理&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;事件代理（Event Delegation），又称之为事件委托。是 JavaScript 中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。
+事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;创建ajax过程&#34;&gt;创建ajax过程&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;ajax(异步javascript xml) 是什么：能够刷新局部网页数据而不是重新加载整个网页。
+(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
+(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.
+(3)设置响应HTTP请求状态变化的函数.
+(4)发送HTTP请求.
+(5)获取异步调用返回的数据.
+(6)使用JavaScript和DOM实现局部刷新.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;为什么https安全&#34;&gt;为什么HTTPS安全&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;因为网络请求需要中间有很多的服务器路由器的转发。中间的节点都可能篡改信息，而如果使用HTTPS，密钥在你和终点站才有。https之所以比http安全，是因为他利用ssl/tls协议传输。它包含证书，卸载，流量转发，负载均衡，页面适配，浏览器适配，refer传递等。保障了传输过程的安全性	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;节流防抖&#34;&gt;节流防抖&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;节流：一段时间内，只执行一次函数
+防抖：事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;说一下cookie和session的区别&#34;&gt;说一下cookie和session的区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;性能角度: 	 cookie影响性能    h5不影响性能    h5最重要
+生命周期:    cookie自定义      localStorage永久、sessionStorage窗口
+存储空间：	cookie 4k      h5  5M
+主要网站设置了cookie  后期所有请求都会携带cookie 影响性能
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;数组的方法&#34;&gt;数组的方法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.concat() 功能：用于连接两个或多个数组，该方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。
+2.join() 功能：根据指定分隔符将数组中的所有元素放入一个字符串，并返回这个字符串。
+3.pop() 功能：方法用于删除并返回数组的最后一个元素。
+4.shift() 功能：方法用于删除并返回数组的第一个元素。
+5.unshift() 功能：向数组的开头添加一个或更多元素，并返回新的长度。
+6.push() 功能：向数组的末尾添加一个或更多元素，并返回新的长度。
+7.slice() 功能：可从已有的数组中返回选定的元素。该方法接收两个参数slice(start,end)，strat为必选，表示从第几位开始；end为可选，表示到第几位结束(不包含end位)，省略表示到最后一位；start和end都可以为负数，负数时表示从最后一位开始算起，如-1表示最后一位。
+8.splice() 功能：向数组中添加，或从数组删除，或替换数组中的元素，然后返回被删除/替换的元素。
+参数：splice(start,num,data1,data2,...); 所有参数全部可选。
+9.toString() 功能：转换成字符串，类似于没有参数的join()。该方法会在数据发生隐式类型转换时被自动调用，如果手动调用，就是直接转为字符串。
+10.indexOf() 功能：根据指定的数据，从左向右，查询在数组中出现的位置，如果不存在指定的数据，返回-1。该方法是查询方法，不会对数组产生改变。
+11.forEach() 功能：ES5新增方法，用来遍历数组，该方法没有返回值。forEach接收的回调函数会根据数组的每一项执行，该回调函数默认有三个参数，分别为：遍历到的数组的数据，对应的索引，数组自身。
+12.map() 功能：1.同forEach功能；2.map的回调函数会将执行结果返回，最后map将所有回调函数的返回值组成新数组返回。
+13.filter() 功能：1.同forEach功能；2.filter的回调函数需要返回布尔值，当为true时，将本次数组的数据返回给filter，最后filter将所有回调函数的返回值组成新数组返回（此功能可理解为“过滤”）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;数组去重的方法&#34;&gt;数组去重的方法&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;一、利用ES6中的 Set 方法去重
+二、使用双重for循环，再利用数组的splice方法去重（ES5常用）
+三、利用数组的indexOf方法去重
+四、利用数组的sort方法去重（相邻元素对比法）
+五、利用ES6中的Map方法去重
+六、利用数组的filter方法去重
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;export和export-default的区别&#34;&gt;export和export default的区别？&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;使用上的不同+
+import xxx from &#39;./&#39;
+
+export xxx
+import {xxx} from &#39;./&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;get-post的区别&#34;&gt;get、post的区别&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;1.get传参方式是通过地址栏URL传递，是可以直接看到get传递的参数，post传参方式参数URL不可见，get把请求的数据在URL后通过？连接，通过&amp;amp;进行参数分割。psot将参数存放在HTTP的包体内
+2.get传递数据是通过URL进行传递，对传递的数据长度是受到URL大小的限制，URL最大长度是2048个字符。post没有长度限制
+3.get后退不会有影响，post后退会重新进行提交
+4.get请求可以被缓存，post不可以被缓存
+5.get请求只URL编码，post支持多种编码方式
+6.get请求的记录会留在历史记录中，post请求不会留在历史记录
+7.get只支持ASCII字符，post没有字符类型限制
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;优雅降级和渐进增强&#34;&gt;优雅降级和渐进增强&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;渐进增强（Progressive Enhancement）：一开始就针对低版本浏览器进行构建页面，完成基本的功能，然后再针对高级浏览器进行效果、交互、追加功能达到更好的体验。
+优雅降级（Graceful Degradation）：一开始就构建站点的完整功能，然后针对浏览器测试和修复。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;小程序&#34;&gt;小程序&lt;/h1&gt;
+&lt;h4 id=&#34;小程序接口必须是https-你写的项目中是谁操作的&#34;&gt;小程序接口必须是https 你写的项目中是谁操作的&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;这个配置是公司后端/运维配置的，但是我个人对编程还是比较喜欢研究的 然后呢我就自己谷歌了一把发现就是去腾讯、阿里云申请证书，然后修改nginx配置就行。我当时用的是免费版，收费版没试过。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;小程序微信登录时怎么实现的&#34;&gt;小程序微信登录时怎么实现的&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;首先通过wx.login和wx.reqeuset获取openid  然后根据API去获取用户的昵称和头像
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;小程序项目你做过哪些优化&#34;&gt;小程序项目你做过哪些优化&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;静态资源优化:
+图片懒加载
+七牛云对象存储
+cdn加速
+expires     之前给大家发的nginx课件里面有
+gzip        之前给大家发的nginx课件里面有
+后端接口优化:
+接口开发规范restful api
+接口安全（https）
+接口性能（多台数据库、缓存服务器redis存内存等）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;咱们项目开发完毕发小超过2m-如果解决&#34;&gt;咱们项目开发完毕发小超过2M 如果解决&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;静态资源 咱们可以分离项目 放到CDN服务器上  
+太大了可以讲一个小程序变成2个小程序  这样就是4M  
+然后通过声明式导航、编程式导航，点击直接跳转到另一个小程序即可。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;将一个div盒子水平垂直居中&#34;&gt;将一个div盒子水平垂直居中&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;    .parent{
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+    }
+    .child{
+        width: 100px;
+        height: 100px;
+        border: 1px slid #111;
+    }
+    
+    
+     &amp;lt;div class=&amp;quot;parent&amp;quot;&amp;gt;
+         &amp;lt;div class=&amp;quot;child&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+     &amp;lt;/div&amp;gt;
+     
+     
+方法一：利用定位（常用方法,推荐）
+
+.parent{
+
+    position:relative;
+
+    }
+
+.child{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    margin-top:-50px;
+
+    margin-left:-50px;
+
+    }
+
+方法一的原理就是定位中心点是盒子的左上顶点，所以定位之后我们需要回退盒子一半的距离。
+
+ 
+
+方法二：利用margin:auto;
+
+.parent{
+
+    position:relative;
+
+    }
+
+.child{
+
+    position:absolute;
+
+    margin:auto;
+
+    top:0;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    }
+
+方法三：利用display:table-cell;
+
+.parent{
+
+    display:table-cell;
+
+    vertical-align:middle;
+
+    text-align:center;
+
+    }
+
+.child{
+
+    display:inline-block;
+
+    }
+
+方法四：利用display：flex;设置垂直水平都居中；
+
+.parent{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    }
+
+方法五：计算父盒子与子盒子的空间距离(这跟方法一是一个道理)；
+
+计算方法：父盒子高度或者宽度的一半减去子盒子高度或者宽的的一半。
+
+.child{
+
+    margin-top:200px;
+
+    margin-left:200px;
+
+    }
+
+方法六：利用transform
+
+.parent{
+
+    position:relative;
+
+    }
+
+.child{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    }
+
+方法七：利用calc计算
+
+.parent{
+
+    position:relative;
+
+    }
+
+.child{
+
+    position:absolute;
+
+    top:calc(200px);//（父元素高-子元素高）÷ 2=200px
+
+    let:calc(200px);//（父元素宽-子元素宽）÷ 2=200px
+
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;vue中更新是异步还是同步的为什么&#34;&gt;Vue中更新是异步还是同步的,为什么?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;数据是同步更新，视图是异步更新&lt;/li&gt;
+&lt;li&gt;因为如果视图更新是同步的，那会导致多次渲染浪费不必要的性能，没必要，内部做了去重(重新更新的值)和防抖(只更新最后一次)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;什么是promise&#34;&gt;什么是Promise&lt;/h1&gt;
+&lt;p&gt;Promise 是异步编程的一种解决方案，其实是一个构造函数，自己身上有all、reject、resolve这几个方法，原型上有then、catch等方法  可以很好地解决&lt;strong&gt;回调地狱&lt;/strong&gt;的问题（避免了层层嵌套的回调函数） ， 语法非常简洁&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Promise&lt;/code&gt;对象有以下两个特点。&lt;/p&gt;
+&lt;p&gt;特点1： 对象的状态不受外界影响。&lt;/p&gt;
+&lt;p&gt;​			解释： &lt;code&gt;Promise&lt;/code&gt;对象代表一个异步操作，有三种状态：&lt;code&gt;pending&lt;/code&gt;（进行中）、&lt;code&gt;fulfilled&lt;/code&gt;（已成功）和						&lt;code&gt;rejected&lt;/code&gt;（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无						法改变这个状态。&lt;/p&gt;
+&lt;p&gt;特点2： 一旦状态改变，就不会再变，任何时候都可以得到这个结果。&lt;/p&gt;
+&lt;p&gt;​			解释：Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要						这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定						型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。&lt;/p&gt;
+&lt;h2 id=&#34;单行文本溢出显示省略号&#34;&gt;单行文本溢出，显示省略号&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;.div_text{
+             width: 300px; 
+             overflow: hidden;
+             text-overflow: ellipsis; 
+             white-space: nowrap;
+             }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;多行文本溢出显示省略号&#34;&gt;多行文本溢出，显示省略号&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt; .div_moreline{
+            width: 300px; 
+            display:-webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden; 
+            max-height: 90px;
+            }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;css手写一个三角形&#34;&gt;css手写一个三角形:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;  .triangle{
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-top-color: black ;
+        }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;vue-cli30兼容20版本&#34;&gt;vue-cli3.0兼容2.0版本&lt;/h1&gt;
+&lt;p&gt;npm install -g @vue/cli-init&lt;/p&gt;
+&lt;h1 id=&#34;什么时候视图不会更新&#34;&gt;什么时候视图不会更新?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//1.操作数组的索引
+//2.操作数组的length
+//以上两种情况都不会更新视图
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;为什么操作这两个属性不会更新视图&#34;&gt;为什么操作这两个属性不会更新视图?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//原因就是因为Vue2.0底层响应式原理使用了ES5中的Object.defineProperty()这个方法,这个方法有个缺点,缺点就是无法劫持数组,数组的变化是没有办法进行响应
+    //操作一些数组的方法 比如push pop shift unshift reverse等方法会触发视图的更新,因为vue的底层特别对这几个方法做了hack处理,只要我们调用这些方法也会视图的更新
+    //Vue3.0的版本,使用的proxy这个方法,这个方法可以劫持数组,就不会出现操作索引和length不更新视图的情况了
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;怎么处理不更新的问题&#34;&gt;怎么处理不更新的问题?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt; //1.不要操作数组的length和索引,如果说硬要操作,可以使用Vue.$set(target,key,value)方法
+ //2.如果说操作了这些属性,不知道问题在哪里,解决不了视图不更新的情况,我们可以调用强制更新$forceUpdate()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-for中有个属性keykey的作用是什么&#34;&gt;v-for中有个属性,key,key的作用是什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;用于区分diff算法的时候,元素的唯一性
+//key的值,正常情况下一般都要给一个唯一的值,如果没有一个惟一的情况下,那么可以暂时的使用index来代替
+//写项目的时候,后台返回的数据肯定有id,那么这个id就是唯一的标识所以我们一般使用id来作为key的值
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-model的修饰符&#34;&gt;v-model的修饰符 ?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;trim lazy number
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-if-v-show的区别-以及使用场景&#34;&gt;V-if v-show的区别 以及使用场景&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//v-if 都是用于控制元素/组件的显示和隐藏 值都是布尔值,如果布尔值为true那么元素就会显示,如果为false,那么元素或者组件就会隐藏 v-if元素不显示的时候,dom结构也会一并移除
+//v-if可以和v-else v-else-if结合使用,如果v-if布尔值为true,那么不会展示v-else的内容,如果布尔值为false,那么就会展示v-else,而不会展示v-if,两者的关系,就是老死不相往来,互斥
+//v-show  都是用于控制元素/组件的显示和隐藏 值都是布尔值,如果布尔值为true那么元素就会显示,如果为false,那么元素或者组件就会隐藏 v-show隐藏元素之后,不会移除dom结构
+
+//使用场景:首次渲染开销较大的时候,可以使用v-if 频繁切换的时候使用v-show
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-on的修饰符&#34;&gt;v-on的修饰符&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//prevent 阻止默认事件
+//ocne 只调用一次
+//native 触发组件根元素的原生事件
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;定义自定义指令的方式以及自定义指令的钩子函数&#34;&gt;定义自定义指令的方式,以及自定义指令的钩子函数&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//bind
+//inserted
+//update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;计算属性的特点&#34;&gt;计算属性的特点?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt; //1.计算的结果会缓存
+ //2.根据外界响应式依赖发生变化而变化
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;watch监听的三种情况和写法&#34;&gt;watch监听的三种情况和写法&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;普通监听
+深度监听
+字符串写法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-if-v-for的优先级&#34;&gt;v-if v-for的优先级&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;v-for优先级别高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;全局组件和局部组件创建方式&#34;&gt;全局组件和局部组件创建方式&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;全局组件的创建
+	利用Vue.component来创建全局组件
+	vue.component( &amp;quot;vheader&amp;quot;,{
+        template: 
+        `&amp;lt;div&amp;gt;
+        我是全局组件&amp;lt;/div&amp;gt;`
+        })
+     可以直接使用&amp;lt;vheader&amp;gt;&amp;lt;/vheader&amp;gt;,不需要挂载
+     
+ 
+局部组件创建
+	（1）创建一个局部组件,举例，命名为App。
+	（2）利用组件的components，将App挂载上去。
+	（3）在页面使用&amp;lt;App&amp;gt;&amp;lt;/App&amp;gt;即可.
+&amp;lt;script&amp;gt;
+    const App = {  //创建
+        template:`
+        &amp;lt;h3&amp;gt;我是App组件&amp;lt;/h3&amp;gt;`
+        }
+    new vue({
+    	el: &#39;#app&#39;,
+    	data:{},
+    	components:{
+   			App  //挂载
+    	}
+    })
+ &amp;lt;/ script&amp;gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;组件的通信方式-写出所有的&#34;&gt;组件的通信方式 写出所有的&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;父子传值：props
+子父传值:$emit
+eventbus
+refs
+$root
+$parent
+vueX
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;在组件上使用v-model流程&#34;&gt;在组件上使用v-model流程&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;父组件:子标签上v-model=&amp;quot;val&amp;quot;
+子组件:input标签上动态绑定value :value=&amp;quot;value&amp;quot;
+注册事件input
+@input: &#39;ipt&#39;
+在methods中定义ipt事件，接收参数
+    ipt(e){
+        this.$emit(&#39;input&#39;,e.target.value)
+    }
+原理:语法糖默认接受value的props，默认发射input的事件出去
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;封装组件的流程&#34;&gt;封装组件的流程&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt; 1.使用Vue.extend()创建一个组件
+
+ 2.使用Vue.component()方法注册组件
+
+ 3.如果子组件需要数据，可以在props中接受定义
+
+ 4.子组件修改好数据之后，想把数据传递给父组件，可以使用emit()方法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;slot具名插槽-插槽作用域&#34;&gt;slot具名插槽 插槽作用域&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1.具名插槽：给slot加上name属性，添加内容时，标签上 v-slot:name属性值
+    举例：	
+    &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;
+            &amp;lt;sdh-com&amp;gt;
+                &amp;lt;template v-slot:header&amp;gt;
+                    &amp;lt;div class=&amp;quot;header&amp;quot;&amp;gt;
+                        &amp;lt;h1&amp;gt;这是顶部栏&amp;lt;/h1&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                &amp;lt;/template&amp;gt;
+            &amp;lt;/sdh-com&amp;gt;
+     &amp;lt;/div&amp;gt;
+    &amp;lt;template id=&amp;quot;sdh&amp;quot;&amp;gt;
+        &amp;lt;fieldset&amp;gt;
+            &amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;
+                &amp;lt;slot name=&amp;quot;header&amp;quot;&amp;gt;&amp;lt;/slot&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/fieldset&amp;gt;
+    &amp;lt;/template&amp;gt;
+
+     &amp;lt;script&amp;gt;
+         Vue.component(&#39;sdh-com&#39;, {
+            data() {
+                return {
+
+                }
+            },
+            template: &#39;#sdh&#39;
+        })
+
+        const vm = new Vue({
+            el: &amp;quot;#app&amp;quot;,
+            data: {
+
+            }
+        })
+    &amp;lt;/script&amp;gt;
+    
+    
+2.插槽作用域：将组件内部的数据传递给分发的内容进行渲染，再通过solt接收分发内容
+	举例：
+		&amp;lt;!DOCTYPE html&amp;gt;
+        &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+
+        &amp;lt;head&amp;gt;
+            &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;
+            &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt;
+            &amp;lt;title&amp;gt;03.插槽slot.html&amp;lt;/title&amp;gt;
+        &amp;lt;/head&amp;gt;
+
+        &amp;lt;body&amp;gt;
+            &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;
+                &amp;lt;sdh-com&amp;gt;
+                    &amp;lt;template v-slot=&amp;quot;{arr}&amp;quot;&amp;gt;
+                        &amp;lt;ul&amp;gt;
+                            &amp;lt;li v-for=&amp;quot;(item,index) in arr&amp;quot; :key=&amp;quot;index&amp;quot;&amp;gt;{{item}}&amp;lt;/li&amp;gt;
+                        &amp;lt;/ul&amp;gt;
+                    &amp;lt;/template&amp;gt;
+                &amp;lt;/sdh-com&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/body&amp;gt;
+
+        &amp;lt;/html&amp;gt;
+
+        &amp;lt;template id=&amp;quot;sdh&amp;quot;&amp;gt;
+            &amp;lt;fieldset&amp;gt;
+                &amp;lt;legend&amp;gt;苏大海&amp;lt;/legend&amp;gt;
+                &amp;lt;h1&amp;gt;{{girlFriend}}&amp;lt;/h1&amp;gt;
+                &amp;lt;slot :arr=&amp;quot;arr&amp;quot;&amp;gt;&amp;lt;/slot&amp;gt;
+            &amp;lt;/fieldset&amp;gt;
+        &amp;lt;/template&amp;gt;
+
+        &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+        &amp;lt;script&amp;gt;
+            //插槽作用域
+            //将组件内部的数据传递给分发的内容进行渲染
+            //再通过solt接收分发内容
+            Vue.component(&#39;sdh-com&#39;, {
+                data() {
+                    return {
+                        girlFriend: &#39;乔姑娘&#39;,
+                        arr: [&amp;quot;黄瓜&amp;quot;, &#39;香蕉&#39;, &#39;茄子&#39;, &#39;山药&#39;, &#39;莲藕&#39;]
+                    }
+                },
+                template: &#39;#sdh&#39;
+            })
+
+            const vm = new Vue({
+                el: &amp;quot;#app&amp;quot;,
+                data: {
+                    msg: &amp;quot;那是&amp;quot;
+                }
+            })
+        &amp;lt;/script&amp;gt;
+
+	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;mixins合并策略&#34;&gt;Mixins合并策略&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;//1.如果说混入了data属性,那么会对data进行递归合并,冲突的时候,以组件的属性优先
+
+//2.同名的钩子函数会被合并为一个数组,都会进行调用,会以混入对象的钩子函数优先调用
+
+//3.组件选项 比如methods directives components filters...都会被合并为一个对象,冲突的时候,以组件的键值对为主
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;nexttick的作用&#34;&gt;$nextTick的作用&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;在下次dom,更新循环结束后执行延迟回调,在修改数据之后立即使用,获取更新后的dom元素
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;vue生命周期钩子函数-created中能不能修改data-为什么&#34;&gt;vue生命周期钩子函数 created中能不能修改data 为什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;可以，在这里可以获取data,并且事件监听也添加上了,数据已经被劫持,观察者就绪,在这个钩子函数中可以修改data
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;发送异步请求在哪个钩子&#34;&gt;发送异步请求在哪个钩子?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;created mounted
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;beforedestroy和destroyed一般用来做什么&#34;&gt;beforeDestroy和destroyed一般用来做什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;销毁定时器，解绑全部指令及事件监听，清除全局事件等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;keep-alive的作用以及使用方式-钩子函数-以及两个属性的用法&#34;&gt;keep-alive的作用以及使用方式 钩子函数 以及两个属性的用法&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;作用:缓存组件
+钩子函数:activated deactivated
+属性:include包含的组件会被缓存，exclude排除的组件不会被缓存
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;组件相互嵌套钩子函数的执行顺序是什么&#34;&gt;组件相互嵌套,钩子函数的执行顺序是什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;父组件beforeCreated  ==》父组件created  ==》父组件beforeMount  ==》
+子组件beforeCreated  ==》子组件created  ==》子组件beforeMount  ==》子组件mounted  ==》
+父组件mounted
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;父组件的beforeupdate触发了会不会触发子组件的beforeupdate&#34;&gt;父组件的beforeUpdate触发了会不会触发子组件的beforeUpdate?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;不会
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;为什么beforecreate不能发请求&#34;&gt;为什么beforeCreate不能发请求?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;因为$data都还没初始化,就算获得了后台数据,也不能修改data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;什么是虚拟dom&#34;&gt;什么是虚拟dom?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;通过js模拟真实dom的嵌套,创建新的页面的结构,就是虚拟dom,在内存中,页面是看不见的,只有添加到页面上才能看见
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;为什么要使用虚拟dom&#34;&gt;为什么要使用虚拟dom?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;使用虚拟dom,可以在内存中更新结构,而不是操作真实dom一个一个更新,最大的好处提高页面渲染的性能,结合diff算法 让页面进行高效更新
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;vue响应式的原理是什么&#34;&gt;Vue响应式的原理是什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;　　Vue 的响应式原理是核心是通过 ES5 的保护对象的 Object.defindeProperty 中的访问器属性中的 get 和 set 方法，data 中声明的属性都被添加了访问器属性，当读取 data 中的数据时自动调用 get 方法，当修改 data 中的数据时，自动调用 set 方法，检测到数据的变化，会通知观察者 Wacher，观察者 Wacher自动触发重新render 当前组件（子组件不会重新渲染）,生成新的虚拟 DOM 树，Vue 框架会遍历并对比新虚拟 DOM 树和旧虚拟 DOM 树中每个节点的差别，并记录下来，最后，加载操作，将所有记录的不同点，局部修改到真实 DOM 树上。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;什么是回流-什么是重绘&#34;&gt;什么是回流 什么是重绘?&lt;/h1&gt;
+&lt;h1 id=&#34;32触发回流的条件-触发重绘的条件&#34;&gt;32.触发回流的条件 触发重绘的条件?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;# 回流
+1. 位置的改变 translate 定位的left top 
+2. 元素位置的显示和隐藏也会引起回流
+3. 宽高的变化
+# 重绘
+1. 颜色的变化
+2. 字体风格的变化
+3. 背景的变化
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;33什么是单页应用&#34;&gt;33.什么是单页应用?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;一个项目只有一个html页面 所有的页面跳转依据于路由进行
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;34单页应用的有点和缺点&#34;&gt;34.单页应用的有点和缺点?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;用户体验好,切换速度快,不需要刷新整个页面
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;35怎么解决单页应用缺点的问题&#34;&gt;35.怎么解决单页应用缺点的问题?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;使用服务端渲染 nuxt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;36history-hash-abstract模式的区别&#34;&gt;36.History hash abstract模式的区别?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. hash有#号,#号后面的url不会向后端发起请求
+
+2. hash路由使用onhashchange监听 history使用onpopstate监听 
+
+3. history使用的是H5的api pushState replaceState
+4. 当hash值相同时,不会触发hashchange,history当输入相同的路径的时候,会将浏览器中的地址当成是请求地址向后台发送请求,会造成页面404
+5. abstract模式是在没有浏览器api的情况下自动启用,abstract模式在切换页面的时候,路径是不会发生变化的
+
+6. 关键字 onhashchange pushstate replacestate popstate
+7. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;37动态路由参数解耦合步骤&#34;&gt;37.动态路由参数解耦合步骤&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;再path路径下，通过props:true解耦，使用，通过props:[&#39;动态参数&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;38vuex中的state能映射到组件的data中吗为什么&#34;&gt;38.vuex中的state能映射到组件的data中吗?为什么?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;其实可以直接映射在data中,只是使用的时候要加（）不方便将state映射给data中的某一个属性
+会造成vuex更新之后视图不更新只有computed才会根据依赖发生改变而改变
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;39修改vuex中state唯一的方式是什么只有mutation中可以修改嘛哪些方式还可以修改state的状态&#34;&gt;39.修改vuex中state唯一的方式是什么?只有mutation中可以修改嘛?哪些方式还可以修改state的状态?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;mutation
+有很多种方式可以修改state，比如getters，比如直接修改，比如action中可以直接修改。但是这些修改不符合vuex的设计原则;所以规定修改state，必需通过mutation进行更改
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;40组件中的data为什么要写成一个函数&#34;&gt;40.组件中的data为什么要写成一个函数?&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;因为如果data是一个对象则会造成数据共享，在多次使用该组件的时候，改变其中一个值会影响全部该组件的值。而如果是通过函数的形式返回出一个对象的话，在每次使用该组件时返回出的对象的地址指向是不一样的，这样子能让各个组件的数据独立。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;41说一下vuex异步的操作流程&#34;&gt;41.说一下vuex异步的操作流程&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;action中发送异步请求，结果通过commit提交mutation
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;网络安全&#34;&gt;网络安全&lt;/h1&gt;
+&lt;h2 id=&#34;xss攻击&#34;&gt;XSS攻击&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;跨网站指令码&lt;/strong&gt;（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是&lt;a href=&#34;https://www.wikiwand.com/zh-hans/%E4%BB%A3%E7%A2%BC%E6%B3%A8%E5%85%A5&#34;&gt;代码注入&lt;/a&gt;的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;XSS 分为三种：反射型，存储型和 DOM-based&lt;/p&gt;
+&lt;h3 id=&#34;如何攻击&#34;&gt;如何攻击&lt;/h3&gt;
+&lt;p&gt;XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。&lt;/p&gt;
+&lt;p&gt;例如通过 URL 获取某些参数&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!-- http://www.domain.com?name=&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; --&amp;gt;
+&amp;lt;div&amp;gt;{{name}}&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;上述 URL 输入可能会将 HTML 改为 &lt;code&gt;alert(1)&lt;/code&gt; ，这样页面中就凭空多了一段可执行脚本。这种攻击类型是反射型攻击，也可以说是 DOM-based 攻击。&lt;/p&gt;
+&lt;p&gt;也有另一种场景，比如写了一篇包含攻击代码 &lt;code&gt;alert(1)&lt;/code&gt; 的文章，那么可能浏览文章的用户都会被攻击到。这种攻击类型是存储型攻击，也可以说是 DOM-based 攻击，并且这种攻击打击面更广。&lt;/p&gt;
+&lt;h3 id=&#34;如何防御&#34;&gt;如何防御&lt;/h3&gt;
+&lt;p&gt;最普遍的做法是转义输入输出的内容，对于引号，尖括号，斜杠进行转义&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function escape(str) {
+  str = str.replace(/&amp;amp;/g, &#39;&amp;amp;amp;&#39;)
+  str = str.replace(/&amp;lt;/g, &#39;&amp;amp;lt;&#39;)
+  str = str.replace(/&amp;gt;/g, &#39;&amp;amp;gt;&#39;)
+  str = str.replace(/&amp;quot;/g, &#39;&amp;amp;quto;&#39;)
+  str = str.replace(/&#39;/g, &#39;&amp;amp;#39;&#39;)
+  str = str.replace(/`/g, &#39;&amp;amp;#96;&#39;)
+  str = str.replace(/\//g, &#39;&amp;amp;#x2F;&#39;)
+  return str
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过转义可以将攻击代码 &lt;code&gt;alert(1)&lt;/code&gt; 变成&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// -&amp;gt; &amp;amp;lt;script&amp;amp;gt;alert(1)&amp;amp;lt;&amp;amp;#x2F;script&amp;amp;gt;
+escape(&#39;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;对于显示富文本来说，不能通过上面的办法来转义所有字符，因为这样会把需要的格式也过滤掉。这种情况通常采用白名单过滤的办法，当然也可以通过黑名单过滤，但是考虑到需要过滤的标签和标签属性实在太多，更加推荐使用白名单的方式。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var xss = require(&#39;xss&#39;)
+var html = xss(&#39;&amp;lt;h1 id=&amp;quot;title&amp;quot;&amp;gt;XSS Demo&amp;lt;/h1&amp;gt;&amp;lt;script&amp;gt;alert(&amp;quot;xss&amp;quot;);&amp;lt;/script&amp;gt;&#39;)
+// -&amp;gt; &amp;lt;h1&amp;gt;XSS Demo&amp;lt;/h1&amp;gt;&amp;amp;lt;script&amp;amp;gt;alert(&amp;quot;xss&amp;quot;);&amp;amp;lt;/script&amp;amp;gt;
+console.log(html)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上示例使用了 &lt;code&gt;js-xss&lt;/code&gt; 来实现。可以看到在输出中保留了 &lt;code&gt;h1&lt;/code&gt; 标签且过滤了 &lt;code&gt;script&lt;/code&gt; 标签&lt;/p&gt;
+&lt;h3 id=&#34;csp攻击&#34;&gt;CSP攻击&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内容安全策略 (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Glossary/CSP&#34;&gt;CSP&lt;/a&gt;) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Glossary/XSS&#34;&gt;XSS&lt;/a&gt;) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们可以通过 CSP 来尽量减少 XSS 攻击。CSP 本质上也是建立白名单，规定了浏览器只能够执行特定来源的代码。&lt;/p&gt;
+&lt;p&gt;通常可以通过 HTTP Header 中的 &lt;code&gt;Content-Security-Policy&lt;/code&gt; 来开启 CSP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;只允许加载本站资源&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Content-Security-Policy: default-src ‘self’
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;只允许加载 HTTPS 协议图片&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Content-Security-Policy: img-src https://*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;允许加载任何来源框架&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Content-Security-Policy: child-src &#39;none&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更多属性可以查看 &lt;a href=&#34;https://content-security-policy.com/&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;csrf攻击&#34;&gt;CSRF攻击&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;跨站请求伪造&lt;/strong&gt;（英语：Cross-site request forgery），也被称为 &lt;strong&gt;one-click attack&lt;/strong&gt; 或者 &lt;strong&gt;session riding&lt;/strong&gt;，通常缩写为 &lt;strong&gt;CSRF&lt;/strong&gt; 或者 &lt;strong&gt;XSRF&lt;/strong&gt;， 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。[&lt;a href=&#34;https://www.wikiwand.com/zh/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0#citenoteRistic1&#34;&gt;1]&lt;/a&gt; 跟&lt;a href=&#34;https://www.wikiwand.com/zh/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC&#34;&gt;跨網站指令碼&lt;/a&gt;（XSS）相比，&lt;strong&gt;XSS&lt;/strong&gt; 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简单点说，CSRF 就是利用用户的登录态发起恶意请求。&lt;/p&gt;
+&lt;h3 id=&#34;csrf漏洞现状&#34;&gt;CSRF漏洞现状&lt;/h3&gt;
+&lt;p&gt;CSRF这种攻击方式在2000年已经被国外的安全人员提出，但在国内，直到06年才开始被关注，08年，国内外的多个大型社区和交互网站分别爆出CSRF漏洞，如：NYTimes.com（纽约时报）、Metafilter（一个大型的BLOG网站），YouTube和百度HI......而现在，互联网上的许多站点仍对此毫无防备，以至于安全业界称CSRF为“沉睡的巨人”。&lt;/p&gt;
+&lt;h3 id=&#34;如何攻击-2&#34;&gt;如何攻击&lt;/h3&gt;
+&lt;p&gt;假设网站中有一个通过 Get 请求提交用户评论的接口，那么攻击者就可以在钓鱼网站中加入一个图片，图片的地址就是评论接口&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;img src=&amp;quot;http://www.domain.com/xxx?comment=&#39;attack&#39;&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果接口是 Post 提交的，就相对麻烦点，需要用表单来提交接口&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;form action=&amp;quot;http://www.domain.com/xxx&amp;quot; id=&amp;quot;CSRF&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;
+  &amp;lt;input name=&amp;quot;comment&amp;quot; value=&amp;quot;attack&amp;quot; type=&amp;quot;hidden&amp;quot; /&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;如何防御-2&#34;&gt;如何防御&lt;/h3&gt;
+&lt;p&gt;防范 CSRF 可以遵循以下几种规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Get 请求不对数据进行修改&lt;/li&gt;
+&lt;li&gt;不让第三方网站访问到用户 Cookie (httponly:true;ali.com)&lt;/li&gt;
+&lt;li&gt;阻止第三方网站请求接口&lt;/li&gt;
+&lt;li&gt;请求时附带验证信息，比如验证码或者 token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;samesite&#34;&gt;SameSite&lt;/h4&gt;
+&lt;p&gt;可以对 Cookie 设置 &lt;code&gt;SameSite&lt;/code&gt; 属性。该属性设置 Cookie 不随着跨域请求发送，该属性可以很大程度减少 CSRF 的攻击，但是该属性目前并不是所有浏览器都兼容。&lt;/p&gt;
+&lt;h4 id=&#34;验证-referer&#34;&gt;验证 Referer&lt;/h4&gt;
+&lt;p&gt;对于需要防范 CSRF 的请求，我们可以通过验证 Referer 来判断该请求是否为第三方网站发起的。&lt;/p&gt;
+&lt;h4 id=&#34;token&#34;&gt;Token&lt;/h4&gt;
+&lt;p&gt;服务器下发一个随机 Token（算法不能复杂），每次发起请求时将 Token 携带上，服务器验证 Token 是否有效。&lt;/p&gt;
+&lt;h2 id=&#34;密码安全&#34;&gt;密码安全&lt;/h2&gt;
+&lt;p&gt;密码安全虽然大多是后端的事情，但是作为一名优秀的前端程序员也需要熟悉这方面的知识。&lt;/p&gt;
+&lt;h3 id=&#34;加盐&#34;&gt;加盐&lt;/h3&gt;
+&lt;p&gt;对于密码存储来说，必然是不能明文存储在数据库中的，否则一旦数据库泄露，会对用户造成很大的损失。并且不建议只对密码单纯通过加密算法加密，因为存在彩虹表的关系。&lt;/p&gt;
+&lt;p&gt;通常需要对密码加盐，然后进行几次不同加密算法的加密。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// 加盐也就是给原密码添加字符串，增加原密码长度
+sha256(sha1(md5(salt + password + salt)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但是加盐并不能阻止别人盗取账号，只能确保即使数据库泄露，也不会暴露用户的真实密码。一旦攻击者得到了用户的账号，可以通过暴力破解的方式破解密码。对于这种情况，通常使用验证码增加延时或者限制尝试次数的方式。并且一旦用户输入了错误的密码，也不能直接提示用户输错密码，而应该提示账号或密码错误。&lt;/p&gt;
+&lt;h1 id=&#34;vue中的render函数介绍&#34;&gt;vue中的render函数介绍&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;render函数是什么&lt;/strong&gt; ：&lt;/p&gt;
+&lt;p&gt;​	 简单的说，在vue中我们使用模板HTML语法组建页面的，使用render函数我们可以用js语言来构建DOM&lt;/p&gt;
+&lt;p&gt;​	 因为vue是虚拟DOM，所以在拿到template模板时也要转译成VNode的函数，而用render函数构建DOM，vue	就免去了转译的过程。&lt;/p&gt;
+&lt;p&gt;​	 使用render函数描述虚拟DOM时，vue提供一个函数，这个函数是就构建虚拟DOM所需要的工具。&lt;/p&gt;
+&lt;h1 id=&#34;mvvm和mvc的区别&#34;&gt;&lt;strong&gt;MVVM和MVC的区别&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;MVC和MVVM的区别其实并不大。都是一种设计思想。&lt;/p&gt;
+&lt;p&gt;主要就是MVC中Controller演变成MVVM中的viewModel。&lt;/p&gt;
+&lt;p&gt;MVVM主要解决了MVC中大量的DOM操作使页面渲染性能降低，加载速度变慢，影响用户体验。&lt;/p&gt;
+&lt;p&gt;当和Model频繁发生变化，开发者需要主动更新到View。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MVVM设计模式的优点&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;双向绑定技术，当Model变化时，View-Model会自动更新，View也会自动变化。很好的做到数据的一致性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由于控制器的功能大都移动到View上处理，大大的对控制器进行了瘦身&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;View的功能进一步强化，具有控制的部分功能，&lt;/p&gt;
+&lt;p&gt;若想无限增强它的功能，甚至控制器的全部功能几乎都可以迁移到各个View上&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;（不过这样不可取，那样View干不了属于它职责范围内的事情）。&lt;/p&gt;
+&lt;p&gt;View可以像控制器一样具有自己都View-Model&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;可以对View或ViewController的数据处理部分抽象出来一个函数处理model。&lt;/p&gt;
+&lt;p&gt;这样它们专职页面布局和页面跳转，它们必然更一步的简化。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;MVVM设计模式的缺点&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;数据绑定也使得bug很难被调试。比如你看到页面异常了，有可能是你的View的代码有bug，也可能是你的model的代码有问题。数据绑定使得一个位置的Bug被快速传递到别的位置，要定位原始出问题的地方就变得不那么容易了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据双向绑定不利于代码重用。客户端开发最常用的是View，但是数据双向绑定技术，让你在一个View都绑定了一个model，不同的模块model都不同。那就不能简单重用view了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一个大的模块中model也会很大，虽然使用方便了也很容易保证数据的一致性，但是长期持有，不释放内存就造成话费更多的内存。&lt;/p&gt;
+&lt;h1 id=&#34;-2&#34;&gt;&lt;/h1&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;let-const-var的区别&#34;&gt;let、const、var的区别&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;const声明的是常量，必须赋值
+    1）一旦声明必须赋值,不能使用null占位。
+    2）声明后不能再修改
+    3）如果声明的是复合类型数据，可以修改其属性
+
+let和var声明的是变量，声明之后可以更改，声明时可以不赋值
+
+var允许重复声明变量，后一个变量会覆盖前一个变量。
+
+let和const在同一作用域不允许重复声明变量，会报错。
+
+var声明的变量存在变量提升（将变量提升到当前作用域的顶部）。即变量可以在声明之前调用，值为undefined。
+let和const不存在变量提升。即它们所声明的变量一定要在声明后使用，否则报ReferenceError错。
+
+
+var：只有全局作用域和函数作用域概念，没有块级作用域的概念。但是会把{}内也假称为块作用域。
+let const：只有块级作用域的概念 ，由 { } 包括起来，if语句和for语句里面的{ }也属于块级作用域。
+ES5中作用域有：全局作用域、函数作用域。没有块作用域的概念。
+ES6(简称ES6)中新增了块级作用域。块作用域由 { } 包括，if语句和for语句里面的{ }也属于块作用域。
+
+ES6明确规定：如果区块中存在let命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。
+            所以在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;v-model是如何实现的语法糖&#34;&gt;v-model是如何实现的，语法糖&lt;/h1&gt;
+&lt;h3 id=&#34;1作用再普通的表单元素上&#34;&gt;1.作用再普通的表单元素上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;动态绑定input的value指向的自定义的变量并且在触发input事件的时候去动态把自定义变量设置为目标值&#34;&gt;动态绑定input的value指向的自定义的变量，并且在触发input事件的时候去动态把自定义变量设置为目标值&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2作用在组件上&#34;&gt;2.作用在组件上&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h4 id=&#34;是一个父子组件通信的语法糖通过props和emit实现&#34;&gt;是一个父子组件通信的语法糖，通过props和$emit实现&lt;/h4&gt;
+&lt;p&gt;参考组件使用v-model流程&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;input v-model=&amp;quot;a&amp;quot; /&amp;gt;
+input元素
+&amp;lt;input :value=&amp;quot;a&amp;quot; @input=&amp;quot;a = $event.target.value&amp;quot; /&amp;gt; // $event.target.value
+就是把input的值赋值给 a 
+
+对于非input元素 
+如果在自定义组件中，v-model
+默认会利用名为 value 的 prop 和名为 input 的事件，如下所示： 
+
+父组件：
+&amp;lt;ModelChild v-model=&amp;quot;message&amp;quot;&amp;gt;&amp;lt;/ModelChild&amp;gt;
+
+子组件：
+&amp;lt;div&amp;gt;{{value}}&amp;lt;/div&amp;gt;
+props:{ value: String }, 
+methods: { 
+    test1(){ 
+        this.$emit(&#39;input&#39;, &#39;小红&#39;) 
+    }, 
+},
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;，&lt;/p&gt;
+">interview questions</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/javascript-notes/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;知识笔记&lt;/p&gt;
@@ -523,6 +2161,22 @@ const n = null // 特殊引用类型，指针指向为空的地址
 
 // 特殊应用类型，但不用于存储数据，所以没有“拷贝、复制函数”这一说
 function fn() {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;typeof&#34;&gt;typeof&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let a                           typeof a // &#39;undefined&#39;
+const str = &#39;abc&#39;               typeof str // &#39;string&#39;
+const n = 100                   typeof n // &#39;number&#39;
+const b = true                  typeof b // &#39;boolean&#39;
+const s = Symbol(&#39;s&#39;)           typeof s // &#39;symbol&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 能判断函数
+typeof console.log              // &#39;function&#39;
+typeof function () {}           // &#39;function&#39;
+
+// 能识别引用类型（不能再继续识别）
+typeof null             // &#39;object&#39;
+typeof [&#39;a&#39;, &#39;b&#39;]       // &#39;object&#39;
+typeof { x: 100 }       // &#39;object&#39;
 &lt;/code&gt;&lt;/pre&gt;
 ">javascript notes</a>
       </div>
