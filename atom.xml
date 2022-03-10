@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chenggr.github.io</id>
     <title>chenggr&apos;s blog</title>
-    <updated>2022-03-10T03:08:33.845Z</updated>
+    <updated>2022-03-10T08:09:41.782Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chenggr.github.io"/>
     <link rel="self" href="https://chenggr.github.io/atom.xml"/>
@@ -1674,14 +1674,22 @@ const n = 100
 const b = true
 const s = Symbol('s')
 </code></pre>
-<h1 id="常见应用类型">常见应用类型</h1>
+<h1 id="常见引用类型">常见引用类型</h1>
 <pre><code class="language-javascript">const obj = { x: 100 }
 const arr = ['a', 'b', 'c']
 
-const n = null // 特殊引用类型，指针指向为空的地址
+const n = null // 特殊引用类型，指针指向为空的地址 
 
 // 特殊应用类型，但不用于存储数据，所以没有“拷贝、复制函数”这一说
 function fn() {}
+</code></pre>
+<h1 id="值类型和引用类型的区别">值类型和引用类型的区别</h1>
+<pre><code class="language-javascript">const obj1 = { x: 100, y:200 }
+const obj2 = obj1
+let x1 = obj1.x
+obj2.x = 101
+x1 = 102
+console.log(obj1.x)   // { x: 101 }
 </code></pre>
 <h1 id="typeof">typeof</h1>
 <pre><code class="language-javascript">let a                           typeof a // 'undefined'
@@ -1699,6 +1707,121 @@ typeof null             // 'object'
 typeof ['a', 'b']       // 'object'
 typeof { x: 100 }       // 'object'
 </code></pre>
+<h1 id="深拷贝">深拷贝</h1>
+<pre><code class="language-javascript">/**
+ * 深拷贝
+ */
+
+const obj1 = {
+    age: 20,
+    name: 'xxx',
+    address: {
+        city: 'beijing'
+    },
+    arr: ['a', 'b', 'c']
+}
+
+const obj2 = deepClone(obj1)
+obj2.address.city = 'shanghai'
+obj2.arr[0] = 'a1'
+console.log(obj1.address.city)
+console.log(obj1.arr[0])
+
+/**
+ * 深拷贝
+ * @param {Object} obj 要拷贝的对象
+ */
+function deepClone(obj = {}) {
+    if (typeof obj !== 'object' || obj == null) {
+        // obj 是 null ，或者不是对象和数组，直接返回
+        return obj
+    }
+
+    // 初始化返回结果
+    let result
+    if (obj instanceof Array) {
+        result = []
+    } else {
+        result = {}
+    }
+
+    for (let key in obj) {
+        // 保证 key 不是原型的属性
+        if (obj.hasOwnProperty(key)) {
+            // 递归调用！！！
+            result[key] = deepClone(obj[key])
+        }
+    }
+
+    // 返回结果
+    return result
+}
+</code></pre>
+<h1 id="原型和原型链">原型和原型链</h1>
+<pre><code class="language-javascript">// 父类
+class People {
+    constructor(name) {
+        this.name = name
+    }
+    eat() {
+        console.log(`${this.name} eat something`)
+    }
+}
+
+// 子类
+class Student extends People {
+    constructor(name, number) {
+        super(name)
+        this.number = number
+    }
+    sayHi() {
+        console.log(`姓名 ${this.name} 学号 ${this.number}`)
+    }
+}
+
+// 子类
+class Teacher extends People {
+    constructor(name, major) {
+        super(name)
+        this.major = major
+    }
+    teach() {
+        console.log(`${this.name} 教授 ${this.major}`)
+    }
+}
+
+// 实例
+const xialuo = new Student('夏洛', 100)
+console.log(xialuo.name)
+console.log(xialuo.number)
+xialuo.sayHi()
+xialuo.eat()
+
+// 实例
+const wanglaoshi = new Teacher('王老师', '语文')
+console.log(wanglaoshi.name)
+console.log(wanglaoshi.major)
+wanglaoshi.teach()
+wanglaoshi.eat()
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://chenggr.github.io/post-images/1646897786563.jpg" alt="" loading="lazy"></figure>
+<h2 id="原型关系">原型关系</h2>
+<pre><code>- 每个 class 都有显示原型 prototype
+- 每个实例都有隐式原型 __proto__
+- 实例的 __proto__ 指向对应 class 的 prototype
+</code></pre>
+<h2 id="基于原型的执行规则">基于原型的执行规则</h2>
+<pre><code>- 获取属性 xialuo.name 或执行方法 xialuo.sayhi() 时
+- 先在自身属性和方法寻找
+- 如果找不到则自动 __proto__ 中查找
+</code></pre>
+<h2 id="原型链">原型链</h2>
+<pre><code class="language-javascript">console.log( Student.prototype.__proto__ )
+console.log( People.prototype )
+console.log( People.prototype === Student.prototype.__proto__ )
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://chenggr.github.io/post-images/1646898516562.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://chenggr.github.io/post-images/1646898904237.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
