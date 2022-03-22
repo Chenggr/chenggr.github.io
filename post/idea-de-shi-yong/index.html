@@ -9,7 +9,7 @@
 <meta name="description" content="一个记录与分享的地方~">
 <meta name="theme-color" content="#000">
 <title>IDEA的使用 | chenggr&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1646900409904">
+<link rel="shortcut icon" href="/favicon.ico?v=1647932432792">
 <link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -191,7 +191,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">6</span>
+        <span class="site-item-stat-count">7</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -605,8 +605,8 @@ control + H</p>
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="javascript notes" href="https://chenggr.github.io/post/javascript-notes/">javascript notes</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="javascript notes" href="https://chenggr.github.io/post/javascript-notes/">上一篇</a>
+        <a class="nav-pc-next" title="interview questions" href="https://chenggr.github.io/post/interview-questions/">interview questions</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="interview questions" href="https://chenggr.github.io/post/interview-questions/">上一篇</a>
       
     </div>
     <div class="nav-next">
@@ -1069,6 +1069,378 @@ control + H</p>
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/js-web-api/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;JS Web API notes&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;JS基础知识，规定语法（ECMA 262 标准）&lt;br&gt;
+JS Web API，网页操作的API（W3C 标准）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DOM&lt;/li&gt;
+&lt;li&gt;BOM&lt;/li&gt;
+&lt;li&gt;事件绑定&lt;/li&gt;
+&lt;li&gt;ajax&lt;/li&gt;
+&lt;li&gt;存储&lt;/li&gt;
+&lt;/ul&gt;
+">JS Web API</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/javascript-notes/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;js基本知识笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;!--more--&gt;
+&lt;h1 id=&#34;常见值类型&#34;&gt;常见值类型&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let a // undefined
+const s = &#39;abc&#39;
+const n = 100
+const b = true
+const s = Symbol(&#39;s&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;常见引用类型&#34;&gt;常见引用类型&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const obj = { x: 100 }
+const arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+
+const n = null // 特殊引用类型，指针指向为空的地址 
+
+// 特殊应用类型，但不用于存储数据，所以没有“拷贝、复制函数”这一说
+function fn() {}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;值类型和引用类型的区别&#34;&gt;值类型和引用类型的区别&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const obj1 = { x: 100, y:200 }
+const obj2 = obj1
+let x1 = obj1.x
+obj2.x = 101
+x1 = 102
+console.log(obj1.x)   // { x: 101 }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;typeof&#34;&gt;typeof&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let a                           typeof a // &#39;undefined&#39;
+const str = &#39;abc&#39;               typeof str // &#39;string&#39;
+const n = 100                   typeof n // &#39;number&#39;
+const b = true                  typeof b // &#39;boolean&#39;
+const s = Symbol(&#39;s&#39;)           typeof s // &#39;symbol&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 能判断函数
+typeof console.log              // &#39;function&#39;
+typeof function () {}           // &#39;function&#39;
+
+// 能识别引用类型（不能再继续识别）
+typeof null             // &#39;object&#39;
+typeof [&#39;a&#39;, &#39;b&#39;]       // &#39;object&#39;
+typeof { x: 100 }       // &#39;object&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;深拷贝&#34;&gt;深拷贝&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
+ * 深拷贝
+ */
+
+const obj1 = {
+    age: 20,
+    name: &#39;xxx&#39;,
+    address: {
+        city: &#39;beijing&#39;
+    },
+    arr: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+}
+
+const obj2 = deepClone(obj1)
+obj2.address.city = &#39;shanghai&#39;
+obj2.arr[0] = &#39;a1&#39;
+console.log(obj1.address.city)
+console.log(obj1.arr[0])
+
+/**
+ * 深拷贝
+ * @param {Object} obj 要拷贝的对象
+ */
+function deepClone(obj = {}) {
+    if (typeof obj !== &#39;object&#39; || obj == null) {
+        // obj 是 null ，或者不是对象和数组，直接返回
+        return obj
+    }
+
+    // 初始化返回结果
+    let result
+    if (obj instanceof Array) {
+        result = []
+    } else {
+        result = {}
+    }
+
+    for (let key in obj) {
+        // 保证 key 不是原型的属性
+        if (obj.hasOwnProperty(key)) {
+            // 递归调用！！！
+            result[key] = deepClone(obj[key])
+        }
+    }
+
+    // 返回结果
+    return result
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;原型和原型链&#34;&gt;原型和原型链&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 父类
+class People {
+    constructor(name) {
+        this.name = name
+    }
+    eat() {
+        console.log(`${this.name} eat something`)
+    }
+}
+
+// 子类
+class Student extends People {
+    constructor(name, number) {
+        super(name)
+        this.number = number
+    }
+    sayHi() {
+        console.log(`姓名 ${this.name} 学号 ${this.number}`)
+    }
+}
+
+// 子类
+class Teacher extends People {
+    constructor(name, major) {
+        super(name)
+        this.major = major
+    }
+    teach() {
+        console.log(`${this.name} 教授 ${this.major}`)
+    }
+}
+
+// 实例
+const xialuo = new Student(&#39;夏洛&#39;, 100)
+console.log(xialuo.name)
+console.log(xialuo.number)
+xialuo.sayHi()
+xialuo.eat()
+
+// 实例
+const wanglaoshi = new Teacher(&#39;王老师&#39;, &#39;语文&#39;)
+console.log(wanglaoshi.name)
+console.log(wanglaoshi.major)
+wanglaoshi.teach()
+wanglaoshi.eat()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646897786563.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;原型关系&#34;&gt;原型关系&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;- 每个 class 都有显示原型 prototype
+- 每个实例都有隐式原型 __proto__
+- 实例的 __proto__ 指向对应 class 的 prototype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;基于原型的执行规则&#34;&gt;基于原型的执行规则&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;- 获取属性 xialuo.name 或执行方法 xialuo.sayhi() 时
+- 先在自身属性和方法寻找
+- 如果找不到则自动 __proto__ 中查找
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;原型链&#34;&gt;原型链&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log( Student.prototype.__proto__ )
+console.log( People.prototype )
+console.log( People.prototype === Student.prototype.__proto__ )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646898516562.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646898904237.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;作用域和闭包&#34;&gt;作用域和闭包&lt;/h1&gt;
+&lt;h2 id=&#34;作用域和自由变&#34;&gt;作用域和自由变&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 自由变量
+当前作用域没有定义的变量，但是使用了，需去查找
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let i, a;
+for (i = 0; i &amp;lt; 10; i++) {
+  a = document.createElement(&amp;quot;a&amp;quot;);
+  a.innerHTML = i + &amp;quot;&amp;lt;br&amp;gt;&amp;quot;;
+  a.addEventListener(&amp;quot;click&amp;quot;, function (e) {
+    e.preventDefault();
+    alert(i);
+  });
+  document.body.appendChild(a);
+}
+// 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;闭包&#34;&gt;闭包&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在函数定义的地方，向上级作用域查找&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 函数作为返回值
+function create() {
+    const a = 100
+    return function () {
+        console.log(a)
+    }
+}
+
+const fn = create()
+const a = 200
+fn() // 100
+
+// 函数作为参数被传递
+function print(fn) {
+    const a = 200
+    fn()
+}
+const a = 100
+function fn() {
+    console.log(a)
+}
+print(fn) // 100
+
+// 所有的自由变量的查找，是在函数定义的地方，向上级作用域查找
+// 不是在执行的地方！！！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;this&#34;&gt;this&lt;/h2&gt;
+&lt;p&gt;this在执行的时候确定的&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作为普通函数&lt;/li&gt;
+&lt;li&gt;使用call apply bind&lt;/li&gt;
+&lt;li&gt;作为对象方法被调用&lt;/li&gt;
+&lt;li&gt;在 class 方法中调用&lt;/li&gt;
+&lt;li&gt;箭头函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function fn1() {
+    console.log(this)
+}
+fn1()   // window
+
+fn1.call({ x: 100 }) // { x: 100 }
+
+const fn2 = fn1.bind({ x: 200 })
+fn2()   // { x: 200 }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const zhangsan = {
+    name: &#39;张三&#39;,
+    sayHi() {
+        // this 即当前对象
+        console.log(this)
+    },
+    wait() {
+        setTimeout(function() {
+            // this === window
+            console.log(this)
+        })
+    }
+}
+const zhangsan = {
+    name: &#39;张三&#39;,
+    sayHi() {
+        // this 即当前对象
+        console.log(this)
+    },
+    waitAgain() {
+        setTimeout(() =&amp;gt; {
+            // this 即当前对象
+            console.log(this)
+        })
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class People {
+    constructor(name) {
+        this.name = name
+        this.age = 20
+    }
+    sayHi() {
+        console.log(this)
+    }
+}
+const zhangsan = new People(&#39;张三‘)
+zhangsan.sayHi()    // zhangsan 对象
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;手写bind&#34;&gt;手写bind&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 模拟 bind
+Function.prototype.bind1 = function () {
+    // 将参数拆解为数组
+    const args = Array.prototype.slice.call(arguments)
+
+    // 获取 this（数组第一项）
+    const t = args.shift()
+
+    // fn1.bind(...) 中的 fn1
+    const self = this
+
+    // 返回一个函数
+    return function () {
+        return self.apply(t, args)
+    }
+}
+
+function fn1(a, b, c) {
+    console.log(&#39;this&#39;, this)
+    console.log(a, b, c)
+    return &#39;this is fn1&#39;
+}
+
+const fn2 = fn1.bind1({x: 100}, 10, 20, 30)
+const res = fn2()
+console.log(res)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;闭包的应用&#34;&gt;闭包的应用&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 闭包隐藏数据，只提供 API
+function createCache() {
+    const data = {} // 闭包中的数据，被隐藏，不被外界访问
+    return {
+        set: function (key, val) {
+            data[key] = val
+        },
+        get: function (key) {
+            return data[key]
+        }
+    }
+}
+
+const c = createCache()
+c.set(&#39;a&#39;, 100)
+console.log( c.get(&#39;a&#39;) )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;异步和单线程&#34;&gt;异步和单线程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;异步和同步的区别&lt;/li&gt;
+&lt;li&gt;异步的应用场景：网络请求&amp;amp;定时任务&lt;/li&gt;
+&lt;li&gt;Promise 解决 callback hell&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function loadImg(src) {
+    const p = new Promise(
+        (resolve, reject) =&amp;gt; {
+            const img = document.createElement(&#39;img&#39;)
+            img.onload = () =&amp;gt; {
+                resolve(img)
+            }
+            img.onerror = () =&amp;gt; {
+                const err = new Error(`图片加载失败 ${src}`)
+                reject(err)
+            }
+            img.src = src
+        }
+    )
+    return p
+}
+
+const url1 = &#39;https://img.mukewang.com/5a9fc8070001a82402060220-140-140.jpg&#39;
+const url2 = &#39;https://img3.mukewang.com/5a9fc8070001a82402060220-100-100.jpg&#39;
+
+loadImg(url1).then(img1 =&amp;gt; {
+    console.log(img1.width)
+    return img1 // 普通对象
+}).then(img1 =&amp;gt; {
+    console.log(img1.height)
+    return loadImg(url2) // promise 实例
+}).then(img2 =&amp;gt; {
+    console.log(img2.width)
+    return img2
+}).then(img2 =&amp;gt; {
+    console.log(img2.height)
+}).catch(ex =&amp;gt; console.error(ex))
+
+&lt;/code&gt;&lt;/pre&gt;
+">javascript basic knowledge notes</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/interview-questions/"" data-c="
@@ -2704,170 +3076,6 @@ methods: {
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;，&lt;/p&gt;
 ">interview questions</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/javascript-notes/"" data-c="
-          &lt;blockquote&gt;
-&lt;p&gt;知识笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;!--more--&gt;
-&lt;h1 id=&#34;常见值类型&#34;&gt;常见值类型&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let a // undefined
-const s = &#39;abc&#39;
-const n = 100
-const b = true
-const s = Symbol(&#39;s&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;常见引用类型&#34;&gt;常见引用类型&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const obj = { x: 100 }
-const arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-
-const n = null // 特殊引用类型，指针指向为空的地址 
-
-// 特殊应用类型，但不用于存储数据，所以没有“拷贝、复制函数”这一说
-function fn() {}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;值类型和引用类型的区别&#34;&gt;值类型和引用类型的区别&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;const obj1 = { x: 100, y:200 }
-const obj2 = obj1
-let x1 = obj1.x
-obj2.x = 101
-x1 = 102
-console.log(obj1.x)   // { x: 101 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;typeof&#34;&gt;typeof&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let a                           typeof a // &#39;undefined&#39;
-const str = &#39;abc&#39;               typeof str // &#39;string&#39;
-const n = 100                   typeof n // &#39;number&#39;
-const b = true                  typeof b // &#39;boolean&#39;
-const s = Symbol(&#39;s&#39;)           typeof s // &#39;symbol&#39; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 能判断函数
-typeof console.log              // &#39;function&#39;
-typeof function () {}           // &#39;function&#39;
-
-// 能识别引用类型（不能再继续识别）
-typeof null             // &#39;object&#39;
-typeof [&#39;a&#39;, &#39;b&#39;]       // &#39;object&#39;
-typeof { x: 100 }       // &#39;object&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;深拷贝&#34;&gt;深拷贝&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;/**
- * 深拷贝
- */
-
-const obj1 = {
-    age: 20,
-    name: &#39;xxx&#39;,
-    address: {
-        city: &#39;beijing&#39;
-    },
-    arr: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-}
-
-const obj2 = deepClone(obj1)
-obj2.address.city = &#39;shanghai&#39;
-obj2.arr[0] = &#39;a1&#39;
-console.log(obj1.address.city)
-console.log(obj1.arr[0])
-
-/**
- * 深拷贝
- * @param {Object} obj 要拷贝的对象
- */
-function deepClone(obj = {}) {
-    if (typeof obj !== &#39;object&#39; || obj == null) {
-        // obj 是 null ，或者不是对象和数组，直接返回
-        return obj
-    }
-
-    // 初始化返回结果
-    let result
-    if (obj instanceof Array) {
-        result = []
-    } else {
-        result = {}
-    }
-
-    for (let key in obj) {
-        // 保证 key 不是原型的属性
-        if (obj.hasOwnProperty(key)) {
-            // 递归调用！！！
-            result[key] = deepClone(obj[key])
-        }
-    }
-
-    // 返回结果
-    return result
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;原型和原型链&#34;&gt;原型和原型链&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// 父类
-class People {
-    constructor(name) {
-        this.name = name
-    }
-    eat() {
-        console.log(`${this.name} eat something`)
-    }
-}
-
-// 子类
-class Student extends People {
-    constructor(name, number) {
-        super(name)
-        this.number = number
-    }
-    sayHi() {
-        console.log(`姓名 ${this.name} 学号 ${this.number}`)
-    }
-}
-
-// 子类
-class Teacher extends People {
-    constructor(name, major) {
-        super(name)
-        this.major = major
-    }
-    teach() {
-        console.log(`${this.name} 教授 ${this.major}`)
-    }
-}
-
-// 实例
-const xialuo = new Student(&#39;夏洛&#39;, 100)
-console.log(xialuo.name)
-console.log(xialuo.number)
-xialuo.sayHi()
-xialuo.eat()
-
-// 实例
-const wanglaoshi = new Teacher(&#39;王老师&#39;, &#39;语文&#39;)
-console.log(wanglaoshi.name)
-console.log(wanglaoshi.major)
-wanglaoshi.teach()
-wanglaoshi.eat()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646897786563.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;原型关系&#34;&gt;原型关系&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;- 每个 class 都有显示原型 prototype
-- 每个实例都有隐式原型 __proto__
-- 实例的 __proto__ 指向对应 class 的 prototype
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;基于原型的执行规则&#34;&gt;基于原型的执行规则&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;- 获取属性 xialuo.name 或执行方法 xialuo.sayhi() 时
-- 先在自身属性和方法寻找
-- 如果找不到则自动 __proto__ 中查找
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;原型链&#34;&gt;原型链&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log( Student.prototype.__proto__ )
-console.log( People.prototype )
-console.log( People.prototype === Student.prototype.__proto__ )
-&lt;/code&gt;&lt;/pre&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646898516562.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://chenggr.github.io/post-images/1646898904237.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
-">javascript notes</a>
       </div>
       
       <div class="item">

@@ -2186,7 +2186,8 @@ body {
     }.site-meta{padding:0 4px}
 #busuanzi_container_site_pv{display:none;}
 #busuanzi_container_site_uv{display:none;}
-.post-meta-divider{display:none;}.box-shadow-wrapper {
+.post-meta-divider{display:none;}
+.post-body .post-button a.btn:hover{color:#fff;}.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
       cursor: default;
