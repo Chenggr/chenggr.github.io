@@ -9,7 +9,7 @@
 <meta name="description" content="一个记录与分享的地方~">
 <meta name="theme-color" content="#000">
 <title>interview questions | chenggr&#39;s blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1647996695631">
+<link rel="shortcut icon" href="/favicon.ico?v=1654137350832">
 <link rel="stylesheet" href="/media/css/mist.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -80,6 +80,8 @@
           
             
             
+              
+            
             <li class="nav-item ">
               
               
@@ -90,6 +92,8 @@
             </li>
           
             
+            
+              
             
             <li class="nav-item ">
               
@@ -102,6 +106,8 @@
           
             
             
+              
+            
             <li class="nav-item ">
               
               
@@ -113,6 +119,8 @@
           
             
             
+              
+            
             <li class="nav-item ">
               
               
@@ -122,6 +130,16 @@
               
             </li>
           
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
           
           
             <li id="fa_search" class="nav-item">
@@ -191,7 +209,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">7</span>
+        <span class="site-item-stat-count">8</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -209,8 +227,6 @@
     </div>
   </div>
   
-  
-
   
 
 
@@ -2426,6 +2442,27 @@ methods: {
             
             
   
+    
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'bf14af681b9289b831fc',
+    clientSecret: '02ef39416b2dffde8686e406e07be42ccde8876b',
+    repo: 'gitalk-comments',
+    owner: 'Chenggr',
+    admin: ['Chenggr'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+    
+    
+  
 
           </div>
         </div>
@@ -2874,6 +2911,640 @@ methods: {
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/gin/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;interview questions 2 for zhouzhe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;JSONP  含义&lt;br&gt;
+根据浏览器同源策略，所谓同源就是协议、主机、端口号都相同时成为同源。a 域的js不能直接访问 b域名的信息，但是script 标签的src属性可以跨域引用文件，jsonp是请求之后后台包装好一段json，并且把数据放在一个callback函数，返回一个js文件，动态引入这个文件，下载完成js之后，会去调用这个callback,通过这样访问数据。&lt;/p&gt;
+&lt;p&gt;JSONP有什么用&lt;br&gt;
+由于同源从略的限制，XMLHttpRequest只允许请求前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后再服务端输出JSON数据并执行回调函数，从而解决跨域数据请求&lt;/p&gt;
+&lt;p&gt;Vue  传值方法(6种)&lt;br&gt;
+属性传值  $refs  &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;通&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;知&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;广&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;播&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;本&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;地&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;路&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;由&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;关&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;系&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;分&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;为&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;三&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;种&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;父&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;、&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;兄&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;弟&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;、&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;无&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;关&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;系&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;可&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;类&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;型&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;固&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;定&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;绑&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;定&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;属&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;性&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;方&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;法&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;本&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;类&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;对&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;象&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;给&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;父&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;：&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;parent  通知传值(广播传值)  本地传值  路由传值
+组件关系分为三种 : 父子组件、兄弟组件、无关系组件
+可传值类型 :  固定值  绑定属性  方法  本类对象
+子组件传给父组件：&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;通&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;知&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;广&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;播&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;本&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;地&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;路&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;由&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;关&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;系&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;分&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;为&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;三&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;种&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;父&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;兄&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;弟&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;、&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;无&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;关&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;系&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;可&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;类&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;型&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;固&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;定&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;绑&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;定&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;属&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;性&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;方&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;法&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;本&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;类&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;象&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;给&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;父&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;：&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;emit方法传递参数&lt;br&gt;
+父传子：（绑定动态属性，子通过props传递）&lt;br&gt;
+父获取子：（调用子组件的时候调用一个ref，在父组件中通过this.&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;属&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;性&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;/&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;方&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;法&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;）&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;获&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;取&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;父&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;：&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;（&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;通&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;过&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;refs.header.属性/.方法）
+子获取父：（子通过&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;属&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;性&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;方&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;法&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;）&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;获&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;取&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;父&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;（&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;通&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;过&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;parent获取父组件的数据和方法，子中使用this.&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;）&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;非&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;父&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;间&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;数&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;据&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;递&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;兄&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;弟&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;就&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;是&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;创&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;建&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;一&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;个&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;事&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;中&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;心&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;相&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;当&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;于&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;中&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;转&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;站&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;可&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;以&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;它&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;来&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;递&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;事&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;和&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;接&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;收&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;事&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;。&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;项&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;目&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;比&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;较&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;小&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;时&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;这&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;个&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;比&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;较&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;合&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;适&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;。&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;（&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;虽&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;然&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;也&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;有&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;不&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;少&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;人&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;推&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;荐&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;直&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;接&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;具&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;体&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;来&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;说&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;看&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;需&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;求&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;咯&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;。&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;技&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;术&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;只&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;是&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;手&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;段&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;目&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;达&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;到&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;才&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;是&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;王&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;道&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;。&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;）&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;通&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;知&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;值&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;：&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;只&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;基&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;本&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;数&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;据&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;类&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;型&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;不&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;能&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;传&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;方&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;法&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;。&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;新&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;建&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;一&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;个&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;文&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;然&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;后&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;引&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;入&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;实&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;例&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;化&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;最&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;后&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;暴&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;露&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;这&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;个&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;实&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;例&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;在&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;要&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;广&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;播&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;地&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;方&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;引&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;入&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;刚&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;才&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;定&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;义&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;实&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;例&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;通&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;过&lt;/mi&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;parent.XX）
+非父子组件间的数据传递，兄弟组件传值
+eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适。（虽然也有不少人推荐直接用VUEX，具体来说看需求咯。技术只是手段，目的达到才是王道。）
+通知传值：只传基本数据类型，不能传方法。新建一个js文件 然后引入vue 实例化vue 最后暴露这个实例，在要广播的地方引入刚才定义的实例，通过 VueEmit.&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;）&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;非&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;父&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;间&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;据&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;递&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;兄&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;弟&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;就&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;创&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;建&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;一&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;个&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;事&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;中&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;心&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;相&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;当&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;于&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;中&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;转&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;站&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;可&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;以&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;它&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;来&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;递&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;事&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;和&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;接&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;收&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;事&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;项&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;目&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;比&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;较&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;小&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;时&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;这&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;个&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;比&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;较&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;合&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;适&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;（&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;虽&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;然&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;也&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;有&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;不&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;少&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;人&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;推&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;荐&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;直&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;接&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;具&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;体&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;来&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;说&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;看&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;需&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;求&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;咯&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;技&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;术&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;只&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;手&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;段&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;目&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;达&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;到&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;才&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;王&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;道&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;）&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;通&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;知&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;值&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;只&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;基&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;本&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;据&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;类&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;型&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;不&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;能&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;传&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;方&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;法&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;。&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;新&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;建&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;一&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;个&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;文&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;然&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;后&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;引&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;入&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;实&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;例&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;化&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;最&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;后&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;暴&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;露&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;这&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;个&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;实&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;例&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;在&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;要&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;广&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;播&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;地&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;方&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;引&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;入&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;刚&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;才&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;定&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;义&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;实&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;例&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;通&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;过&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;emit(&#39;名称&#39;,&#39;数据&#39;)传播数据，在接收收数据的地方通过&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;接&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;收&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;广&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;播&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;数&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;据&lt;/mi&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;on接收广播的数据VueEmit.&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;接&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;收&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;广&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;播&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;据&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.22222em;&#34;&gt;V&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;on(&#39;名称&#39;,function(){}&lt;br&gt;
+本地传值：localStorage： String(可通过JSON进行json数据与String之间的转化)&lt;br&gt;
+Vuex:方法、数据、异步方法&lt;br&gt;
+路由传值 ：父组件push使用this.&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;在&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;中&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;获&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;取&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;参&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;数&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;时&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;是&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;router.push，在子组件中获取参数时是this.&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;在&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;中&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;获&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;取&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;参&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;时&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;route.params&lt;/p&gt;
+&lt;p&gt;VueX（状态管理器---数据传递）&lt;br&gt;
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 devtools extension，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。&lt;br&gt;
+state, getters, mutations, actions, modules。（5大属性）&lt;br&gt;
+　　1. state：vuex的基本数据，用来存储变量&lt;br&gt;
+　　 2. geeter：从基本数据(state)派生的数据，相当于state的计算属性&lt;br&gt;
+　　 3. mutation：提交更新数据的方法，必须是同步的(如果需要异步使用action)。每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。&lt;br&gt;
+　　 回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数，提交载荷作为第二个参数。&lt;br&gt;
+　　 4. action：和mutation的功能大致相同，不同之处在于 ==》1. Action 提交的是 mutation，而不是直接变更状态。 2. Action 可以包含任意异步操作。&lt;br&gt;
+　　  5. modules：模块化vuex，可以让每一个模块拥有自己的state、mutation、action、getters,使得结构非常清晰，方便管理。&lt;/p&gt;
+&lt;p&gt;一般中大型单页应用，如果需要考虑如何更好地在组件外部管理状态，就使用vuex&lt;br&gt;
+状态管理包含三点：state，驱动应用的数据源&lt;br&gt;
+view，以声明方式将 state 映射到视图&lt;br&gt;
+actions，响应在 view 上的用户输入导致的状态变化&lt;br&gt;
+使用及数据传递：vuex文件夹里新建一个store.js---安装-- -store.js 中引入vue、vuex 引入vuex 并且use---定义数据 state在vuex中用于存储数据---定义方法 mutations里边放的是方法,方法主要用于改变state里边的数据---实例化 vuex---对外暴露---在需要用的地方引入---注册store ，放在methods,data同级---使用vuex&lt;br&gt;
+使用数据： this.$store.state.count&lt;br&gt;
+调用方法： this.$store.commit(&#39;incCount&#39;)&lt;/p&gt;
+&lt;p&gt;在Vue组件中获得Vuex属性、我们可以通过Vue的Computed获得Vuex的state&lt;/p&gt;
+&lt;p&gt;Vue生命周期钩子函数&lt;br&gt;
+应用场景：&lt;br&gt;
+beforeCreate 可以在此时加一些loading效果，在created时进行移除&lt;br&gt;
+created 需要异步请求数据的方法可以在此时执行，完成数据的初始化&lt;br&gt;
+mounted 当需要操作dom的时候执行，可以配合$.nextTick 使用进行单一事件对数据的更新后更新dom&lt;br&gt;
+updated 当数据更新需要做统一业务处理的时候使用&lt;/p&gt;
+&lt;p&gt;Vue双向绑定原理&lt;br&gt;
+VUE实现双向数据绑定的原理就是利用了 Object.defineProperty() 这个方法重新定义了对象获取属性值(get)和设置属性值(set)的操作来实现的。它接收三个参数，要操作的对象，要定义或修改的对象属性名，属性描述符。重点就是最后的属性描述符。属性描述符是一个对象，主要有两种形式：数据描述符和存取描述符。这两种对象只能选择一种使用，不能混合两种描述符的属性同时使用。上面说的get和set就是属于存取描述符对象的属性。&lt;/p&gt;
+&lt;p&gt;前端优化方案&lt;br&gt;
+内容优化 减少HTTP请求数（合并多个CSS文件和js文件，使用 data：URL scheme在实际的页面嵌入图像数据 )，合理设置HTTP缓存等）&lt;br&gt;
+减少DNS查找：最理想的方法就是将所有的内容资源都放在同一个域&lt;br&gt;
+避免重定向：在定义链接地址的href属性的时候，尽量使用最完整直接的地址&lt;br&gt;
+使用Ajax缓存：ajax缓存只对GET方式的请求有效&lt;br&gt;
+避免404：把缺少的网页文件恢复到正确的位置，重新设置网络服务&lt;br&gt;
+懒加载组件：懒加载的主要目的是优化前端性能，减少请求数或延迟请求数（纯粹的延迟加载，使用setTimeOut或者setInterval 进行加载延迟，条件加载，符合某些条件，或者触发了某些事件才开始异步下载，可视区加载，即仅加载可以看到的区域，监控滚动条实现）&lt;br&gt;
+预加载组件：预加载是牺牲前端性能，换取用户体验，使用户的操作得到最快的反映，仅使用JavaScript实现预加载；使用Ajax实现预加载。 懒加载的主要目的是优化前端性能，减少请求数或延迟请求数&lt;br&gt;
+减少DOM元素数量：减少不必要的内容，如果数据量大，可以考虑分页，或者按需加载&lt;/p&gt;
+&lt;p&gt;服务器优化：对Ajax请求使用GET方法，使用内容分发网络（CDN）：把网站内容分散到多个、处于不同地域位置的服务器上可以加快下载速度&lt;br&gt;
+Cookie优化：减小Cookie大小，针对Web组件使用域名无关的Cookie&lt;br&gt;
+Css优化：避免使用CSS表达式，使用&lt;link&gt;来代替@import，将CSS代码放在HTML页面的顶部&lt;br&gt;
+javascript优化 :时间委托减少循环绑定事件, onclick，onmouseover，onmouseout(冒泡原理)&lt;br&gt;
+图像优化: 尝试把GIF格式转换成PNG格式，看看是否节省空间,精灵图等&lt;/p&gt;
+&lt;p&gt;Es6&lt;br&gt;
+1.变量声明：let表示声明局部变量，而const表示声明常量（不可更改）&lt;br&gt;
+2.模板字符串：将表达式嵌入字符串中进行拼接。用${}来界定，ES6反引号(``)直接搞定&lt;br&gt;
+3.箭头函数：箭头函数就是函数的一种简写形式，使用括号包裹参数，跟随一个 =&amp;gt;，紧接着是函数体（不需要 function 关键字来创建函数，省略 return 关键字，继承当前上下文的 this 关键字）当你的函数有且仅有一个参数的时候，是可以省略掉括号的。当你函数返回有且仅有一个表达式的时候可以省略{} 和 return）&lt;br&gt;
+4. 对象和数组解构、函数的参数默认值、class类、二进制和八进制字面量&lt;br&gt;
+5. for...of 和 for...in：（for...of 用于遍历一个迭代器，如数组，for...in 用来遍历对象中的属性）&lt;br&gt;
+6.Promise&lt;/p&gt;
+&lt;p&gt;This的指向（4种）&lt;br&gt;
+1.如果是一般函数,this指向全局对象window&lt;br&gt;
+2.在严格模式下&amp;quot;use strict&amp;quot;,为undefined&lt;br&gt;
+3.对象的方法里调用,this指向调用该方法的对象&lt;br&gt;
+4.构造函数里的this,指向创建出来的实例.&lt;br&gt;
+定时器中的this，指向的是window&lt;br&gt;
+元素绑定事件，事件触发后，执行的函数中的this，指向的是当前元素&lt;br&gt;
+函数调用时如果绑定了bind，那么函数中的this指向了bind中绑定的元素&lt;br&gt;
+对象中的方法，该方法被哪个对象调用了，那么方法中的this就指向该对象&lt;/p&gt;
+&lt;p&gt;bind、call、apply 改变 this 的指向&lt;br&gt;
+bind 和 call 、apply 的区别：bind 返回的是一个新的函数，并未立即执行原函数。call、apply 会立即执行原函数。&lt;br&gt;
+call 和 apply 的区别：call 的参数需要一个个写上，apply 的参数是一个数组。&lt;br&gt;
+优先级：（显式绑定：call、apply、bind、new）（隐式绑定：根据调用关系确定 this 指向）（new 绑定的优先级比 bind 绑定高）（箭头函数的优先级比 call、apply 高）&lt;/p&gt;
+&lt;p&gt;Promise&lt;br&gt;
+Promise是异步编程的一种解决方案&lt;br&gt;
+用途：1.用于异步计算&lt;br&gt;
+2. 可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果&lt;br&gt;
+3. 以在对象之间传递和操作promise，帮助我们处理队列。&lt;br&gt;
+方法：&lt;br&gt;
+1.then方法：then方法返回的是一个新的promise实例&lt;br&gt;
+2.catch方法：catch方法是在promise发生错误时的回调&lt;br&gt;
+3.finally方法：finally方法指定无论最后promise最后状态如何都会执行的函数&lt;br&gt;
+4.all方法：all方法用于将多个实例包装成一个新的promise实例&lt;br&gt;
+5.race方法：race方法同样是将多个实例包装成一个新的实例&lt;br&gt;
+6.reject方法：reject方法会返回一个新的实例，状态为rejected。回调函数立即执行&lt;br&gt;
+7.try方法：在实际开发中遇到无法区分函数是同步还是异步操作时，但是还想用promise来处理，可以使用try方法&lt;br&gt;
+8.resolve方法：将现有对象转为promise对象，它的参数分为四种（1、参数是一个promise实例；如果参数是promise实例，则不作修改，原样返回。2、参数是一个thenable对象，是指由then方法的对象；该方法会将这个对象转为promise对象，然后立即执行then方法 。3、如果不是具有then方法的对象或者根本不是对象；如果参数是一个原始值，或者是一个不具有then方法的对象，则promise。resolve方法返回一个新的promise对象，状态为resolved。4、不带有任何参数；如果不带有任何参数会直接返回一个resolved状态的promise对象。）&lt;br&gt;
+9.allSettled方法：allSettled方法接收一组promise实例作为参数，包装成一个新的实例&lt;br&gt;
+10.any方法：接收一组promise实例作为参数，只要有一个变为fulfilled状态，包装的实例就会变成fulfilled状态，如果所有的参数都变成rejected状态，就会变成rejected状态。&lt;/p&gt;
+&lt;p&gt;Promise对象只有三种状态：异步操作“未完成”（pending），异步操作“已完成”（resolved，又称fulfilled），异步操作“失败”（rejected）&lt;br&gt;
+Promise对象有两个特点：1.对象的状态不受外界影响&lt;br&gt;
+2.一旦状态改变，就不会再变，任何时候都可以得到这个结果&lt;br&gt;
+使用注意事项：&lt;br&gt;
+1.Promise构造函数内的同步代码立即执行&lt;br&gt;
+2.回调函数参数resolve异步执行, 将结果作为参数传给then方法中的回调函数&lt;br&gt;
+3. resolve只有第一次执行有效,状态不能二次改变&lt;br&gt;
+4. then和catch如果有return, 返回的是一个全新的promise对象, 可以链式调用&lt;br&gt;
+5. Promise构造函数只会执行一次, promise实例会保存resolve的状态,以后这个实例每次调用then都是返回一个这个状态, 若链式调用then,下一个则会打印undefined, res没有值...&lt;br&gt;
+6. then中返回任意一个非 promise 的值都会被包裹成 promise 对象&lt;br&gt;
+7. .then 或 .catch 返回的值不能是 promise 本身，否则会造成死循环&lt;br&gt;
+8. .then 或者 .catch 的参数期望是函数，传入非函数则会发生值穿透&lt;br&gt;
+9. .then 可以接收两个参数，第一个是处理成功的函数，第二个是处理错误的函数。.catch 是 .then 第二个参数的简便写法，但是它们用法上有一点需要注意：.then 的第二个处理错误的函数捕获不了第一个处理成功的函数抛出的错误，而后续的 .catch 可以捕获之前的错误。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;JS继承	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;原型链继承（利用原型让一个引用类型继承另外一个引用类型的属性和方法）&lt;br&gt;
+不足之处：①创建实例时不能传递参数。②所有属性都被实例共享&lt;br&gt;
+1.prototype: 这是一个属性，在javascript中的每一个函数都会有一个prototype属性，普通的对象是没有这个属性的。构造函数的prototype属性的属性值就是该构造函数而创建的实例的原型。&lt;br&gt;
+2.2. &lt;strong&gt;proto&lt;/strong&gt;: 每一个JavaScript对象（除了null）都具有的一个属性，叫 &lt;strong&gt;proto&lt;/strong&gt;,这个属性会指向该对象的原型&lt;br&gt;
+3.3. constructor: 每一个原型都有一个constructor属性指向关联的构造函数。&lt;/p&gt;
+&lt;p&gt;借用构造函数继承:&lt;br&gt;
+使用.call()和.apply()将父类构造函数引入子类函数，使用父类的构造函数来增强子类实例，等同于复制父类的实例给子类&lt;br&gt;
+(优点：可以传递参数，避免了引用类型共享&lt;br&gt;
+缺点：方法都在构造函数中定义，每次创建实例都会创建一遍方法)&lt;/p&gt;
+&lt;p&gt;组合继承: 将原型链继承和构造函数继承这两种模式的优点组合在一起，通过调用父类构造，继承父类的属性并保留传参，然后通过将父类实例作为子类原型，实现函数复用。&lt;br&gt;
+优点：融合了原型继承和构造函数继承，是JavaScript中常用的设计模式。&lt;br&gt;
+缺点：调用两次父构造函数&lt;/p&gt;
+&lt;p&gt;原型式继承: 用一个函数包装一个对象，然后返回这个函数的调用，这个函数就变成了个可以随意增添属性的实例或对象。object.create()就是这个原理,直接将某个对象直接赋值给构造函数的原型。&lt;/p&gt;
+&lt;p&gt;寄生式继承: 创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，最后返回构造函数。(就像给原型式继承外面套了个壳子，然后return出来)&lt;/p&gt;
+&lt;p&gt;寄生组合式继承: 通过借用构造函数传递参数和寄生模式实现继承属性，通过原型链的混成形式来继承方法，在函数中用apply或者call引入另一个构造函数，可传参。&lt;br&gt;
+开发人员普遍认为寄生组合式继承是最理想的继承范式&lt;/p&gt;
+&lt;p&gt;JS闭包&lt;br&gt;
+闭包是指有权访问另外一个函数作用域中的变量的函数(能够读取其他函数内部变量的函数)&lt;br&gt;
+创建闭包最常见的方式函数作为返回值&lt;br&gt;
+闭包的作用: &lt;br&gt;
+1.让我们在全局作用域中访问局部变量&lt;br&gt;
+2.让局部变量一直驻留在计算机的内存中	&lt;br&gt;
+3.正常函数执行完毕后,里面声明的变量被垃圾回收处理掉,但是闭包可以让作用域里的变量,在函数执行完之后依旧保持没有被垃圾回收处理掉&lt;br&gt;
+特性：&lt;br&gt;
+①函数嵌套函数&lt;br&gt;
+②函数内部可以引用函数外部的参数和变量&lt;br&gt;
+③参数和变量不会被垃圾回收机制回收&lt;br&gt;
+④&lt;/p&gt;
+&lt;p&gt;J S 跨域 （同源指 协议+域名+端口 三者相同）&lt;br&gt;
+跨域解决方案&lt;br&gt;
+1、 通过jsonp跨域&lt;br&gt;
+2、 document.domain + iframe跨域（此方案仅限主域相同，子域不同的跨域应用场景）&lt;br&gt;
+3、 location.hash + iframe（location.hash来进行传值）&lt;br&gt;
+4、 window.name + iframe跨域&lt;br&gt;
+5、 postMessage跨域&lt;br&gt;
+6、 跨域资源共享（CORS）&lt;br&gt;
+7、 nginx代理跨域&lt;br&gt;
+8、 nodejs中间件代理跨域&lt;br&gt;
+9、 WebSocket协议跨域&lt;br&gt;
+10、动态创建script（因为script标签不受同源策略的限制）&lt;/p&gt;
+&lt;p&gt;单页面、多页面应用的区别&lt;br&gt;
+单页面应用&lt;br&gt;
+一个项目中只有一个完整的html页面，其他的都是部分的html片段组成。页面跳转只是局部刷新，不会重新加载全部资源。片段之间的切换快，比较容易实现转场动画。&lt;br&gt;
+多页面应用&lt;br&gt;
+一个项目是由多个完整的html页面组成，页面跳转所有的资源都要重新加载，页面之间的切换会出现卡顿空白的问题，不容易实现切换动画等。&lt;/p&gt;
+&lt;p&gt;vue-router有哪几种导航钩子？(路由守卫)&lt;br&gt;
+第一种：是全局导航钩子：router.beforeEach(to,from,next)，作用：跳转前进行判断拦截。&lt;br&gt;
+第二种：组件内的钩子 beforeRouteEnter、 beforeRouteUpdate、 beforeRouteLeave&lt;br&gt;
+第三种：单独路由独享组件beforeEnter&lt;/p&gt;
+&lt;p&gt;vue组件的功能&lt;br&gt;
+1.能够把页面抽象成多个相对独立的模块&lt;br&gt;
+2.实现代码重用，提高开发效率和代码质量，使得代码易于维护&lt;br&gt;
+Vue组件封装过程&lt;br&gt;
+● 首先，使用Vue.extend()创建一个组件&lt;br&gt;
+● 然后，使用Vue.component()方法注册组件&lt;br&gt;
+● 接着，如果子组件需要数据，可以在props中接受定义&lt;br&gt;
+● 最后，子组件修改好数据之后，想把数据传递给父组件，可以使用emit()方法&lt;/p&gt;
+&lt;p&gt;从输入URL到浏览器显示页面发生了什么&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;输入网址&lt;/li&gt;
+&lt;li&gt;游览器查找域名的IP地址（DSN请求）&lt;/li&gt;
+&lt;li&gt;建立TCP链接（三次握手----客户端发送一个带有SYN标志的数据包给服务端，服务端收到后，回传一个带有SYN/ACK标志的数据包以示传达确认信息，最后客户端再回传一个带ACK标志的数据包，代表握手结束，连接成功）&lt;/li&gt;
+&lt;li&gt;游览器向WEB服务器发起Http请求（请求方法URI协议/版本、请求头(Request Header)、请求正文）&lt;/li&gt;
+&lt;li&gt;服务器端处理&lt;/li&gt;
+&lt;li&gt;关闭TCP链接（4次握手）&lt;/li&gt;
+&lt;li&gt;游览器解析资源&lt;/li&gt;
+&lt;li&gt;游览器布局渲染&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;webpack可以看做是模块打包工具：它将各种静态资源（比如：JavaScript 文件，图片文件，样式文件等）视为模块，它能够对这些模块进行解析优化和转换等操作，最后将它们打包在一起，打包后的文件可用于在浏览器中使用。&lt;br&gt;
+webpack优势&lt;br&gt;
+webpack能替代部分 grunt/gulp 的工作，比如打包、压缩混淆、图片转base64等，而且还具有以下几点优势：&lt;br&gt;
+1.webpack 是以 commonJS 的形式来书写脚本的，但对 AMD/CMD 的支持也很全面，方便旧项目进行代码迁移&lt;br&gt;
+2.能被模块化的不仅仅是 JS 了&lt;br&gt;
+3.扩展性强，具有强大的插件（Plugin）接口，使用起来比较灵活，特别是支持热插拔的功能很实用&lt;br&gt;
+4.可以将代码切割成不同的块（chunk），每个块包含一个或多个模块，块可以按需被异步加载，降低了初始化时间&lt;/p&gt;
+&lt;p&gt;H5 本地存储&lt;br&gt;
+本地存储localstorage    本地存储sessionstorage&lt;br&gt;
+离线缓存（application cache）  Web SQL IndexedDB&lt;br&gt;
+本质区别：&lt;br&gt;
+1、cookie：是网站为了标识用户身份而存储在本地终端上的数据（通常经过加密），数据始终在同源的http请求中携带（即使不需要），即会在浏览器和服务器间来回传递。&lt;br&gt;
+2、sessionStorage和localStorage不会自动把数据发给服务器。&lt;br&gt;
+存储大小：&lt;br&gt;
+1、cookie数据一般不能超过4K。&lt;br&gt;
+2、sessionStorage和localStorage一般可达5M左右。&lt;br&gt;
+有效期限：&lt;br&gt;
+1、cookie如果不设置期限，一般在浏览器关闭后就失效（自动删除）。&lt;br&gt;
+2、sessionStorage也会在浏览器绘画窗口关闭后失效。&lt;br&gt;
+3、localStorage没有过期时限，即使关闭浏览器或者重启电脑也不会失效（除非你手动删除）&lt;/p&gt;
+&lt;p&gt;函数防抖&lt;br&gt;
+1.定义&lt;br&gt;
+在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时；典型的案例就是输入搜索：输入结束后n秒才进行搜索请求，n秒内又输入的内容，就重新计时。&lt;br&gt;
+2.实现原理&lt;br&gt;
+函数防抖的基本思想是设置一个定时器，在指定时间间隔内运行代码时清楚上一次的定时器，并设置另一个定时器，知道函数请求停止并超过时间间隔才会执行。&lt;br&gt;
+3.使用场景&lt;br&gt;
+文本框输入搜索（连续输入时避免多次请求接口）&lt;/p&gt;
+&lt;p&gt;函数节流&lt;br&gt;
+1.定义&lt;br&gt;
+规定在一个单位时间内，只能触发一次函数，如果这个单位时间内触发多次函数，只有一次生效； 典型的案例就是鼠标不断点击触发，规定在n秒内多次点击只有一次生效。&lt;br&gt;
+2.实现原理&lt;br&gt;
+其原理是用时间戳来判断是否已到回调该执行时间，记录上次执行的时间戳，然后每次触发 scroll 事件执行回调，回调中判断当前时间戳距离上次执行时间戳的间隔是否已经到达 规定时间段，如果是，则执行，并更新上次执行的时间戳，&lt;br&gt;
+3.使用场景&lt;br&gt;
+resize、scroll、mousemove等事件触发监听&lt;/p&gt;
+&lt;p&gt;link和@import区别&lt;br&gt;
+1.从属关系区别&lt;br&gt;
+@import是 CSS 提供的语法规则，只有导入样式表的作用；link是HTML提供的标签，不仅可以加载 CSS 文件，还可以定义 RSS、rel 连接属性等。&lt;br&gt;
+2.加载顺序区别&lt;br&gt;
+加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。&lt;br&gt;
+3.兼容性区别&lt;br&gt;
+@import是 CSS2.1 才有的语法，故只可在 IE5+ 才能识别；link标签作为 HTML 元素，不存在兼容性问题。&lt;br&gt;
+4.DOM可控性区别&lt;br&gt;
+可以通过 JS 操作 DOM ，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。&lt;/p&gt;
+&lt;p&gt;团体项目协作&lt;br&gt;
+切图自动压缩功能. 服务器在国内天然更快,&lt;br&gt;
+权限管理:成员、团队权限分级和管理，保证了设计稿的准确性和安全性&lt;br&gt;
+支持 Axure 等文档在线展示和共享: 还支持 Word / Excel / PPT / PDF 在线预览和共享&lt;br&gt;
+支持手机上和微信中预览、操作和分享等&lt;/p&gt;
+&lt;p&gt;浅拷贝与深拷贝&lt;br&gt;
+深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的&lt;br&gt;
+浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。&lt;br&gt;
+但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。&lt;br&gt;
+深拷贝 : (JSON.parse(JSON.stringify())---- 递归方法)&lt;br&gt;
+浅拷贝 : (Object.assign()、、Array.prototype.concat())&lt;/p&gt;
+&lt;p&gt;VUE----key的作用：&lt;br&gt;
+1、元素的唯一性，diff方法中提高了匹配元素index的性能。有key时遍历key-index对象（快），无key时遍历旧Vnode（慢）。&lt;br&gt;
+2、在元素list一直变化的情况下，key值设置唯一时，能很精确找到/找不到变更元素，key不唯一时，不能精确找到要匹配的元素。但对于是原地复用元素还是重新创建元素没有直接影响，只要新旧两个Vnode满足sameVnode，就会复用已有元素。&lt;/p&gt;
+&lt;p&gt;Git&lt;/p&gt;
+&lt;p&gt;keep-alive&lt;br&gt;
+ keep-alive用来缓存组件,避免多次加载相应的组件,减少性能消耗，通过设置了keep-alive，可以简单理解为从页面1跳转到页面2后，然后后退到页面1，只会加载缓存中之前已经渲染好的页面1，而不会再次重新加载页面1，及不会再触发页面一种的created等类似的钩子函数，除非自己重新刷新该页面1。&lt;/p&gt;
+&lt;p&gt;vue的路由实现hash模式 和 history模式&lt;br&gt;
+hash模式：在浏览器中符号“#”，#以及#后面的字符称之为hash，用 window.location.hash 读取。特点：hash虽然在URL中，但不被包括在HTTP请求中；用来指导浏览器动作，对服务端安全无用，hash不会重加载页面&lt;br&gt;
+history模式：history采用HTML5的新特性；且提供了两个新方法： pushState()， replaceState()可以对浏览器历史记录栈进行修改，以及popState事件的监听到状态变更&lt;/p&gt;
+&lt;p&gt;路由对象&lt;br&gt;
+一个路由对象表示当前激活路由的状态信息，包含当前URL解析的信息，还有Url匹配到的路由记录&lt;br&gt;
+路由对象是不可变的，每次成功的导航后都会产生一个新对象&lt;br&gt;
+路由出现的多个地方：&lt;br&gt;
+1.在组件内，即this.&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt; &lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt; &lt;/mi&gt;&lt;mn&gt;2.&lt;/mn&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;在&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;route  
+2.在&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;在&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;route观察者回调中&lt;br&gt;
+3.route.match(location)的返回值&lt;/p&gt;
+&lt;p&gt;路由跳转&lt;br&gt;
+编程式（ js跳转）this.$router.push()&lt;br&gt;
+声明式（标签跳转）&lt;router-link to=&#34; &#34;&gt;&lt;/router-link&gt;&lt;/p&gt;
+&lt;p&gt;v-if 和 v-show 区别&lt;br&gt;
+相同点：都能实现元素的显示和隐藏&lt;br&gt;
+不同点：&lt;br&gt;
+1.v-if是真正的条件渲染，而v-show只是控制元素的dispaly属性，当需要做频繁切换显示隐藏时，推荐使用v-show，如果只是做一次，使用v-if；&lt;br&gt;
+2.v-if能使用template，而v-show不能使用&lt;br&gt;
+3.v-if有配套的v-else和v-else-if使用，而v-show没有&lt;/p&gt;
+&lt;p&gt;计算属性和 methods 有什么区别？&lt;br&gt;
+--&amp;gt;总结：computed计算属性的缓存原理在我们处理大量数据的时候使用可以大大提高效率，不必在数据没有发生改变的时候重新获取数据的值，可直接获取到结果，并且只执行绑定依赖的方法。methods里方法在依赖的值改变后，只有设置触发才会重新执行methods里相关的方法。&lt;br&gt;
+计算属性方法调用不用加();methods需要；&lt;br&gt;
+执行机制&lt;br&gt;
+computed里的方法在初始化执行过后，只要任何值有更新，那么所有在computed计算属性里和其相关的值都会更新。&lt;br&gt;
+methods只有在调用的时候才会执行对应的方法，不会自动同步数据。&lt;br&gt;
+computed计算属性跟methods在内部的函数写起来没有什么区别，只是在调用的时候不一样&lt;/p&gt;
+&lt;p&gt;vue 中怎么操作 dom 元素(refs)&lt;br&gt;
+vue 中怎么获取父组件的内容(&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;中&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;父&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;怎&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;么&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;调&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;用&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;子&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;组&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;件&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;的&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;方&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;法&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;root)
+vue 中父组件怎么调用子组件的方法(&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;中&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;父&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;怎&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;么&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;调&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;用&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;子&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;组&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;件&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;方&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;法&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;refs 选中子组件，直接调用方法名)&lt;br&gt;
+当页面应用程序刷新之后怎么保证数据还是存在的？你怎么缓存页面数据(sessionStorage,localStorage)&lt;/p&gt;
+&lt;p&gt;vue-cli 工程技术集合介绍&lt;br&gt;
+1.构建的 vue-cli 工程都到了哪些技术，它们的作用分别是什么？&lt;br&gt;
+vue.js：vue-cli工程的核心，主要特点是 双向数据绑定 和 组件系统。&lt;br&gt;
+vue-router：vue官方推荐使用的路由框架。&lt;br&gt;
+vuex：专为 Vue.js 应用项目开发的状态管理器，主要用于维护vue组件间共用的一些 变量 和 方法。&lt;br&gt;
+axios（ 或者 fetch 、ajax ）：用于发起 GET 、或 POST 等 http请求，基于 Promise 设计。&lt;br&gt;
+vuex等：一个专为vue设计的移动端UI组件库。创建一个emit.js文件，用于vue事件机制的管理。&lt;br&gt;
+webpack：模块加载和vue-cli工程打包器&lt;/p&gt;
+&lt;p&gt;JS对象的属性检测&lt;br&gt;
+Attr(attribute) in object：检测共有和私有&lt;br&gt;
+hasOwnProperty：检测私有属性&lt;br&gt;
+路由模式切换代码：&lt;br&gt;
+export default new Router({&lt;br&gt;
+//路由模式：hash(默认)，history模式&lt;br&gt;
+    mode: &#39;history&#39;,&lt;br&gt;
+//修改路由高亮样式，默认值为&#39;router-link-active&#39;&lt;br&gt;
+    linkActiveClass: &#39;active&#39;&lt;br&gt;
+对于MVVM的了解?&lt;br&gt;
+MVVM 是 Model-View-ViewModel的缩写,&lt;br&gt;
+Model代表数据模型,View代表UI组件，ViewModel监听数据模型的改变和控制视图行为、处理用户交互，MVVM架构下Model和View本是没有直接联系的，ViewModel通过双向绑定,把View和Model连接了起来。&lt;br&gt;
+双向绑定的原理？&lt;br&gt;
+vue实现数据双向绑定主要采用的是：数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty（）来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调。&lt;br&gt;
+常用的指令有哪些？&lt;br&gt;
+在项目中如果我要进行判断我会使用 v-if，如果我需要遍历我会使用v-for，如果我需要绑定事件我会使用v-on，我会使用v-cloak 解决屏幕闪动，如果我需要让数据只绑定一次不进行更新我会使用v-once，如果我需要动态绑定一个或者多个特性我会使用v-bind&lt;br&gt;
+v-if和v-show的区别？&lt;br&gt;
+v-if：判断是否加载（渲染）；v-show：控制是否显影（display）&lt;/p&gt;
+&lt;p&gt;常用的修饰符？&lt;br&gt;
+.trim          //清楚首位空白字符&lt;br&gt;
+.stop              //阻止单击事件冒泡&lt;br&gt;
+.prevent        //提交事件不再重新加载页面,&lt;br&gt;
+.capture        //添加事件侦听器时使用事件捕获模式&lt;br&gt;
+.self              //只当事件在该元素本身时触发回调（在其子元素上不触发）&lt;br&gt;
+.once             //只触发一次事件&lt;br&gt;
+...&lt;/p&gt;
+&lt;p&gt;在vue中我们用什么来监听数据的变化?&lt;br&gt;
+Watch&lt;br&gt;
+计算属性与方法、监听属性的比较?&lt;br&gt;
+计算属性和方法: 页面只要重新渲染，方法都会执行一次，而计算属性只有在它的相关依赖发生改变时才会重新求值&lt;br&gt;
+计算属性和监听属性:计算属性和监听属性相似都是在相关以来发生改变时才会重新求值, 当我有一些数据需要随着其它数据变动而变动时，我们很容易滥用watch,通常更好的做法是使用计算属性而不是命令式的 watch 回调&lt;br&gt;
+什么是虚拟DOM,它和真实DOM相比优势在哪?&lt;br&gt;
+虚拟DOM是描述真实DOM的js对象&lt;br&gt;
+它的优势在于减少重排重绘,提升了计算机的性能&lt;br&gt;
+对keep-alive的了解?&lt;br&gt;
+keep-alive是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。&lt;br&gt;
+在vue 2.1.0 版本之后，keep-alive新加入了两个属性: include(包含的组件缓存) 与 exclude(排除的组件不缓存，优先级大于include) 。&lt;br&gt;
+include - 字符串或正则表达式。只有名称匹配的组件会被缓存。&lt;br&gt;
+exclude - 字符串或正则表达式。任何名称匹配的组件都不会被缓存。&lt;br&gt;
+max - 数字。最多可以缓存多少组件实例。&lt;br&gt;
+(面试官可能会换个问法:我们如果将某个列表类组件内容滑动到第100条位置，然后我们在切换到一个组件后再次切换回到该组件，要让该组件的位置状态依旧保持在第100条列表处,我们需要怎么做)&lt;br&gt;
+什么是单页面,它的优缺点是什么?&lt;br&gt;
+概念：只有一个html页面，所以跳转的方式是组件之间的切换&lt;br&gt;
+优点：跳转流畅；组件化开发；组件可复用；开发便捷&lt;br&gt;
+缺点: 首屏加载过慢；seo优化不好; 不支持低版本的浏览器，最低只支持到IE9&lt;br&gt;
+Vue-router的钩子函数? (路由守卫可由相应的函数实现)&lt;br&gt;
+路由钩子函数有三种：&lt;br&gt;
+1 : 全局钩子： beforeEach、 afterEach&lt;br&gt;
+2 : 单个路由里面的钩子：  beforeEnter&lt;br&gt;
+3 : 组件路由：beforeRouteEnter、 beforeRouteUpdate、 beforeRouteLeave&lt;/p&gt;
+&lt;h2 id=&#34;怎么定义-vue-router-的动态路由-怎么获取传过来的值在-router-目录下的-indexjs-文件中对-path-属性加上-id使用-router-对象的-paramsid-获取-vue-router-的params和query传参的使用和区别query使用name来引入也可以传参使用path也可以而使用params传参只能使用name进行引入简单来说明一下router和route的区别router-是路由操作对象只写对象route-路由信息对象只读对象vuejs的两个核心是什么1数据驱动2组件系统localstorage和sessionstorage区别sessionstorage不在不同的浏览器窗口中共享即使是同一个页面localstorage-在所有同源窗口中都是共享的localstorage生命周期是永久这意味着除非用户显示在浏览器提供的ui上清除localstorage信息否则这些信息将永远存在-sessionstorage生命周期为当前窗口或标签页一旦窗口或标签页被永久关闭了那么所有通过sessionstorage存储的数据也就被清空了-v-for中key值的作用1高效的更新虚拟dom2区分虚拟dom中的节点hash模式和history模式hash模式在浏览器中符号以及后面的字符称之为hash用windowlocationhash读取history模式-history采用html5的新特性且提供了两个新方法pushstatereplacestate可以对浏览器历史记录栈进行修改以及popstate事件可监听到状态变更git的用法如果实在不会怎么办那就说对git的用法不太熟悉一般使用tortoisegitajax的使用1创建xmlhttprequest对象2创建一个新的http连接并指定该http请求的方法-url及验证信息3设置对异步传输对象状态监听4发送http请求5获取异步调用返回的数据6使用javascript和dom实现局部刷新&#34;&gt;怎么定义 vue-router 的动态路由? 怎么获取传过来的值?&lt;br&gt;
+在 router 目录下的 index.js 文件中，对 path 属性加上 /:id，使用 router 对象的 params.id 获取。&lt;br&gt;
+Vue Router 的params和query传参的使用和区别?&lt;br&gt;
+query使用name来引入也可以传参，使用path也可以,而使用params传参只能使用name进行引入&lt;br&gt;
+简单来说明一下&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;和&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;router和&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;和&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;route的区别&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;是&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;路&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;由&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;操&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;作&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;对&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;象&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;，&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;只&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;写&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;对&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;象&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;router : 是路由操作对象，只写对象
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;是&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;路&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;由&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;操&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;作&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;象&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;，&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;只&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;写&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;对&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;象&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;route : 路由信息对象，只读对象&lt;br&gt;
+Vue.js的两个核心是什么?&lt;br&gt;
+1.数据驱动2.组件系统&lt;br&gt;
+localStorage和sessionStorage区别?&lt;br&gt;
+sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的&lt;br&gt;
+localStorage生命周期是永久，这意味着除非用户显示在浏览器提供的UI上清除localStorage信息，否则这些信息将永远存在。&lt;br&gt;
+sessionStorage生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过sessionStorage存储的数据也就被清空了。&lt;br&gt;
+v-for中key值的作用?&lt;br&gt;
+1)高效的更新虚拟DOM&lt;br&gt;
+2)区分虚拟DOM中的节点&lt;br&gt;
+hash模式和history模式&lt;br&gt;
+hash模式：在浏览器中符号“#”，#以及#后面的字符称之为hash，用window.location.hash读取&lt;br&gt;
+history模式: history采用HTML5的新特性；且提供了两个新方法：pushState（），replaceState（）可以对浏览器历史记录栈进行修改，以及popState事件可监听到状态变更&lt;br&gt;
+git的用法如果实在不会怎么办?&lt;br&gt;
+那就说对git的用法不太熟悉,一般使用TortoiseGit&lt;br&gt;
+Ajax的使用&lt;br&gt;
+(1)创建&lt;code&gt;XMLHttpRequest&lt;/code&gt;对象&lt;br&gt;
+(2)创建一个新的&lt;code&gt;HTTP&lt;/code&gt;连接,并指定该&lt;code&gt;HTTP&lt;/code&gt;请求的方法、&lt;code&gt;URL&lt;/code&gt;及验证信息.&lt;br&gt;
+(3)设置对异步传输对象状态监听&lt;br&gt;
+(4)发送&lt;code&gt;HTTP&lt;/code&gt;请求.&lt;br&gt;
+(5)获取异步调用返回的数据.&lt;br&gt;
+(6)使用JavaScript和DOM实现局部刷新.&lt;/h2&gt;
+&lt;p&gt;1.localStorage的大小一般为5M 永久有效，除非你进行手动删除 不参与服务器端的通信。&lt;br&gt;
+sessionStorage的大小一般为5M 在当前会话下有效，关闭页面或者浏览器时会被清空 不参与服务器端的通信。&lt;br&gt;
+cookies的大小一般为4K 在设置的有效之前有效，当超过有效期便会失效 参与服务器端通信，每次都会携带http的头信息中&lt;br&gt;
+es6的语义化标签:Header Footer Nav Article Aside Time Mark&lt;br&gt;
+HTML语义化的理解：指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化），便于开发者阅读，维护和写出更优雅的代码的同时，让浏览器的爬虫和辅助技术更好的解析。&lt;br&gt;
+2.Localstorage&lt;br&gt;
+3.渐进增强:针对低版本浏览器进行构建页面,保证最基本的功能,然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的效果体验.&lt;br&gt;
+优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。&lt;/p&gt;
+&lt;p&gt;4.Sass的优点:Sass的有点对于我来说我所用的觉得最突出的就是嵌套和变量 让我觉得非常方便和代码更明了&lt;br&gt;
+事件委托就是把原本需要绑定的事件委托给父元素，让父元素负责事件监听。原理是DOM元素的事件冒泡， 减少注册时间,节省内存&lt;br&gt;
+5.Jsonp cros proxy （协议域名端口相同，同源政策）&lt;br&gt;
+Vue的优点&lt;br&gt;
+1.只专注于视图层的轻量级的框架&lt;br&gt;
+2.数据的双向绑定 优点是减少了dom操作&lt;br&gt;
+3.组件化 和 响应式设计&lt;br&gt;
+4.实现数据与结构的分离 高效轻便 易于浏览器的加载速度&lt;/p&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;监听可以监听除data以外的其他函数，计算只能计算data里的数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET把参数包含在URL中，POST通过request body传递参数&lt;br&gt;
+GET产生一个TCP数据包；POST产生两个TCP数据包。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;常用浏览器的内核:&lt;br&gt;
+IE:trident内核;&lt;br&gt;
+Firefox:gecko内核&lt;br&gt;
+Safari:webkit内核&lt;br&gt;
+Opera:以前是presto,现在改用Blink&lt;br&gt;
+Chrome:Blink&lt;br&gt;
+常见的兼容性问题&lt;br&gt;
+1)不同了浏览器的标签的内边距和外边距有差异, 在公共样式写*{margin:0;padding:0}来解决；&lt;br&gt;
+2）块级元素float后会存在横向margin的情况，(IE6显示比设置大),在float的元素上加overflow:hidden来解决&lt;br&gt;
+3)设置较小高度的时候(10px以下),在IE6 IE7中高度超过了设置高度,给超过设置高度的标签上加overflow:hidden&lt;br&gt;
+3. HTML5 为什什么只需要写 &lt;!DOCTYPE HTML&gt;？HTML5有哪些新特性、移 除了了那些元素？如何处理理HTML5新标签的浏览器器兼容问题？如何区分 HTML 和HTML5？&lt;/p&gt;
+&lt;!DOCTYPE HTML&gt;可以告知浏览器以何种规范解析页面,
+&lt;p&gt;H5的新特性1)语义标签例如&lt;nav&gt;&lt;footer&gt;&lt;header&gt;等;2)视频和音频&lt;audio&gt;&lt;video&gt;3)canvas绘图4)getlocation获取位置等&lt;br&gt;
+移除了basefont,big,center,frame等&lt;br&gt;
+可以从文档类型声明上来区分;可以从结构语义上来区分;&lt;/p&gt;
+&lt;p&gt;css引入的方式有&lt;br&gt;
+外部样式 link&lt;br&gt;
+外部导入 import&lt;br&gt;
+内部样式 &lt;style&gt;&lt;/style&gt;&lt;br&gt;
+行内样式 &lt;div style=&#34;&#34;&gt;&lt;/div&gt;&lt;br&gt;
+Link和@import的区别:&lt;br&gt;
+1：link是XHTML标签,@import属于CSS&lt;br&gt;
+2：link引用CSS时，在页面载入时同时加载；@import需要页面网页完全载入以后加载。&lt;br&gt;
+3：link是XHTML标签，无兼容问题；@import是在CSS2.1提出的，低版本的浏览器不支持。&lt;br&gt;
+4：link支持使用Javascript控制DOM去改变样式；而@import不支持。&lt;/p&gt;
+&lt;p&gt;CSS选择符有哪些?哪些属性可以继承?优先级算法如何计算?内联和 important哪个优先级高?&lt;br&gt;
+选择器:Id选择器,类选择器,标签选择器,相邻选择器,子选择器,后代选择器,伪类选择器等&lt;br&gt;
+可继承的属性:font-size,font-family,color等&lt;br&gt;
+优先级按照就近原则,样式定义最近优先,而载入的样式则以最后载入的为准.&lt;br&gt;
+!important优先级高&lt;br&gt;
+6. web标准：结构(html)+表现(css)+行为(js)&lt;br&gt;
+7. 基本语句构成是:选择器{属性:值;属性:值}&lt;br&gt;
+8. string object number function boolean undefined&lt;br&gt;
+强制类型的转换:parseInt paresFloat Number()&lt;br&gt;
+隐式类型的转换: ==&lt;br&gt;
+split()是将字符串切割成数组,而join()则是将数据转换为字符串&lt;br&gt;
+11. get请求会把参数包含在URL中,而post则通过request body传参,另外get请求会产生一个TCP数据包,而post则会产生两个TCP数据包&lt;br&gt;
+12. 我一般用JSON.parse()&lt;br&gt;
+13. 如何进行网站性能优化&lt;br&gt;
+　　content方向：&lt;br&gt;
+　1. 减少HTTP请求：合并文件、CSS精灵、inline Image&lt;br&gt;
+　　2. 减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询&lt;br&gt;
+　　3. 避免重定向：多余的中间访问&lt;br&gt;
+　　4. 使Ajax可缓存&lt;br&gt;
+　　5. 非必须组件延迟加载&lt;br&gt;
+　　6. 未来所需组件预加载&lt;br&gt;
+　　7. 减少DOM元素数量&lt;br&gt;
+　　8. 将资源放到不同的域下：浏览器同时从一个域下载资源的数目有限，增加域可以提高并行下载量&lt;br&gt;
+　　9. 减少iframe数量&lt;br&gt;
+　　10. 减少404页面&lt;br&gt;
+　　Server方面&lt;br&gt;
+　1. 使用CDN&lt;br&gt;
+　　2. 添加Expires或者Cache-Control响应头&lt;br&gt;
+　　3. 对组件使用Gzip压缩&lt;br&gt;
+　　4. 配置ETag&lt;br&gt;
+　　5. Flush Buffer Early&lt;br&gt;
+　　6. Ajax使用GET进行请求&lt;br&gt;
+　　7. 避免空src的img标签&lt;br&gt;
+　　Cookie方面&lt;br&gt;
+　　1. 减小cookie大小&lt;br&gt;
+　　2. 引入资源的域名不要包含cookie&lt;br&gt;
+　　css方面&lt;br&gt;
+　　1. 将样式表放到页面顶部&lt;br&gt;
+　　2. 不使用CSS表达式&lt;br&gt;
+　　3. 使用不使用@import&lt;br&gt;
+　　4. 不使用IE的Filter&lt;br&gt;
+　　Javascript方面&lt;br&gt;
+　1. 将脚本放到页面底部&lt;br&gt;
+　　2. 将javascript和css从外部引入&lt;br&gt;
+　　3. 压缩javascript和css&lt;br&gt;
+　　4. 删除不需要的脚本&lt;br&gt;
+　　5. 减少DOM访问&lt;br&gt;
+　　6. 合理设计事件监听器&lt;br&gt;
+　　图片方面&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;优化图片：根据实际颜色需要选择色深、压缩&lt;br&gt;
+　　2. 优化css精灵&lt;br&gt;
+　　3. 不要在HTML中拉伸图片&lt;br&gt;
+　　4. 保证favicon.ico小并且可缓存&lt;/li&gt;
+&lt;li&gt;vue + webpack 前端性能优化&lt;br&gt;
+#优化一：vue-router路由懒加载:  vue 是单页面应用，使用webpcak打包后的文件很大，会使进入首页时，加载的资源过多，页面会出现白屏的情况，不利于用户体验。运用懒加载后，就可以按需加载页面，提高用户体验。&lt;br&gt;
+#优化二: 用image-webpack-loader 来压缩图片&lt;br&gt;
+#优化三: 打包后的js过大，将js打包多个文件&lt;br&gt;
+#优化四：去掉不必要的插件，按需引入&lt;br&gt;
+#优化五：gzip压缩&lt;br&gt;
+#优化六：服务器缓存&lt;br&gt;
+this的四种指向&lt;br&gt;
+a.如果是一般函数,this指向全局对象window;&lt;br&gt;
+b.在严格模式下&amp;quot;use strict&amp;quot;,为undefined.&lt;br&gt;
+c.对象的方法里调用,this指向调用该方法的对象.&lt;br&gt;
+d.构造函数里的this,指向创建出来的实例.&lt;/li&gt;
+&lt;li&gt;ajax常见的状态码&lt;br&gt;
+1XX 信息性状态码 服务器正在处理请求&lt;br&gt;
+2XX 成功状态码   请求已正常处理完毕&lt;br&gt;
+3XX 重定向状态码 需要进行额外操作以完成请求&lt;br&gt;
+4XX 客户端错误状态码 客户端原因导致服务器无法处理请求&lt;br&gt;
+5XX 服务端状态码  服务器原因导致处理请求出错&lt;/li&gt;
+&lt;li&gt;严格模式 有什么 特点 ? （3-4条）&lt;br&gt;
+1.严格模式下不可以使用with（）&lt;br&gt;
+2.严格模式下，变量必须声明&lt;br&gt;
+3.严格模式下，this默认是undefined&lt;br&gt;
+4.严格模式下，为只读变量和不可扩展对象赋值会报错&lt;br&gt;
+5.严格模式下，函数的形参不可以同名&lt;br&gt;
+6.严格模式下，不可以使用caller和arguments的属性，会报错&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;data(){return } 为什么要return&lt;br&gt;
+不使用return包裹的数据会在项目的全局可见,会造成变量污染;使用return包裹后数据中变量只在当前组件中生效,不会影响其他组件&lt;br&gt;
+chrome49跨域&lt;br&gt;
+49之前在属性页面中的目标输入框里加上   --disable-web-security &lt;br&gt;
+49之后:&lt;br&gt;
+1.在电脑上新建一个目录，例如：C:\MyChromeDevUserData&lt;br&gt;
+2.在属性页面中的目标输入框里加上   --disable-web-security --user-data-dir=C:\MyChromeDevUserData，--user-data-dir的值就是刚才新建的目录。&lt;br&gt;
+3.点击应用和确定后关闭属性页面，并打开chrome浏览器。&lt;br&gt;
+http和https的区别:&lt;br&gt;
+https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。&lt;br&gt;
+http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。&lt;br&gt;
+http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。&lt;br&gt;
+http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。&lt;br&gt;
+真数组和伪数组的区别?&lt;br&gt;
+真数组能使用数组的拓展方法,伪数组不行;&lt;br&gt;
+真数组的长度是可变的,伪数组的不行&lt;br&gt;
+伪数组转真数组：&lt;br&gt;
+1var newArr=[].slice.call(obj)&lt;br&gt;
+2var newArr=Array.from(obj),ES6的新语法&lt;br&gt;
+3var newArr=[...obj]&lt;br&gt;
+Ui库和自己写的代码冲突的时候&lt;br&gt;
+增加权重,&lt;br&gt;
+在UI库底层样式去改样式&lt;/p&gt;
+&lt;p&gt;节流和防抖?&lt;br&gt;
+函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时    (点赞,获取验证码)&lt;br&gt;
+函数节流（throttle）：当持续触发事件时，保证一定时间段内只调用一次事件处理函数     (滚动条事件)&lt;br&gt;
+Vue的生命周期&lt;br&gt;
+beforeCreate : 实例组件刚创建,元素DOM和数据还没有初始化&lt;br&gt;
+created:数据data已经初始化完成,方法可以调用,但是DOM未渲染&lt;br&gt;
+beforeMount:DOM未完成挂载,数据也未完成初始化&lt;br&gt;
+mounted:数据和DOM都挂载完成&lt;br&gt;
+beforeUpdate: 页面数据改变触发,但是数据还是原来的数据&lt;br&gt;
+Updated:页面数据改变触发,数据是更新之后的数据&lt;br&gt;
+beforeDestroy:组件销毁之前执行,可以在这里面清楚定时器&lt;br&gt;
+Destroyed:个人感觉跟beforeDestroy&lt;br&gt;
+position的值， relative和absolute分别是相对于谁进行定位的？&lt;br&gt;
+§ absolute :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。&lt;br&gt;
+§ fixed （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。&lt;br&gt;
+§ relative 生成相对定位的元素，相对于其在普通流中的位置进行定位。&lt;br&gt;
+§ static 默认值。没有定位，元素出现在正常的流中&lt;br&gt;
+§ sticky 生成粘性定位的元素，容器的位置根据正常文档流计算得出&lt;br&gt;
+-------------------------------------------------------------------------------------------自定义组件的方法&lt;br&gt;
+答：第一步：在components目录新建你的组件文件（smithButton.vue），script一定要export default {&lt;br&gt;
+第二步：在需要用的页面（组件）中导入：import smithButton from ‘../components/smithButton.vue’&lt;br&gt;
+第三步：注入到vue的子组件的components属性上面,components:{smithButton}&lt;br&gt;
+第四步：在template视图view中使用，&lt;smith-button&gt;  &lt;/smith-button&gt;&lt;br&gt;
+问题有：smithButton命名，使用的时候则smith-button。&lt;br&gt;
+实现垂直定位居中的方法?&lt;br&gt;
+1.已知宽高&lt;br&gt;
+a)子元素绝对定位 上下左右0+margin auto&lt;br&gt;
+b)子元素绝对定位 上下50% margin-top -高度的一半 margin-left -宽度的一半&lt;br&gt;
+2.未知宽高&lt;br&gt;
+a)子元素相对定位 左上50% transform：translate（-50%，-50%）&lt;br&gt;
+b)父元素 display：flex justify-content:center align-items:center&lt;br&gt;
+c)父元素 display: table-cell text-align:center vertical-align:middle&lt;br&gt;
+Jq的自定义方法?&lt;br&gt;
+jQuery.fn.extend(object);    给jQuery对象添加方法&lt;br&gt;
+jQuery.extend(object);     为扩展jQuery类本身.为类添加新的方法。&lt;br&gt;
+vue中自定义指令?&lt;br&gt;
+Vue自定义指令和组件一样存在着全局注册和局部注册两种方式。先来看看注册全局指令的方式，通过 Vue.directive( id, [definition] ) 方式注册全局指令，第二个参数可以是对象数据，也可以是一个指令函数。&lt;br&gt;
+注：使用指令时必须在指名名称前加前缀v-，即v-指令名称&lt;br&gt;
+1.钩子函数&lt;br&gt;
+一个指令定义对象可以提供如下几个钩子函数 (均为可选)：&lt;br&gt;
+bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。&lt;br&gt;
+inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。&lt;br&gt;
+update：被绑定元素所在模板更新时调用，但是可能发生在其子 VNode 更新之前。&lt;br&gt;
+componentUpdated：被绑定元素所在模板完成一次更新周期时调用。&lt;br&gt;
+unbind：只调用一次，指令与元素解绑时调用。&lt;br&gt;
+项目中图片优化?&lt;br&gt;
+小的图片用精灵图,大的有专门的图片服务器&lt;br&gt;
+当数据发生变化的时候，VUE怎么更新节点？&lt;br&gt;
+Vue采用的是虚拟DOM进行局部刷新，更新节点的过程中采用了diff算法，diff的过程就是调用patch函数，比较新旧节点，一边比对一边给真实DOM打补丁。&lt;br&gt;
+Amd,cmd,commonjs,es6对比&lt;br&gt;
+1)AMD-异步模块定义 是RequireJS在推广过程中对模块定义的规范化产出是一个概念,依赖前置,在参数里面引入js文件&lt;br&gt;
+2)Cmd-是同步模块定义 是SeaJS在推广过程中对模块定义的规范化产出,依赖就近,什么时候用什么时候require&lt;br&gt;
+3)CommonJS是通过module.exports定义的,在前端浏览器里面并不支持,module.exports通过node.js后端使用的,&lt;br&gt;
+4)ES6特性,模块化—export/import对模块导出导入&lt;br&gt;
+export和export default区别:1在一个文件或模块中，export可以有多个，export default仅有一个2 export 导出对象引入时需要用{}而export default&lt;br&gt;
+null和undefined的区别:&lt;br&gt;
+null标示没有对象,即标示这里不应该有值;undefined表示缺少值,即本来应该有值但是没有被定义&lt;br&gt;
+闭包?&lt;br&gt;
+闭包就是函数套函数&lt;br&gt;
+用处:1可以读取到函数内部的变量,2让变量始终保持在内存中&lt;br&gt;
+坏处:1 滥用闭包可能导致内存泄漏,&lt;br&gt;
+原型链?&lt;br&gt;
+对象之间的继承关系，在JavaScript中是通过prototype对象指向父类对象，直到指向Object对象为止，这样就形成了一个原型指向的链条，专业术语称之为原型链。&lt;br&gt;
+深拷贝和浅拷贝?&lt;br&gt;
+浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。&lt;br&gt;
+深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象&lt;br&gt;
+浅拷贝的实现方式有:object.assign()(obj只有一层时是深拷贝)、Array.prototype.concat()&lt;br&gt;
+深拷贝的实现方式有:json.parse(json.stringfy())、手写递归方法(其原理是遍历数组和对象直到里面都是基本的数据类型,然后再去复制,就完成了深拷贝)&lt;br&gt;
+div+css布局有什么优点?&lt;br&gt;
+(1)可以实现html结构和css表现分离,使html文档结构更清晰、可读性高、加载速度更快&lt;br&gt;
+(2)提高了样式表的复用性和设计的灵活性&lt;br&gt;
+(3)浏览器会缓存静态文件如css文件,有利于提高网站的性能和SEO评估&lt;br&gt;
+(4)提高代码的可维护性&lt;br&gt;
+继承?&lt;br&gt;
+自己有的用自己的 自己没有的找别人要&lt;br&gt;
+1构造函数的 原型(prototype)&lt;/p&gt;
+&lt;p&gt;2普通对象      内部原型(构造原型)(&lt;strong&gt;proto&lt;/strong&gt;)&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;普通函数      指向继承(call/apply)  他们的区别主要是第二个参数 call接的是参数列表而apply接的是参数数组&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;es5对象继承   创造继承 (Object.create)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;es6类的继承   继承(延生)(class  extends)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;json和jsonp?&lt;br&gt;
+json是一种数据格式,而jsonp是解决跨域的一种方法&lt;br&gt;
+npm和yarn的区别?&lt;br&gt;
+npm是按照队列去执行（上一个没安装完，下一个就5等着）&lt;br&gt;
+yarn  并行安装（同步执行所有的）和离线模式（如果之前安装过，可以在缓存里面读取），速度会快一些&lt;br&gt;
+开启动画加速?&lt;br&gt;
+当我们用到动画的时候,如果用 top left这样的会触发浏览器的重绘,这时候我们使用transform:translate()来代替就会避免了浏览器的重绘,提高了性能达到加速的效果&lt;br&gt;
+常见的css和js的兼容?&lt;br&gt;
+Css兼容:&lt;br&gt;
+1.hack:让css代码兼容IE浏览器，呈现出和其他厂商浏览器相同的UI界面。1)属性名前缀 #color:red IE6 &lt;em&gt;color:red IE7 2)浏览器前缀 -webkit- (safari Chrome) -moz- (Firefox) -ms- (IE) -o- (Opera)&lt;br&gt;
+2.内外边距不同,&lt;/em&gt;{margin:0;padding:0}&lt;br&gt;
+3.浮动有横向marign的时候ie产生的比设置的大 , 给浮动的元素加display:inline&lt;br&gt;
+4.设置较小高度的时候(一般小于10px),在IE6 IE7会超出设置高度,在超出的标签设置overflow:hidden&lt;br&gt;
+JS兼容:&lt;br&gt;
+1.滚动条 在Chrome中默认滚动条是body的可以通过body.scrolltop来取,而火狐等浏览器认为滚动条是HTML的&lt;br&gt;
+var st=document.body.scrollTop || document.documentElement.scrollTop&lt;br&gt;
+2.监听addEventListener(事件名，处理函数，布尔值:布尔值为false则为冒泡,true则为捕获) IE: attachEvent(事件名，处理函数)&lt;br&gt;
+3.移除监听 removeEventListener(事件名,处理函数) IE:detachEvent(事件名,处理函数)&lt;br&gt;
+4.阻止冒泡 W3C: event:stopPropagation() IE 678 :event:cancelBubble=true&lt;br&gt;
+Vue中的template是什么?&lt;br&gt;
+template是模板占位符,可以帮助我们包裹元素&lt;br&gt;
+动态组件和异步组件?&lt;br&gt;
+动态组件使用is来切换不同的组件,而异步组件类似于路由的按需加载,用的时候import,&lt;br&gt;
+Eg:&lt;br&gt;
+响应式设计和自适应设计?&lt;br&gt;
+响应式设计（RWD）：建立一个网页，通过CSS Media Query，Content - Based Breakpoint等技术来改变网页的大小适应不同分辨率的屏幕&lt;br&gt;
+自适应设计（AWD）：为不同类别的设备建立不同的网页，检测到设备分辨率大小后调用相应的网页。&lt;br&gt;
+nth-of-type和nth-child区别?&lt;br&gt;
+:nth-of-type(n) : 在同一父元素下, 同类子元素第n个&lt;br&gt;
+:nth-child(n) : 在同一父元素下，所有子元素第n个&lt;br&gt;
+理解和使用Promise.all和Promise.race?&lt;br&gt;
+Promise.all可以将多个Promise实例包装成一个新的Promise实例。同时，成功和失败的返回值是不同的，成功的时候返回的是一个结果数组，而失败的时候则返回最先被reject失败状态的值。&lt;br&gt;
+Promse.race就是赛跑的意思，意思就是说，Promise.race([p1, p2, p3])里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。&lt;/p&gt;
+">interview questions 2</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://chenggr.github.io/post/js-web-api/"" data-c="
